@@ -80,6 +80,9 @@
  .card.top{border-top-color:var(--orange);background:var(--panel2)}
  .ph{position:relative;aspect-ratio:16/10;overflow:hidden;background:var(--steel)}
  .ph img{width:100%;height:100%;object-fit:cover;filter:saturate(.85) contrast(1.05)}
+ .rot{position:relative}
+ .rot img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .9s ease}
+ .rot img.show{opacity:1}
  .ph::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 45%,rgba(10,12,15,.85) 100%)}
  .ph.none{display:flex;align-items:flex-end;background:var(--steel) var(--cable);}
  .ph.none::before{content:attr(data-city);position:absolute;top:14px;left:18px;font-family:var(--disp);font-weight:800;font-size:13px;letter-spacing:.3em;text-transform:uppercase;color:var(--muted)}
@@ -145,7 +148,7 @@
   .ss-item{font-size:21px;padding:14px 16px;white-space:nowrap}
   .ss-p{display:none}
  }
- @media (prefers-reduced-motion:reduce){.ch i,.ss-imgs > *{transition:none}}
+ @media (prefers-reduced-motion:reduce){.ch i,.ss-imgs > *,.rot img{transition:none}}
 
  footer{border-top:1px solid var(--line);padding:30px 0 50px;color:var(--muted);font-size:12.5px}
  footer h4{font-family:var(--disp);font-size:14px;letter-spacing:.24em;text-transform:uppercase;color:var(--fog);margin-bottom:8px}
@@ -167,7 +170,7 @@
 <header id="top">
  <div class="wrap hero-body">
   <h1>Where to<br><span class="l2">practice</span><br>for cheap</h1>
-  <p class="lede">Rec centers, studios, parks and socials across the East Valley, cheapest first. Prices checked October 2026. Call before you drive.</p>
+  <p class="lede">Rec centers, studios and parks across the East Valley, everything $30 or less, cheapest first. Prices checked October 2026. Call before you drive.</p>
   <div class="facts">
    <div><b>$3</b><span>Cheapest indoor</span></div>
    <div><b id="f-free">0</b><span>Free spots</span></div>
@@ -225,18 +228,11 @@ const S = [
   {n:"Kiwanis Recreation Center", c:"Tempe", t:"Indoor", p:4, pl:"$4", pn:"fitness drop-in (check, may be $1)", what:"Fitness drop-in. Classrooms rent for about $30/hr, 20x28 ft.", catch:"Far south Tempe. Sources disagree on the drop-in fee.", contact:"6111 S All America Way · 480-350-5201 · krcadmin@tempe.gov", url:"https://www.tempe.gov/government/community-services/community-recreation-centers/fitness-centers", q:"Kiwanis Recreation Center Tempe AZ"},
   {n:"Red Mountain Center", c:"Mesa", t:"Indoor", p:5, pl:"$5", pn:"day pass. Rooms $20-65/hr", what:"Activity room $20-65/hr is the cheapest private AC room found. Mesquite Room (hardwood, stage) $75-225/hr. Open Mon-Fri 5:30 AM-9 PM.", catch:"Far east Mesa. Rooms book through an interest form, not instantly.", contact:"7550 E Adobe St · 480-644-4800 · parksresreg@mesaaz.gov", url:"https://www.mesaaz.gov/Activities-Culture/Parks-Recreation-and-Community-Facilities/Recreational-Facilities/Red-Mountain-Center", q:"Red Mountain Center 7550 E Adobe St Mesa AZ"},
   {n:"CDC Studios (Creative Dance Collective)", c:"Mesa", t:"Indoor", p:15, pl:"$15", pn:"practice hour, up to 2 couples", what:"Real ballroom floor, 4,000 sq ft. Floor time Mon-Fri 1-9 PM. They teach bachata and host socials.", catch:"You may share the floor and music with a class. Room to yourselves is $75-150/hr.", contact:"2107 W Guadalupe Rd · studio@cdc.dance", url:"https://cdc.dance/studio-rental/", q:"CDC Studios 2107 W Guadalupe Rd Mesa AZ"},
-  {n:"Bright Open Layout Dance Studio (Peerspace)", c:"Mesa", t:"Indoor", p:38, pl:"$38-48", pn:"per hour, 3 hr minimum", what:"Private 800 sq ft studio with sprung floor, mirrors and speakers. Bookable Mon-Fri 6 AM-10 PM.", catch:"The 3-hour minimum makes one session $114 or more.", contact:"West Mesa (85202), address shown after booking", url:"https://www.peerspace.com/pages/listings/622ab0eef7f27600218584e2", q:""},
   {n:"Mesa Arts Center Dance Studio", c:"Mesa", t:"Indoor", p:900, pl:"Ask", pn:"rate not posted", what:"1,200 sq ft studio with a wood floor, mirrors and a barre, downtown Mesa.", catch:"Their rental terms say new inquiries take 6+ weeks to process.", contact:"rentals@mesaartscenter.com", url:"https://www.mesaartscenter.com/venue-details/29/dance-studio", q:"Mesa Arts Center 1 E Main St Mesa AZ"},
   {n:"Escalante Multi-Generational Center", c:"Tempe", t:"Indoor", p:900, pl:"Ask", pn:"rate not posted", what:"Two multi-purpose rooms plus classrooms for rent, near McClintock and Apache.", catch:"Email for the hourly rate.", contact:"2150 E Orange St · Jennifer_Gall@tempe.gov · 480-350-5805", url:"https://www.tempe.gov/government/community-services/community-recreation-centers/escalante-multi-generational-center/facility-information", q:"Escalante Multi-Generational Center Tempe AZ"},
   {n:"North Tempe Multi-Generational Center", c:"Tempe", t:"Indoor", p:900, pl:"Ask", pn:"rate not posted", what:"Classrooms and a gym for rent, near McKellips and Scottsdale Rd.", catch:"Email for the hourly rate.", contact:"1555 N Bridalwreath St · tj_nemecek@tempe.gov (rooms) · rick_oliphant@tempe.gov (gym)", url:"https://www.tempe.gov/government/community-services/community-recreation-centers/north-tempe-multi-generational-center/facility-information", q:"North Tempe Multi-Generational Center Tempe AZ"},
   {n:"Pyle Adult Recreation Center", c:"Tempe", t:"Indoor", p:900, pl:"Ask", pn:"rate not posted", what:"Multi-purpose room holds 144.", catch:"Adult center, evening hours may be limited.", contact:"655 E Southern Ave · Pyle_Rentals@tempe.gov", url:"https://www.tempe.gov/government/community-services/community-recreation-centers/pyle-adult-recreation-center", q:"Pyle Adult Recreation Center Tempe AZ"},
-  {n:"Chandler Community Center, Cotton Room", c:"Chandler", t:"Indoor", p:91, pl:"$91+", pn:"per hour, 2 hr minimum", what:"Half room $91/hr resident, $123/hr non-resident.", catch:"Only Fri-Sun after regular hours. Too pricey for weekly practice.", contact:"", url:"https://www.chandleraz.gov/sites/default/files/departments/parks-and-recreation/City-of-Chander-Rental-Fees-CC-Mar2025.pdf", q:"Chandler Community Center Chandler AZ"},
-  {n:"Broadway Recreation Center", c:"Mesa", t:"Indoor", p:115, pl:"$115", pn:"per hour, full gym", what:"Cushioned wood gym floor, 96x120 ft.", catch:"Needs a liability insurance certificate. Only worth it split across a group.", contact:"59 E Broadway Rd · 480-835-6273", url:"https://www.arizonadisabledsports.com/specsratesrules", q:"Broadway Recreation Center 59 E Broadway Rd Mesa AZ"},
-  {n:"Arthur Murray Mesa-Gilbert", c:"Gilbert", t:"Indoor", p:950, pl:"Quote", pn:"no posted rate", what:"Polished floor, mirrors, sound system. Rents by the hour.", catch:"Inquiry plus deposit. Closes by 8:45 PM.", contact:"3347 E Baseline Rd · 480-287-5590", url:"https://arthurmurraymesa.com/studio-rental/", q:"Arthur Murray 3347 E Baseline Rd Gilbert AZ"},
 
-  // SOCIALS
-  {n:"Havana Nights at Dave & Buster's", c:"Tempe", t:"Social", p:5, pl:"$5", pn:"cover", what:"Wed and Sun. Lesson 7-8:30 PM, then open dancing until midnight. Polished concrete floor.", catch:"Second-floor patio, no AC. DJ picks the music.", contact:"Tempe Marketplace", url:"https://azsalsa.net/havana-nights/", q:"Dave and Busters Tempe Marketplace"},
-  {n:"Bachata Addiction Thursdays", c:"Tempe", t:"Social", p:5, pl:"$5-10", pn:"$10 with lesson, $5 after 9 PM", what:"Thursday bachata night with an 8 PM lesson.", catch:"Open-air rooftop, no AC.", contact:"Dave & Buster's, Tempe Marketplace", url:"https://azsalsa.net/bachata-addiction-thursdays/", q:"Dave and Busters Tempe Marketplace"},
 
   // OUTDOOR, free
   {n:"Soleri Bridge Plaza", c:"Scottsdale", t:"Outdoor", p:0, pl:"Free", pn:"open 24/7", what:"22,000 sq ft paved plaza with shade and seating on the Scottsdale Waterfront canal.", catch:"Dark and quiet at night. Bring a light if the plaza lights are off.", contact:"4420 N Scottsdale Rd", url:"https://www.yelp.com/biz/soleri-bridge-and-plaza-scottsdale-2", q:"Soleri Bridge and Plaza Scottsdale AZ"},
@@ -244,7 +240,7 @@ const S = [
   {n:"SkySong plaza", c:"Scottsdale", t:"Outdoor", p:0, pl:"Free", pn:"hours not checked", what:"Large paved plaza under the shade sail at Scottsdale Rd and McDowell.", catch:"Private property. Not checked, security may ask you to move.", contact:"", url:"https://www.google.com/maps/search/?api=1&query=SkySong%20Scottsdale%20AZ", q:"SkySong Scottsdale AZ"},
   {n:"Tempe Beach Park", c:"Tempe", t:"Outdoor", p:0, pl:"Free", pn:"5 AM-midnight", what:"Lakeside park with paved paths along Town Lake.", catch:"Mostly lawn. Find a flat paved patch off the path.", contact:"", url:"https://www.tempe.gov/Home/Components/FacilityDirectory/FacilityDirectory/176/3542", q:"Tempe Beach Park Tempe AZ"},
   {n:"Kiwanis Park", c:"Tempe", t:"Outdoor", p:0, pl:"Free", pn:"6 AM-midnight", what:"Big lit park around the Kiwanis Rec Center, with ramadas on concrete pads.", catch:"Ramadas can be reserved by groups.", contact:"Mill Ave and All America Way", url:"https://www.tempe.gov/Home/Components/FacilityDirectory/FacilityDirectory/120/3542", q:"Kiwanis Park Tempe AZ"},
-  {n:"Tempe Arts Park (Tempe Center for the Arts)", c:"Tempe", t:"Outdoor", p:0, pl:"Free", pn:"park hours", what:"17-acre lakeside art park with a sculpture garden and plaza on the southwest end of Town Lake.", catch:"The building closes at 5 PM. The grounds follow park hours (check).", contact:"", url:"https://www.downtowntempe.com/go/tempe-arts-park", q:"Tempe Center for the Arts Tempe AZ"},
+  {n:"Tempe Arts Park (Tempe Center for the Arts)", c:"Tempe", t:"Outdoor", p:0, pl:"Free", pn:"park hours", what:"17-acre lakeside art park on the southwest end of Town Lake. Best spot: the smooth paved circle on the Rio Salado Path right next to the park, a local skate spot.", catch:"The building closes at 5 PM. The grounds follow park hours (check).", contact:"", url:"https://www.downtowntempe.com/go/tempe-arts-park", q:"Tempe Center for the Arts Tempe AZ"},
   {n:"Town Lake bridges", c:"Tempe", t:"Outdoor", p:0, pl:"Free", pn:"hours not checked", what:"Mill Ave bridge is lit with string lights at night. Elmore is a paved pedestrian bridge.", catch:"Narrow, with walkers and bikes passing through.", contact:"", url:"https://www.tempe.gov/government/community-services/tempe-town-lake/public-projects-at-town-lake/bridges-of-town-lake", q:"Tempe Town Lake pedestrian bridge"},
   {n:"ASU Tempe campus plazas", c:"Tempe", t:"Outdoor", p:0, pl:"Free", pn:"campus open", what:"Lit paved plazas around Gammage and Palm Walk. Dancers practice on campus at night.", catch:"Not checked against campus rules.", contact:"", url:"https://www.google.com/maps/search/?api=1&query=ASU%20Gammage%20Tempe%20AZ", q:"ASU Gammage Tempe AZ"},
   {n:"Tempe Marketplace District Stage", c:"Tempe", t:"Outdoor", p:0, pl:"Free", pn:"mall hours", what:"Paved plaza in the middle of the shopping center.", catch:"Private property, and bands play Thu-Sun.", contact:"2000 E Rio Salado Pkwy", url:"https://tempemarketplace.com/", q:"Tempe Marketplace District Stage"},
@@ -259,32 +255,76 @@ const S = [
 ];
 
 const IMG = {
- "eagles-community-center-open-gym":"", "arthur-murray-mesa-gilbert":"img/arthur-murray-mesa-gilbert.jpg",
- "bachata-addiction-thursdays":"img/bachata-addiction-thursdays.jpg", "broadway-recreation-center":"img/broadway-recreation-center.png",
- "dr-a-j-chandler-park":"img/dr-a-j-chandler-park.jpg", "havana-nights-at-dave-buster-s":"img/havana-nights-at-dave-buster-s.jpg",
- "mesa-arts-center-shadow-walk":"img/mesa-arts-center-shadow-walk.jpg", "pioneer-park":"img/pioneer-park.jpg",
- "tumbleweed-park":"img/tumbleweed-park.jpg", "scottsdale-civic-center":"img/scottsdale-civic-center.jpg",
- "skysong-plaza":"img/skysong-plaza.jpg", "tempe-beach-park":"img/tempe-beach-park.jpg", "kiwanis-park":"img/kiwanis-park.jpg",
- "tempe-arts-park-tempe-center-for-the-art":"img/tempe-arts-park-tempe-center-for-the-art.jpg",
- "town-lake-bridges":"img/town-lake-bridges.jpg", "asu-tempe-campus-plazas":"img/asu-tempe-campus-plazas.jpg",
- "tempe-marketplace-district-stage":"img/tempe-marketplace-district-stage.jpg"
+"dr-a-j-chandler-park": [
+"img/dr-a-j-chandler-park.jpg"
+],
+"mesa-arts-center-shadow-walk": [
+"img/mesa-arts-center-shadow-walk.jpg",
+"img/mesa-arts-center-shadow-walk-c0.jpg",
+"img/mesa-arts-center-shadow-walk-c1.jpg"
+],
+"pioneer-park": [
+"img/pioneer-park.jpg",
+"img/pioneer-park-c0.jpg"
+],
+"tumbleweed-park": [
+"img/tumbleweed-park.jpg"
+],
+"scottsdale-civic-center": [
+"img/scottsdale-civic-center.jpg",
+"img/scottsdale-civic-center-2.jpg"
+],
+"skysong-plaza": [
+"img/skysong-plaza.jpg",
+"img/skysong-plaza-c6.jpg",
+"img/skysong-plaza-c1.jpg"
+],
+"tempe-beach-park": [
+"img/tempe-beach-park.jpg",
+"img/tempe-beach-park-c1.jpg",
+"img/tempe-beach-park-c2.jpg"
+],
+"kiwanis-park": [
+"img/kiwanis-park.jpg",
+"img/kiwanis-park-c5.jpg",
+"img/kiwanis-park-c6.jpg"
+],
+"tempe-arts-park-tempe-center-for-the-art": [
+"img/tempe-arts-park-tempe-center-for-the-art.jpg",
+"img/tempe-arts-park-tempe-center-for-the-art-c1.jpg",
+"img/tempe-arts-park-tempe-center-for-the-art-c6.jpg"
+],
+"town-lake-bridges": [
+"img/town-lake-bridges.jpg",
+"img/town-lake-bridges-c1.jpg",
+"img/town-lake-bridges-c5.jpg"
+],
+"asu-tempe-campus-plazas": [
+"img/asu-tempe-campus-plazas.jpg",
+"img/asu-tempe-campus-plazas-c5.jpg"
+],
+"tempe-marketplace-district-stage": [
+"img/tempe-marketplace-district-stage.jpg",
+"img/tempe-marketplace-district-stage-c1.jpg",
+"img/tempe-marketplace-district-stage-c2.jpg"
+],
+"soleri-bridge-plaza": [
+"img/soleri-bridge-plaza-c0.jpg",
+"img/soleri-bridge-plaza-c1.jpg"
+],
+"water-tower-plaza": [
+"img/water-tower-plaza-c5.jpg",
+"img/water-tower-plaza-c0.jpg"
+]
 };
-const CREDITS = [
- ["SkySong","ASU SkySong Campus, Scottsdale","CC BY 3.0","https://commons.wikimedia.org/wiki/File:Arizona_State_University_Sky_Song_Campus,_Scottsdale,_AZ_-_panoramio.jpg"],
- ["Tempe Beach Park","Tempe Beach Park, Tempe, Arizona","CC BY-SA 2.0","https://commons.wikimedia.org/wiki/File:Tempe_Beach_Park_-_Tempe,_Arizona_-_4264432380.jpg"],
- ["Kiwanis Park","Tempe Kiwanis Park","CC BY 3.0","https://commons.wikimedia.org/wiki/File:Tempe_Kiwanis_Park_Baseball_Field_-_panoramio.jpg"],
- ["Tempe Arts Park","Tempe Center for the Arts","CC BY-SA 3.0","https://commons.wikimedia.org/wiki/File:Tempe_Center_for_the_Arts_-_NWC_-_2009-09-04.JPG"],
- ["Town Lake bridges","Tempe Town Lake Pedestrian Bridge","CC BY 2.0","https://commons.wikimedia.org/wiki/File:Tempe_Town_Lake_Pedestrian_Bridge,_black_and_white.jpg"],
- ["ASU plazas","Gammage Auditorium, ASU","CC BY 2.5","https://commons.wikimedia.org/wiki/File:FLW_Gammage_Auditorium_ASU_PHX_AZ_20186.JPG"],
- ["Tempe Marketplace","Tempe Marketplace","CC BY-SA 3.0","https://commons.wikimedia.org/wiki/File:Tempe_Marketplace_-_2008-04-17_-_Image1.JPG"]
-];
+const CREDITS = [["skysong plaza", "ASU SkySong Campus, Scottsdale (Panoramio)", "CC BY 3.0", "https://commons.wikimedia.org/wiki/File:Arizona_State_University_Sky_Song_Campus,_Scottsdale,_AZ_-_panoramio.jpg"], ["tempe beach park", "Tempe Beach Park", "CC BY-SA 2.0", "https://commons.wikimedia.org/wiki/File:Tempe_Beach_Park_-_Tempe,_Arizona_-_4264432380.jpg"], ["kiwanis park", "Tempe Kiwanis Park (Panoramio)", "CC BY 3.0", "https://commons.wikimedia.org/wiki/File:Tempe_Kiwanis_Park_Baseball_Field_-_panoramio.jpg"], ["tempe arts park tempe center for the art", "Tempe Center for the Arts", "CC BY-SA 3.0", "https://commons.wikimedia.org/wiki/File:Tempe_Center_for_the_Arts_-_NWC_-_2009-09-04.JPG"], ["town lake bridges", "Tempe Town Lake Pedestrian Bridge", "CC BY 2.0", "https://commons.wikimedia.org/wiki/File:Tempe_Town_Lake_Pedestrian_Bridge,_black_and_white.jpg"], ["asu tempe campus plazas", "Gammage Auditorium, ASU", "CC BY 2.5", "https://commons.wikimedia.org/wiki/File:FLW_Gammage_Auditorium_ASU_PHX_AZ_20186.JPG"], ["tempe marketplace district stage", "Tempe Marketplace", "CC BY-SA 3.0", "https://commons.wikimedia.org/wiki/File:Tempe_Marketplace_-_2008-04-17_-_Image1.JPG"], ["asu tempe campus plazas", "Arizona State University, Tempe Main Campus, Tempe, AZ - panoramio (54).jpg", "CC BY 3.0", "https://commons.wikimedia.org/wiki/File:Arizona_State_University,_Tempe_Main_Campus,_Tempe,_AZ_-_panoramio_(54).jpg"], ["tempe beach park", "Tempe Beach Park - Tempe, Arizona.jpg", "CC BY-SA 2.0", "https://commons.wikimedia.org/wiki/File:Tempe_Beach_Park_-_Tempe,_Arizona.jpg"], ["tempe beach park", "Tempe Beach Park - Tempe, Arizona - 4263690127.jpg", "CC BY-SA 2.0", "https://commons.wikimedia.org/wiki/File:Tempe_Beach_Park_-_Tempe,_Arizona_-_4263690127.jpg"], ["kiwanis park", "Kiwanis Park Walk Path - panoramio.jpg", "CC BY 3.0", "https://commons.wikimedia.org/wiki/File:Kiwanis_Park_Walk_Path_-_panoramio.jpg"], ["kiwanis park", "Kiwanis Park Distant Bridge Structure - panoramio.jpg", "CC BY 3.0", "https://commons.wikimedia.org/wiki/File:Kiwanis_Park_Distant_Bridge_Structure_-_panoramio.jpg"], ["tempe arts park tempe center for the art", "Tempe Center for the Arts - West - 2009-09-04.JPG", "CC BY-SA 3.0", "https://commons.wikimedia.org/wiki/File:Tempe_Center_for_the_Arts_-_West_-_2009-09-04.JPG"], ["tempe arts park tempe center for the art", "Evening at Tempe Center for the Arts - panoramio.jpg", "CC BY 3.0", "https://commons.wikimedia.org/wiki/File:Evening_at_Tempe_Center_for_the_Arts_-_panoramio.jpg"], ["town lake bridges", "Tempe Town Lake Walk Bridge, Tempe, Arizona - panoramio.jpg", "CC BY 3.0", "https://commons.wikimedia.org/wiki/File:Tempe_Town_Lake_Walk_Bridge,_Tempe,_Arizona_-_panoramio.jpg"], ["town lake bridges", "Tempe town lake bridge 07042006.jpg", "CC BY-SA 3.0", "https://commons.wikimedia.org/wiki/File:Tempe_town_lake_bridge_07042006.jpg"], ["tempe marketplace district stage", "Tempe Marketplace - 2009-04-13 - Image9.JPG", "CC BY-SA 3.0", "https://commons.wikimedia.org/wiki/File:Tempe_Marketplace_-_2009-04-13_-_Image9.JPG"], ["tempe marketplace district stage", "Tempe Marketplace - 2008-04-17 - Image4.JPG", "CC BY-SA 3.0", "https://commons.wikimedia.org/wiki/File:Tempe_Marketplace_-_2008-04-17_-_Image4.JPG"], ["skysong plaza", "Skysong - East - 2010-02-18.jpg", "CC BY-SA 3.0", "https://commons.wikimedia.org/wiki/File:Skysong_-_East_-_2010-02-18.jpg"], ["skysong plaza", "Arizona State University Sky Song Campus, Scottsdale, AZ - panoramio (5).jpg", "CC BY 3.0", "https://commons.wikimedia.org/wiki/File:Arizona_State_University_Sky_Song_Campus,_Scottsdale,_AZ_-_panoramio_(5).jpg"], ["soleri bridge plaza", "Soleri bridge Scottsdale 003.JPG", "CC0", "https://commons.wikimedia.org/wiki/File:Soleri_bridge_Scottsdale_003.JPG"], ["soleri bridge plaza", "View of Scottsdale Waterfront from the new Marshall Way pedestrian bridge.jpg", "CC BY-SA 3.0", "https://commons.wikimedia.org/wiki/File:View_of_Scottsdale_Waterfront_from_the_new_Marshall_Way_pedestrian_bridge.jpg"], ["mesa arts center shadow walk", "Mesa Arts Center - West - 2009-09-16.JPG", "CC BY-SA 3.0", "https://commons.wikimedia.org/wiki/File:Mesa_Arts_Center_-_West_-_2009-09-16.JPG"], ["mesa arts center shadow walk", "Mesa arts center.jpg", "CC BY-SA 3.0", "https://commons.wikimedia.org/wiki/File:Mesa_arts_center.jpg"], ["water tower plaza", "Gilbert Watertower - North - 2009-09-14.jpg", "CC BY-SA 3.0", "https://commons.wikimedia.org/wiki/File:Gilbert_Watertower_-_North_-_2009-09-14.jpg"], ["water tower plaza", "Downtown Gilbert - SWC Gilbert & Page - 2009-03-23.JPG", "CC BY-SA 3.0", "https://commons.wikimedia.org/wiki/File:Downtown_Gilbert_-_SWC_Gilbert_%26_Page_-_2009-03-23.JPG"], ["pioneer park", "Mesa-Pioneer Park-Mesa Pioneer Monument-3.jpg", "CC BY-SA 4.0", "https://commons.wikimedia.org/wiki/File:Mesa-Pioneer_Park-Mesa_Pioneer_Monument-3.jpg"]];
 const PICKS = [
  ["CDC Studios (Creative Dance Collective)","Best indoor deal"],
  ["Eagles Community Center open gym","Cheapest with AC"],
  ["Soleri Bridge Plaza","Free, open 24/7"]
 ];
 
-const TYPES=["All","Indoor","Outdoor","Social"], CITIES=["Scottsdale","Tempe","Mesa","Gilbert","Chandler"];
+const TYPES=["All","Indoor","Outdoor"], CITIES=["Scottsdale","Tempe","Mesa","Gilbert","Chandler"];
 const PIN={"ASU Tempe campus plazas":1,"Scottsdale Civic Center":2}, rank=s=>PIN[s.n]||99;
 let type="All", cities=new Set(CITIES), sort="price";
 const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
@@ -293,10 +333,10 @@ const mapUrl=q=>"https://www.google.com/maps/search/?api=1&query="+encodeURIComp
 const pickLabel=Object.fromEntries(PICKS);
 
 function card(s){
- const img=IMG[slug(s.n)], top=pickLabel[s.n];
+ const img=IMG[slug(s.n)]||[], top=pickLabel[s.n];
  const cls="card"+(s.p===0?" free":"")+(top?" top":"");
- const ph=img
-  ? `<div class="ph"><img src="${img}" alt="${esc(s.n)}" loading="lazy"><span class="price">${esc(s.pl)}</span>${top?`<span class="ptag">${esc(top)}</span>`:""}</div>`
+ const ph=img.length
+  ? `<div class="ph rot">${img.map((u,k)=>`<img src="${u}" alt="${esc(s.n)}" loading="lazy"${k?"":` class="show"`}>`).join("")}<span class="price">${esc(s.pl)}</span>${top?`<span class="ptag">${esc(top)}</span>`:""}</div>`
   : `<div class="ph none" data-city="${esc(s.c)}"><span class="price">${esc(s.pl)}</span>${top?`<span class="ptag">${esc(top)}</span>`:""}</div>`;
  return `<article class="${cls}">${ph}
   <div class="body">
@@ -333,8 +373,8 @@ const $=id=>document.getElementById(id);
 const chars=t=>[...t].map((c,i)=>{const ch=c===" "?"&nbsp;":esc(c);return `<span class="ch" style="--i:${i}" aria-hidden="true"><i>${ch}</i><i>${ch}</i></span>`}).join("");
 function renderSS(){
  $("ssList").innerHTML=ssRows.map((s,i)=>`<li><button type="button" class="ss-item" data-i="${i}" aria-label="${esc(s.n)}, ${esc(s.pl)}"><span>${chars(s.n)}</span><span class="ss-p">${esc(s.pl)}</span></button></li>`).join("");
- $("ssImgs").innerHTML=ssRows.map((s,i)=>{const img=IMG[slug(s.n)];
-  return img?`<img data-src="${img}" alt="${esc(s.n)}">`:`<div class="ss-none"><span>${esc(s.pl)}</span></div>`}).join("");
+ $("ssImgs").innerHTML=ssRows.map((s,i)=>{const img=IMG[slug(s.n)]||[];
+  return img.length?`<div class="rot">${img.map((u,k)=>`<img data-src="${u}" alt="${esc(s.n)}"${k?"":` class="show"`}>`).join("")}</div>`:`<div class="ss-none"><span>${esc(s.pl)}</span></div>`}).join("");
  $("ss").hidden=!ssRows.length;
  go(0,true);
 }
@@ -344,7 +384,7 @@ function go(i,quiet){
  [...$("ssList").children].forEach((li,k)=>li.firstChild.setAttribute("aria-current",k===active));
  [...$("ssImgs").children].forEach((el,k)=>{
   el.classList.toggle("on",k===active);
-  if(el.dataset.src&&Math.abs(k-active)<=1){el.src=el.dataset.src;delete el.dataset.src}
+  if(Math.abs(k-active)<=1) el.querySelectorAll("img[data-src]").forEach(im=>{im.src=im.dataset.src;delete im.dataset.src});
  });
  $("ssInfo").className="ss-info"+(s.p===0?" free":"");
  $("ssInfo").innerHTML=`<span class="kd">${esc(s.c)} / ${esc(s.t)}</span><span class="big">${esc(s.pl)}</span><h3>${esc(s.n)}</h3>
@@ -370,6 +410,10 @@ document.getElementById("f-all").textContent=S.length;
 document.getElementById("credits").innerHTML=CREDITS.map(c=>`<li>${esc(c[0])}: <a href="${c[3]}" target="_blank" rel="noopener">${esc(c[1])}</a>, Wikimedia Commons, ${esc(c[2])}</li>`).join("");
 document.getElementById("sort").onchange=e=>{sort=e.target.value;render()};
 render();
+if(!matchMedia("(prefers-reduced-motion: reduce)").matches) setInterval(()=>{
+ document.querySelectorAll(".rot").forEach(r=>{const im=r.querySelectorAll("img"); if(im.length<2) return;
+  const k=[...im].findIndex(x=>x.classList.contains("show")); im[k].classList.remove("show"); im[(k+1)%im.length].classList.add("show")});
+},3500);
 </script>
 <script type="module">
 if(!matchMedia("(prefers-reduced-motion: reduce)").matches){
