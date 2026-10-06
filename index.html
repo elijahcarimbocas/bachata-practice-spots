@@ -4,130 +4,172 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="author" content="Elijah Carimbocas">
-<title>Bachata Practice Spots</title>
-<meta name="description" content="Cheap indoor and outdoor places to practice partner bachata in Scottsdale, Tempe, Mesa, Gilbert and Chandler, with prices and links.">
+<title>Practice Spots</title>
+<meta name="description" content="Cheap indoor and outdoor places to practice partner bachata in Scottsdale, Tempe, Mesa, Gilbert and Chandler, with prices, photos and links.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Figtree:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@500;700;800;900&family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-/* Layout: one narrow column. Filter bar, three picks, then a priced list sorted cheapest first. */
-:root{
-  --bg:#f3f5f8; --surface:#ffffff; --ink:#151d29; --muted:#56637a; --line:#dde3ec;
-  --accent:#2c56c9; --accent-soft:#e6ecfb; --free:#1d7a52; --free-soft:#e2f3eb; --warn:#9a5b0b;
-  --display:'Bricolage Grotesque', 'Avenir Next', system-ui, sans-serif;
-  --body:'Figtree', system-ui, -apple-system, sans-serif;
-  --mono:'JetBrains Mono', ui-monospace, Menlo, monospace;
-  color-scheme:light;
-}
-@media (prefers-color-scheme: dark){
-  :root{
-    --bg:#0f141c; --surface:#161d28; --ink:#e7ecf3; --muted:#9aa7bb; --line:#263142;
-    --accent:#7d9cf2; --accent-soft:#1d2a47; --free:#5cc79a; --free-soft:#163327; --warn:#e2a54f;
-    color-scheme:dark;
-  }
-}
-*{box-sizing:border-box}
-html{-webkit-text-size-adjust:100%}
-body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.55;
-  padding-inline:16px;padding-block:env(safe-area-inset-top,0px) env(safe-area-inset-bottom,0px)}
-.wrap{max-width:880px;margin:0 auto;padding-block:40px 64px;display:grid;gap:32px}
-a{color:var(--accent)}
-a:focus-visible,button:focus-visible,select:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+ /* SBK house look: dark steel, orange + amber, square corners, 1px grid gutters, cable rule between sections. */
+ :root{
+  --ink:#0a0c0f; --steel:#11151a; --panel:#171c23; --panel2:#1c222a;
+  --line:rgba(201,210,219,.15); --line2:rgba(201,210,219,.30);
+  --orange:#e2552b; --amber:#f0a03c; --green:#7fcf9f;
+  --fog:#c9d2db; --muted:#7f8b98; --white:#f4f7fa;
+  --disp:'Big Shoulders Display',Impact,sans-serif; --body:'Archivo',system-ui,sans-serif;
+  --cable:repeating-linear-gradient(90deg,var(--line2) 0 1px,transparent 1px 13px);
+  color-scheme:dark;
+ }
+ *{box-sizing:border-box;margin:0;padding:0;border-radius:0}
+ body{background:var(--ink);color:var(--white);font-family:var(--body);font-size:15.5px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+ a{color:inherit;text-decoration:none}
+ img{display:block;max-width:100%}
+ button,select{font:inherit;color:inherit}
+ :focus-visible{outline:2px solid var(--amber);outline-offset:2px}
+ .wrap{max-width:1180px;margin:0 auto;padding:0 28px}
+ @media(max-width:600px){.wrap{padding:0 16px}}
 
-header{display:grid;gap:10px}
-h1{font-family:var(--display);font-weight:800;font-size:clamp(2rem,6vw,3.1rem);line-height:1.02;letter-spacing:-.02em;margin:0;text-wrap:balance}
-.lede{color:var(--muted);margin:0;max-width:60ch}
+ nav{position:sticky;top:0;z-index:50;backdrop-filter:blur(14px);background:rgba(10,12,15,.86);border-bottom:1px solid var(--line)}
+ nav .wrap{display:flex;align-items:center;justify-content:space-between;height:58px;gap:16px}
+ .logo{font-family:var(--disp);font-weight:900;font-size:24px;letter-spacing:.06em;text-transform:uppercase;white-space:nowrap}
+ .logo b{color:var(--orange)}
+ nav .back{font-size:12px;font-weight:600;letter-spacing:.13em;text-transform:uppercase;color:var(--muted)}
+ nav .back:hover{color:var(--white)}
 
-.controls{display:grid;gap:12px;position:sticky;top:env(safe-area-inset-top,0px);z-index:2;background:var(--bg);padding-block:12px;border-bottom:1px solid var(--line)}
-.row{display:flex;flex-wrap:wrap;gap:8px;align-items:center;min-width:0}
-.row > *{min-width:0}
-#cities{flex:1 1 100%}
-.wrap,.wrap > *{min-width:0}
-.chip{font:500 14px/1 var(--body);border:1px solid var(--line);background:var(--surface);color:var(--ink);padding:9px 14px;border-radius:999px;cursor:pointer}
-.chip[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
-.chip:active{transform:translateY(1px)}
-select{font:500 14px var(--body);padding:8px 10px;border-radius:10px;border:1px solid var(--line);background:var(--surface);color:var(--ink)}
-.count{color:var(--muted);font-size:14px;margin-left:auto}
+ header{position:relative;overflow:hidden;border-bottom:1px solid var(--line);isolation:isolate}
+ .hero-img{position:absolute;inset:0;z-index:-2;background:url(img/tempe-beach-park.jpg) center 55%/cover no-repeat}
+ header::before{content:"";position:absolute;inset:0;z-index:-1;background:
+   linear-gradient(105deg,rgba(10,12,15,.95) 0%,rgba(10,12,15,.82) 40%,rgba(10,12,15,.35) 75%,rgba(10,12,15,.6) 100%),
+   linear-gradient(180deg,rgba(10,12,15,.5) 0%,transparent 30%,rgba(10,12,15,.92) 100%)}
+ .hero-body{padding-top:84px}
+ h1{font-family:var(--disp);font-weight:900;font-size:clamp(3.2rem,10vw,7.4rem);line-height:.86;text-transform:uppercase}
+ h1 .l2{color:var(--orange)}
+ .lede{max-width:440px;color:var(--fog);margin-top:20px;line-height:1.65}
+ .facts{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));max-width:640px;margin:40px 0 34px;border-top:1px solid var(--line2);border-bottom:1px solid var(--line2);background:rgba(10,12,15,.5)}
+ .facts div{padding:14px 10px 12px;text-align:center;border-right:1px solid var(--line)}
+ .facts div:last-child{border-right:0}
+ .facts b{display:block;font-family:var(--disp);font-weight:800;font-size:clamp(28px,6vw,42px);line-height:1;font-variant-numeric:tabular-nums}
+ .facts div:first-child b{color:var(--orange)}
+ .facts span{display:block;font-size:9.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);margin-top:7px;font-weight:600}
 
-.picks{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
-.pick{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px;display:grid;gap:4px;align-content:start}
-.pick b{font-family:var(--display);font-size:1.05rem}
-.pick .p{font-family:var(--mono);font-size:1.4rem}
-.pick span{color:var(--muted);font-size:14px}
-h2{font-family:var(--display);font-weight:800;font-size:1.4rem;margin:0}
+ section{padding:64px 0;position:relative}
+ section::before{content:"";position:absolute;top:0;left:0;right:0;height:9px;background:var(--cable);opacity:.55}
+ h2{font-family:var(--disp);font-weight:800;font-size:clamp(2.2rem,6vw,3.6rem);line-height:.92;text-transform:uppercase}
+ .sub{color:var(--muted);max-width:520px;margin-top:12px;font-size:14.5px}
 
-.list{display:grid;gap:10px}
-.spot{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px;display:grid;grid-template-columns:110px minmax(0,1fr);gap:16px}
-.price{font-family:var(--mono);font-variant-numeric:tabular-nums;font-size:1.15rem;line-height:1.2}
-.price small{display:block;font-family:var(--body);font-size:12px;color:var(--muted);margin-top:4px}
-.spot.free .price{color:var(--free)}
-.main{display:grid;gap:6px;min-width:0}
-.name{font-family:var(--display);font-weight:600;font-size:1.15rem;margin:0;line-height:1.25}
-.tags{display:flex;flex-wrap:wrap;gap:6px}
-.tag{font-size:12px;font-weight:600;padding:3px 9px;border-radius:999px;background:var(--accent-soft);color:var(--accent)}
-.tag.outdoor{background:var(--free-soft);color:var(--free)}
-.meta{margin:0;font-size:15px}
-.catch{margin:0;font-size:14px;color:var(--warn)}
-.links{display:flex;flex-wrap:wrap;gap:14px;font-size:14px;font-weight:600}
-.contact{font-size:14px;color:var(--muted);margin:0;overflow-wrap:anywhere}
-.empty{color:var(--muted);padding:24px 0}
+ .picks{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;background:var(--line);margin-top:34px}
+ @media(max-width:860px){.picks{grid-template-columns:1fr}}
 
-.notes{display:grid;gap:8px;color:var(--muted);font-size:14px;max-width:65ch}
-.notes h2{color:var(--ink)}
-.notes p{margin:0}
-footer{color:var(--muted);font-size:13px;border-top:1px solid var(--line);padding-top:16px}
+ .filters{position:sticky;top:58px;z-index:40;background:rgba(10,12,15,.94);backdrop-filter:blur(10px);border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-top:30px}
+ .frow{display:flex;flex-wrap:wrap;align-items:center;gap:0}
+ .frow + .frow{border-top:1px solid var(--line)}
+ .f{padding:12px 16px 11px 0;margin-right:16px;font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);background:none;border:0;border-bottom:2px solid transparent;cursor:pointer}
+ .f:hover{color:var(--white)}
+ .f[aria-pressed="true"]{color:var(--white);border-bottom-color:var(--orange)}
+ .sort{margin-left:auto;display:flex;align-items:center;gap:8px;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);font-weight:700;padding:8px 0}
+ .sort select{background:var(--panel);border:1px solid var(--line2);padding:6px 8px;font-size:13px;letter-spacing:0;text-transform:none}
+ .count{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);font-weight:700;margin:22px 0 14px}
 
-@media (max-width:640px){
-  .picks{grid-template-columns:1fr}
-  .spot{grid-template-columns:1fr;gap:8px}
-  .count{margin-left:0;width:100%}
-}
-@media (prefers-reduced-motion:no-preference){
-  .spot{animation:in .35s cubic-bezier(.16,1,.3,1) both}
-  @keyframes in{from{opacity:.4;transform:translateY(4px)}to{opacity:1;transform:none}}
-}
+ .grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line)}
+ @media(max-width:980px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+ @media(max-width:620px){.grid{grid-template-columns:1fr}}
+
+ .card{background:var(--panel);display:flex;flex-direction:column;min-width:0;border-top:2px solid var(--line2)}
+ .card.top{border-top-color:var(--orange);background:var(--panel2)}
+ .ph{position:relative;aspect-ratio:16/10;overflow:hidden;background:var(--steel)}
+ .ph img{width:100%;height:100%;object-fit:cover;filter:saturate(.85) contrast(1.05)}
+ .ph::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 45%,rgba(10,12,15,.85) 100%)}
+ .ph.none{display:flex;align-items:flex-end;background:var(--steel) var(--cable);}
+ .ph.none::before{content:attr(data-city);position:absolute;top:14px;left:18px;font-family:var(--disp);font-weight:800;font-size:13px;letter-spacing:.3em;text-transform:uppercase;color:var(--muted)}
+ .price{position:absolute;left:18px;bottom:12px;z-index:1;font-family:var(--disp);font-weight:900;font-size:44px;line-height:1;font-variant-numeric:tabular-nums}
+ .card.free .price{color:var(--green)}
+ .card.top .price{color:var(--orange)}
+ .ptag{position:absolute;top:0;right:0;z-index:1;font-size:9.5px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;padding:5px 12px;background:var(--line2);color:var(--ink)}
+ .card.top .ptag{background:var(--orange);color:#180500}
+ .body{padding:18px 18px 20px;display:flex;flex-direction:column;gap:9px;flex:1}
+ .kd{font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);font-weight:700}
+ .card h3{font-family:var(--disp);font-weight:800;font-size:26px;line-height:.98;text-transform:uppercase}
+ .pn{font-size:13px;color:var(--fog)}
+ .what{font-size:14px;color:var(--fog);line-height:1.55}
+ .catch{font-size:13.5px;color:var(--amber);line-height:1.5;border-left:2px solid var(--amber);padding-left:10px}
+ .ct{font-size:12.5px;color:var(--muted);overflow-wrap:anywhere}
+ .links{display:flex;gap:0;margin-top:auto;padding-top:10px;border-top:1px solid var(--line)}
+ .links a{font-size:11.5px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;padding:8px 18px 4px 0;color:var(--white)}
+ .links a:hover{color:var(--orange)}
+ .empty{background:var(--panel);padding:30px;color:var(--muted)}
+
+ .notes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;background:var(--line);margin-top:30px;border-top:2px solid var(--orange)}
+ @media(max-width:860px){.notes{grid-template-columns:1fr}}
+ .notes div{background:var(--ink);padding:22px 22px 24px 0}
+ @media(max-width:860px){.notes div{padding:18px 0}}
+ .notes b{display:block;font-family:var(--disp);font-weight:800;font-size:22px;text-transform:uppercase;margin-bottom:6px}
+ .notes p{color:var(--fog);font-size:14px}
+
+ footer{border-top:1px solid var(--line);padding:30px 0 50px;color:var(--muted);font-size:12.5px}
+ footer h4{font-family:var(--disp);font-size:14px;letter-spacing:.24em;text-transform:uppercase;color:var(--fog);margin-bottom:8px}
+ footer ul{list-style:none;display:grid;gap:4px}
+ footer a{text-decoration:underline;text-underline-offset:2px}
+
+ @media(max-width:600px){
+  .facts{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .facts div:nth-child(2){border-right:0}
+  .facts div:nth-child(-n+2){border-bottom:1px solid var(--line)}
+  .sort{margin-left:0;width:100%}
+ }
 </style>
 </head>
 <body>
-<div class="wrap">
-  <header>
-    <h1>Where to practice bachata without paying studio rates</h1>
-    <p class="lede">Indoor and outdoor spots across Scottsdale, Tempe, Mesa, Gilbert and Chandler, cheapest first. Prices checked October 2026. Call before you drive, hours and fees change.</p>
-  </header>
+<nav><div class="wrap"><a class="logo" href="#top">Practice <b>Spots</b></a><a class="back" href="https://elijahcarimbocas.github.io/sf-sbk-2026/">Road to SBK</a></div></nav>
 
-  <section aria-label="Best picks" class="picks">
-    <div class="pick"><span>Best indoor deal</span><b>CDC Studios, Mesa</b><div class="p">$15</div><span>Practice hour on a real dance floor, up to 2 couples</span></div>
-    <div class="pick"><span>Cheapest with AC</span><b>Eagles open gym, Mesa</b><div class="p">$3</div><span>Shared gym floor, pickup sports running</span></div>
-    <div class="pick"><span>Free, open late</span><b>Soleri Bridge Plaza</b><div class="p">Free</div><span>Big paved plaza, open 24/7, quiet at night</span></div>
-  </section>
-
-  <div class="controls" role="region" aria-label="Filters">
-    <div class="row" id="types" aria-label="Type"></div>
-    <div class="row">
-      <span id="cities" class="row" aria-label="City"></span>
-      <label for="sort" class="count" style="margin-left:auto">Sort
-        <select id="sort">
-          <option value="price">Cheapest first</option>
-          <option value="city">By city</option>
-        </select>
-      </label>
-    </div>
+<header id="top">
+ <div class="hero-img" role="img" aria-label="Tempe Beach Park"></div>
+ <div class="wrap hero-body">
+  <h1>Where to<br><span class="l2">practice</span><br>for cheap</h1>
+  <p class="lede">Rec centers, studios, parks and socials across the East Valley, cheapest first. Prices checked October 2026. Call before you drive.</p>
+  <div class="facts">
+   <div><b>$3</b><span>Cheapest indoor</span></div>
+   <div><b id="f-free">0</b><span>Free spots</span></div>
+   <div><b>5</b><span>Cities</span></div>
+   <div><b id="f-all">0</b><span>Places</span></div>
   </div>
+ </div>
+</header>
 
-  <section aria-labelledby="h-list" style="display:grid;gap:14px">
-    <div class="row"><h2 id="h-list">All spots</h2><span class="count" id="count"></span></div>
-    <div class="list" id="list"></div>
-  </section>
+<section>
+ <div class="wrap">
+  <h2>Start with these three</h2>
+  <div class="picks" id="picks"></div>
+ </div>
+</section>
 
-  <section class="notes">
-    <h2>Before you go</h2>
-    <p>The $3 to $6 day passes get you into a gym or fitness room, not a private room. Ask the front desk if two people can practice in a corner. Some will say yes, some won't.</p>
-    <p>Outdoors, stick to smooth concrete or pavers. Turns don't work on grass, and rough pavers chew up dance shoes.</p>
-    <p>Most Gilbert and Chandler parks close at 10 or 10:30 PM. Tempe Beach Park and Kiwanis Park stay open until midnight, and Soleri Bridge Plaza never closes.</p>
-  </section>
+<section id="all">
+ <div class="wrap">
+  <h2>Every spot</h2>
+  <p class="sub">Filter by type and city. Day passes get you a shared gym or fitness floor, so ask the front desk before you set up.</p>
+  <div class="filters" role="region" aria-label="Filters">
+   <div class="frow" id="types"></div>
+   <div class="frow"><span id="cities" class="frow" style="border:0"></span>
+    <label class="sort" for="sort">Sort <select id="sort"><option value="price">Cheapest first</option><option value="city">By city</option></select></label>
+   </div>
+  </div>
+  <p class="count" id="count"></p>
+  <div class="grid" id="grid"></div>
 
-  <footer>Compiled October 2026 from city, venue and booking pages. Some rates come from search listings and are marked "check" on the card.</footer>
-</div>
+  <div class="notes">
+   <div><b>Day passes</b><p>The $3 to $6 passes cover a gym or fitness room you share. Some front desks will let two people practice in a corner and some won't.</p></div>
+   <div><b>Surface</b><p>Outdoors, look for smooth concrete or pavers. Turns don't work on grass, and rough pavers chew up dance shoes.</p></div>
+   <div><b>Closing time</b><p>Most Gilbert and Chandler parks close at 10 or 10:30 PM. Tempe Beach Park and Kiwanis Park go until midnight. Soleri Bridge Plaza never closes.</p></div>
+  </div>
+ </div>
+</section>
+
+<footer>
+ <div class="wrap">
+  <h4>Photo credits</h4>
+  <ul id="credits"></ul>
+  <p style="margin-top:14px">Other photos come from each venue's own page. Places without a photo show a placeholder until one is added.</p>
+ </div>
+</footer>
 
 <script>
 const S = [
@@ -172,45 +214,79 @@ const S = [
   {n:"Tumbleweed Park", c:"Chandler", t:"Outdoor", p:0, pl:"Free", pn:"6 AM-10:30 PM", what:"About 200 acres around the Tumbleweed Rec Center.", catch:"Paved, lit spots not checked. Look near the rec center.", contact:"", url:"https://www.chandleraz.gov/explore/chandler-parks/guide/tumbleweed-park", q:"Tumbleweed Park Chandler AZ"}
 ];
 
-const TYPES = ["All","Indoor","Outdoor","Social"];
-const CITIES = ["Scottsdale","Tempe","Mesa","Gilbert","Chandler"];
-let type = "All", cities = new Set(CITIES), sort = "price";
+const IMG = {
+ "eagles-community-center-open-gym":"", "arthur-murray-mesa-gilbert":"img/arthur-murray-mesa-gilbert.jpg",
+ "bachata-addiction-thursdays":"img/bachata-addiction-thursdays.jpg", "broadway-recreation-center":"img/broadway-recreation-center.png",
+ "dr-a-j-chandler-park":"img/dr-a-j-chandler-park.jpg", "havana-nights-at-dave-buster-s":"img/havana-nights-at-dave-buster-s.jpg",
+ "mesa-arts-center-shadow-walk":"img/mesa-arts-center-shadow-walk.jpg", "pioneer-park":"img/pioneer-park.jpg",
+ "tumbleweed-park":"img/tumbleweed-park.jpg", "scottsdale-civic-center":"img/scottsdale-civic-center.jpg",
+ "skysong-plaza":"img/skysong-plaza.jpg", "tempe-beach-park":"img/tempe-beach-park.jpg", "kiwanis-park":"img/kiwanis-park.jpg",
+ "tempe-arts-park-tempe-center-for-the-art":"img/tempe-arts-park-tempe-center-for-the-art.jpg",
+ "town-lake-bridges":"img/town-lake-bridges.jpg", "asu-tempe-campus-plazas":"img/asu-tempe-campus-plazas.jpg",
+ "tempe-marketplace-district-stage":"img/tempe-marketplace-district-stage.jpg"
+};
+const CREDITS = [
+ ["Scottsdale Civic Center","Civic Center Library entrance, Old Town Scottsdale AZ","CC BY-SA 4.0","https://commons.wikimedia.org/wiki/File:Civic_Center_Library_entrance,_Old_Town_Scottsdale_AZ.JPG"],
+ ["SkySong","ASU SkySong Campus, Scottsdale","CC BY 3.0","https://commons.wikimedia.org/wiki/File:Arizona_State_University_Sky_Song_Campus,_Scottsdale,_AZ_-_panoramio.jpg"],
+ ["Tempe Beach Park","Tempe Beach Park, Tempe, Arizona","CC BY-SA 2.0","https://commons.wikimedia.org/wiki/File:Tempe_Beach_Park_-_Tempe,_Arizona_-_4264432380.jpg"],
+ ["Kiwanis Park","Tempe Kiwanis Park","CC BY 3.0","https://commons.wikimedia.org/wiki/File:Tempe_Kiwanis_Park_Baseball_Field_-_panoramio.jpg"],
+ ["Tempe Arts Park","Tempe Center for the Arts","CC BY-SA 3.0","https://commons.wikimedia.org/wiki/File:Tempe_Center_for_the_Arts_-_NWC_-_2009-09-04.JPG"],
+ ["Town Lake bridges","Tempe Town Lake Pedestrian Bridge","CC BY 2.0","https://commons.wikimedia.org/wiki/File:Tempe_Town_Lake_Pedestrian_Bridge,_black_and_white.jpg"],
+ ["ASU plazas","Gammage Auditorium, ASU","CC BY 2.5","https://commons.wikimedia.org/wiki/File:FLW_Gammage_Auditorium_ASU_PHX_AZ_20186.JPG"],
+ ["Tempe Marketplace","Tempe Marketplace","CC BY-SA 3.0","https://commons.wikimedia.org/wiki/File:Tempe_Marketplace_-_2008-04-17_-_Image1.JPG"]
+];
+const PICKS = [
+ ["CDC Studios (Creative Dance Collective)","Best indoor deal"],
+ ["Eagles Community Center open gym","Cheapest with AC"],
+ ["Soleri Bridge Plaza","Free, open 24/7"]
+];
 
-const esc = s => String(s).replace(/[&<>"]/g, ch => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[ch]));
-const mapUrl = q => "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(q);
+const TYPES=["All","Indoor","Outdoor","Social"], CITIES=["Scottsdale","Tempe","Mesa","Gilbert","Chandler"];
+let type="All", cities=new Set(CITIES), sort="price";
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const slug=n=>n.toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"").slice(0,40).replace(/-$/,"");
+const mapUrl=q=>"https://www.google.com/maps/search/?api=1&query="+encodeURIComponent(q);
+const pickLabel=Object.fromEntries(PICKS);
 
-function chips(el, items, isOn, onTap){
-  el.innerHTML = items.map(v => `<button class="chip" type="button" aria-pressed="${isOn(v)}" data-v="${esc(v)}">${esc(v)}</button>`).join("");
-  el.onclick = e => { const b = e.target.closest("button"); if (b) onTap(b.dataset.v); };
+function card(s){
+ const img=IMG[slug(s.n)], top=pickLabel[s.n];
+ const cls="card"+(s.p===0?" free":"")+(top?" top":"");
+ const ph=img
+  ? `<div class="ph"><img src="${img}" alt="${esc(s.n)}" loading="lazy"><span class="price">${esc(s.pl)}</span>${top?`<span class="ptag">${esc(top)}</span>`:""}</div>`
+  : `<div class="ph none" data-city="${esc(s.c)}"><span class="price">${esc(s.pl)}</span>${top?`<span class="ptag">${esc(top)}</span>`:""}</div>`;
+ return `<article class="${cls}">${ph}
+  <div class="body">
+   <span class="kd">${esc(s.c)} / ${esc(s.t)}</span>
+   <h3>${esc(s.n)}</h3>
+   <span class="pn">${esc(s.pn)}</span>
+   <p class="what">${esc(s.what)}</p>
+   <p class="catch">${esc(s.catch)}</p>
+   ${s.contact?`<p class="ct">${esc(s.contact)}</p>`:""}
+   <div class="links"><a href="${esc(s.url)}" target="_blank" rel="noopener">Info</a>${s.q?`<a href="${mapUrl(s.q)}" target="_blank" rel="noopener">Map</a>`:""}</div>
+  </div></article>`;
 }
-
+function btns(el,items,on,tap){
+ el.innerHTML=items.map(v=>`<button type="button" class="f" aria-pressed="${on(v)}" data-v="${esc(v)}">${esc(v)}</button>`).join("");
+ el.onclick=e=>{const b=e.target.closest("button"); if(b) tap(b.dataset.v)};
+}
 function render(){
-  chips(document.getElementById("types"), TYPES, v => v === type, v => { type = v; render(); });
-  chips(document.getElementById("cities"), CITIES, v => cities.has(v), v => {
-    if (cities.size === CITIES.length) cities = new Set([v]);
-    else if (cities.has(v)) { cities.delete(v); if (!cities.size) cities = new Set(CITIES); }
-    else cities.add(v);
-    render();
-  });
-  let rows = S.filter(s => (type === "All" || s.t === type) && cities.has(s.c));
-  rows.sort(sort === "price"
-    ? (a, b) => a.p - b.p || a.n.localeCompare(b.n)
-    : (a, b) => CITIES.indexOf(a.c) - CITIES.indexOf(b.c) || a.p - b.p);
-  document.getElementById("count").textContent = rows.length + " of " + S.length;
-  document.getElementById("list").innerHTML = rows.length ? rows.map(s => `
-    <article class="spot${s.p === 0 ? " free" : ""}">
-      <div class="price">${esc(s.pl)}<small>${esc(s.pn)}</small></div>
-      <div class="main">
-        <h3 class="name">${esc(s.n)}</h3>
-        <div class="tags"><span class="tag">${esc(s.c)}</span><span class="tag ${s.t === "Outdoor" ? "outdoor" : ""}">${esc(s.t)}</span></div>
-        <p class="meta">${esc(s.what)}</p>
-        <p class="catch">${esc(s.catch)}</p>
-        ${s.contact ? `<p class="contact">${esc(s.contact)}</p>` : ""}
-        <div class="links"><a href="${esc(s.url)}" target="_blank" rel="noopener">Info page</a>${s.q ? `<a href="${mapUrl(s.q)}" target="_blank" rel="noopener">Map</a>` : ""}</div>
-      </div>
-    </article>`).join("") : `<p class="empty">Nothing matches. Tap a city to add it back.</p>`;
+ btns(document.getElementById("types"),TYPES,v=>v===type,v=>{type=v;render()});
+ btns(document.getElementById("cities"),CITIES,v=>cities.has(v),v=>{
+  if(cities.size===CITIES.length) cities=new Set([v]);
+  else if(cities.has(v)){cities.delete(v); if(!cities.size) cities=new Set(CITIES)}
+  else cities.add(v);
+  render();
+ });
+ const rows=S.filter(s=>(type==="All"||s.t===type)&&cities.has(s.c))
+  .sort(sort==="price"?(a,b)=>a.p-b.p||a.n.localeCompare(b.n):(a,b)=>CITIES.indexOf(a.c)-CITIES.indexOf(b.c)||a.p-b.p);
+ document.getElementById("count").textContent=rows.length+" of "+S.length+" places";
+ document.getElementById("grid").innerHTML=rows.length?rows.map(card).join(""):`<p class="empty">Nothing matches. Tap a city to add it back.</p>`;
 }
-document.getElementById("sort").onchange = e => { sort = e.target.value; render(); };
+document.getElementById("picks").innerHTML=PICKS.map(([n])=>card(S.find(s=>s.n===n))).join("");
+document.getElementById("f-free").textContent=S.filter(s=>s.p===0).length;
+document.getElementById("f-all").textContent=S.length;
+document.getElementById("credits").innerHTML=CREDITS.map(c=>`<li>${esc(c[0])}: <a href="${c[3]}" target="_blank" rel="noopener">${esc(c[1])}</a>, Wikimedia Commons, ${esc(c[2])}</li>`).join("");
+document.getElementById("sort").onchange=e=>{sort=e.target.value;render()};
 render();
 </script>
 </body>
