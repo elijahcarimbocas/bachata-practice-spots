@@ -285,6 +285,7 @@ const PICKS = [
 ];
 
 const TYPES=["All","Indoor","Outdoor","Social"], CITIES=["Scottsdale","Tempe","Mesa","Gilbert","Chandler"];
+const PIN={"ASU Tempe campus plazas":1,"Scottsdale Civic Center":2}, rank=s=>PIN[s.n]||99;
 let type="All", cities=new Set(CITIES), sort="price";
 const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 const slug=n=>n.toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"").slice(0,40).replace(/-$/,"");
@@ -321,7 +322,7 @@ function render(){
   render();
  });
  const rows=S.filter(s=>(type==="All"||s.t===type)&&cities.has(s.c))
-  .sort(sort==="price"?(a,b)=>a.p-b.p||a.n.localeCompare(b.n):(a,b)=>CITIES.indexOf(a.c)-CITIES.indexOf(b.c)||a.p-b.p);
+  .sort(sort==="price"?(a,b)=>a.p-b.p||rank(a)-rank(b)||a.n.localeCompare(b.n):(a,b)=>CITIES.indexOf(a.c)-CITIES.indexOf(b.c)||a.p-b.p);
  document.getElementById("count").textContent=rows.length+" of "+S.length+" places";
  document.getElementById("grid").innerHTML=rows.length?rows.map(card).join(""):`<p class="empty">Nothing matches. Tap a city to add it back.</p>`;
  ssRows=rows; renderSS();
