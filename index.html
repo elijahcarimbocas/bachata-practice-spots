@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="author" content="Elijah Carimbocas">
+<title>Bachata Practice Spots</title>
+<meta name="description" content="Cheap indoor and outdoor places to practice partner bachata in Scottsdale, Tempe, Mesa, Gilbert and Chandler, with prices and links.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Figtree:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+/* Layout: one narrow column. Filter bar, three picks, then a priced list sorted cheapest first. */
+:root{
+  --bg:#f3f5f8; --surface:#ffffff; --ink:#151d29; --muted:#56637a; --line:#dde3ec;
+  --accent:#2c56c9; --accent-soft:#e6ecfb; --free:#1d7a52; --free-soft:#e2f3eb; --warn:#9a5b0b;
+  --display:'Bricolage Grotesque', 'Avenir Next', system-ui, sans-serif;
+  --body:'Figtree', system-ui, -apple-system, sans-serif;
+  --mono:'JetBrains Mono', ui-monospace, Menlo, monospace;
+  color-scheme:light;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#0f141c; --surface:#161d28; --ink:#e7ecf3; --muted:#9aa7bb; --line:#263142;
+    --accent:#7d9cf2; --accent-soft:#1d2a47; --free:#5cc79a; --free-soft:#163327; --warn:#e2a54f;
+    color-scheme:dark;
+  }
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.55;
+  padding-inline:16px;padding-block:env(safe-area-inset-top,0px) env(safe-area-inset-bottom,0px)}
+.wrap{max-width:880px;margin:0 auto;padding-block:40px 64px;display:grid;gap:32px}
+a{color:var(--accent)}
+a:focus-visible,button:focus-visible,select:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+header{display:grid;gap:10px}
+h1{font-family:var(--display);font-weight:800;font-size:clamp(2rem,6vw,3.1rem);line-height:1.02;letter-spacing:-.02em;margin:0;text-wrap:balance}
+.lede{color:var(--muted);margin:0;max-width:60ch}
+
+.controls{display:grid;gap:12px;position:sticky;top:env(safe-area-inset-top,0px);z-index:2;background:var(--bg);padding-block:12px;border-bottom:1px solid var(--line)}
+.row{display:flex;flex-wrap:wrap;gap:8px;align-items:center;min-width:0}
+.row > *{min-width:0}
+#cities{flex:1 1 100%}
+.wrap,.wrap > *{min-width:0}
+.chip{font:500 14px/1 var(--body);border:1px solid var(--line);background:var(--surface);color:var(--ink);padding:9px 14px;border-radius:999px;cursor:pointer}
+.chip[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.chip:active{transform:translateY(1px)}
+select{font:500 14px var(--body);padding:8px 10px;border-radius:10px;border:1px solid var(--line);background:var(--surface);color:var(--ink)}
+.count{color:var(--muted);font-size:14px;margin-left:auto}
+
+.picks{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.pick{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px;display:grid;gap:4px;align-content:start}
+.pick b{font-family:var(--display);font-size:1.05rem}
+.pick .p{font-family:var(--mono);font-size:1.4rem}
+.pick span{color:var(--muted);font-size:14px}
+h2{font-family:var(--display);font-weight:800;font-size:1.4rem;margin:0}
+
+.list{display:grid;gap:10px}
+.spot{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px;display:grid;grid-template-columns:110px minmax(0,1fr);gap:16px}
+.price{font-family:var(--mono);font-variant-numeric:tabular-nums;font-size:1.15rem;line-height:1.2}
+.price small{display:block;font-family:var(--body);font-size:12px;color:var(--muted);margin-top:4px}
+.spot.free .price{color:var(--free)}
+.main{display:grid;gap:6px;min-width:0}
+.name{font-family:var(--display);font-weight:600;font-size:1.15rem;margin:0;line-height:1.25}
+.tags{display:flex;flex-wrap:wrap;gap:6px}
+.tag{font-size:12px;font-weight:600;padding:3px 9px;border-radius:999px;background:var(--accent-soft);color:var(--accent)}
+.tag.outdoor{background:var(--free-soft);color:var(--free)}
+.meta{margin:0;font-size:15px}
+.catch{margin:0;font-size:14px;color:var(--warn)}
+.links{display:flex;flex-wrap:wrap;gap:14px;font-size:14px;font-weight:600}
+.contact{font-size:14px;color:var(--muted);margin:0;overflow-wrap:anywhere}
+.empty{color:var(--muted);padding:24px 0}
+
+.notes{display:grid;gap:8px;color:var(--muted);font-size:14px;max-width:65ch}
+.notes h2{color:var(--ink)}
+.notes p{margin:0}
+footer{color:var(--muted);font-size:13px;border-top:1px solid var(--line);padding-top:16px}
+
+@media (max-width:640px){
+  .picks{grid-template-columns:1fr}
+  .spot{grid-template-columns:1fr;gap:8px}
+  .count{margin-left:0;width:100%}
+}
+@media (prefers-reduced-motion:no-preference){
+  .spot{animation:in .35s cubic-bezier(.16,1,.3,1) both}
+  @keyframes in{from{opacity:.4;transform:translateY(4px)}to{opacity:1;transform:none}}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>Where to practice bachata without paying studio rates</h1>
+    <p class="lede">Indoor and outdoor spots across Scottsdale, Tempe, Mesa, Gilbert and Chandler, cheapest first. Prices checked October 2026. Call before you drive, hours and fees change.</p>
+  </header>
+
+  <section aria-label="Best picks" class="picks">
+    <div class="pick"><span>Best indoor deal</span><b>CDC Studios, Mesa</b><div class="p">$15</div><span>Practice hour on a real dance floor, up to 2 couples</span></div>
+    <div class="pick"><span>Cheapest with AC</span><b>Eagles open gym, Mesa</b><div class="p">$3</div><span>Shared gym floor, pickup sports running</span></div>
+    <div class="pick"><span>Free, open late</span><b>Soleri Bridge Plaza</b><div class="p">Free</div><span>Big paved plaza, open 24/7, quiet at night</span></div>
+  </section>
+
+  <div class="controls" role="region" aria-label="Filters">
+    <div class="row" id="types" aria-label="Type"></div>
+    <div class="row">
+      <span id="cities" class="row" aria-label="City"></span>
+      <label for="sort" class="count" style="margin-left:auto">Sort
+        <select id="sort">
+          <option value="price">Cheapest first</option>
+          <option value="city">By city</option>
+        </select>
+      </label>
+    </div>
+  </div>
+
+  <section aria-labelledby="h-list" style="display:grid;gap:14px">
+    <div class="row"><h2 id="h-list">All spots</h2><span class="count" id="count"></span></div>
+    <div class="list" id="list"></div>
+  </section>
+
+  <section class="notes">
+    <h2>Before you go</h2>
+    <p>The $3 to $6 day passes get you into a gym or fitness room, not a private room. Ask the front desk if two people can practice in a corner. Some will say yes, some won't.</p>
+    <p>Outdoors, stick to smooth concrete or pavers. Turns don't work on grass, and rough pavers chew up dance shoes.</p>
+    <p>Most Gilbert and Chandler parks close at 10 or 10:30 PM. Tempe Beach Park and Kiwanis Park stay open until midnight, and Soleri Bridge Plaza never closes.</p>
+  </section>
+
+  <footer>Compiled October 2026 from city, venue and booking pages. Some rates come from search listings and are marked "check" on the card.</footer>
+</div>
+
+<script>
+const S = [
+  // INDOOR, priced
+  {n:"Eagles Community Center open gym", c:"Mesa", t:"Indoor", p:3, pl:"$3", pn:"adult drop-in", what:"Open gym evenings. Mon soccer, Tue/Fri basketball and volleyball, Wed basketball, Sat basketball and soccer, no open gym Thu. Fitness room open during open gym.", catch:"You share the floor with a pickup game. The separate dance studio room rents for about $18-120/hr depending on size.", contact:"828 E Broadway Rd · 480-644-5745 · eaglescommunitycenter@mesaaz.gov", url:"https://www.mesaaz.gov/Activities-Culture/Parks-Recreation-and-Community-Facilities/Recreational-Facilities/Eagles-Community-Center", q:"Eagles Community Center 828 E Broadway Rd Mesa AZ"},
+  {n:"Freestone Recreation Center", c:"Gilbert", t:"Indoor", p:3.5, pl:"$3.50", pn:"resident, noon-3 PM weekdays ($4.50 day pass)", what:"Day pass covers the gym and fitness areas. Open Mon-Fri 5:15 AM-10 PM, Sat 7 AM-9 PM, Sun 10 AM-5 PM.", catch:"Non-resident price not posted (check). No private room on a day pass.", contact:"Freestone Park, Gilbert", url:"https://www.gilbertaz.gov/departments/parks-and-recreation/recreation-centers-classes/freestone-recreation-center/passes-memberships", q:"Freestone Recreation Center Gilbert AZ"},
+  {n:"Tumbleweed Recreation Center", c:"Chandler", t:"Indoor", p:4, pl:"$4", pn:"resident, $6 non-resident", what:"Daily pass covers the fitness area and open gym.", catch:"Shared space. Ask if partner practice is OK.", contact:"745 E Germann Rd", url:"https://www.chandleraz.gov/explore/chandler-recreation/centers-and-facilities/tumbleweed-recreation-center/memberships", q:"Tumbleweed Recreation Center 745 E Germann Rd Chandler AZ"},
+  {n:"Eldorado Aquatic & Fitness Center", c:"Scottsdale", t:"Indoor", p:4, pl:"$4", pn:"resident, $6 non-resident", what:"Fitness center drop-in near Miller Rd and Oak St.", catch:"Fitness floor, not a studio. Ask when the group fitness room sits empty. Rate from search listing (check).", contact:"480-312-2484", url:"https://www.scottsdaleaz.gov/aquatics/eldorado-pool", q:"Eldorado Aquatic and Fitness Center Scottsdale AZ"},
+  {n:"Club SAR", c:"Scottsdale", t:"Indoor", p:4, pl:"$4", pn:"resident, $6 non-resident", what:"City fitness center drop-in.", catch:"Same deal as Eldorado: shared floor. Rate from search listing (check).", contact:"", url:"https://www.scottsdaleaz.gov/club-sar-fitness-center", q:"Club SAR Scottsdale AZ"},
+  {n:"Kiwanis Recreation Center", c:"Tempe", t:"Indoor", p:4, pl:"$4", pn:"fitness drop-in (check, may be $1)", what:"Fitness drop-in. Classrooms rent for about $30/hr, 20x28 ft.", catch:"Far south Tempe. Sources disagree on the drop-in fee.", contact:"6111 S All America Way · 480-350-5201 · krcadmin@tempe.gov", url:"https://www.tempe.gov/government/community-services/community-recreation-centers/fitness-centers", q:"Kiwanis Recreation Center Tempe AZ"},
+  {n:"Red Mountain Center", c:"Mesa", t:"Indoor", p:5, pl:"$5", pn:"day pass. Rooms $20-65/hr", what:"Activity room $20-65/hr is the cheapest private AC room found. Mesquite Room (hardwood, stage) $75-225/hr. Open Mon-Fri 5:30 AM-9 PM.", catch:"Far east Mesa. Rooms book through an interest form, not instantly.", contact:"7550 E Adobe St · 480-644-4800 · parksresreg@mesaaz.gov", url:"https://www.mesaaz.gov/Activities-Culture/Parks-Recreation-and-Community-Facilities/Recreational-Facilities/Red-Mountain-Center", q:"Red Mountain Center 7550 E Adobe St Mesa AZ"},
+  {n:"CDC Studios (Creative Dance Collective)", c:"Mesa", t:"Indoor", p:15, pl:"$15", pn:"practice hour, up to 2 couples", what:"Real ballroom floor, 4,000 sq ft. Floor time Mon-Fri 1-9 PM. They teach bachata and host socials.", catch:"You may share the floor and music with a class. Room to yourselves is $75-150/hr.", contact:"2107 W Guadalupe Rd · studio@cdc.dance", url:"https://cdc.dance/studio-rental/", q:"CDC Studios 2107 W Guadalupe Rd Mesa AZ"},
+  {n:"Bright Open Layout Dance Studio (Peerspace)", c:"Mesa", t:"Indoor", p:38, pl:"$38-48", pn:"per hour, 3 hr minimum", what:"Private 800 sq ft studio with sprung floor, mirrors and speakers. Bookable Mon-Fri 6 AM-10 PM.", catch:"The 3-hour minimum makes one session $114 or more.", contact:"West Mesa (85202), address shown after booking", url:"https://www.peerspace.com/pages/listings/622ab0eef7f27600218584e2", q:""},
+  {n:"Escalante Multi-Generational Center", c:"Tempe", t:"Indoor", p:900, pl:"Ask", pn:"rate not posted", what:"Two multi-purpose rooms plus classrooms for rent, near McClintock and Apache.", catch:"Email for the hourly rate.", contact:"2150 E Orange St · Jennifer_Gall@tempe.gov · 480-350-5805", url:"https://www.tempe.gov/government/community-services/community-recreation-centers/escalante-multi-generational-center/facility-information", q:"Escalante Multi-Generational Center Tempe AZ"},
+  {n:"North Tempe Multi-Generational Center", c:"Tempe", t:"Indoor", p:900, pl:"Ask", pn:"rate not posted", what:"Classrooms and a gym for rent, near McKellips and Scottsdale Rd.", catch:"Email for the hourly rate.", contact:"1555 N Bridalwreath St · tj_nemecek@tempe.gov (rooms) · rick_oliphant@tempe.gov (gym)", url:"https://www.tempe.gov/government/community-services/community-recreation-centers/north-tempe-multi-generational-center/facility-information", q:"North Tempe Multi-Generational Center Tempe AZ"},
+  {n:"Pyle Adult Recreation Center", c:"Tempe", t:"Indoor", p:900, pl:"Ask", pn:"rate not posted", what:"Multi-purpose room holds 144.", catch:"Adult center, evening hours may be limited.", contact:"655 E Southern Ave · Pyle_Rentals@tempe.gov", url:"https://www.tempe.gov/government/community-services/community-recreation-centers/pyle-adult-recreation-center", q:"Pyle Adult Recreation Center Tempe AZ"},
+  {n:"Chandler Community Center, Cotton Room", c:"Chandler", t:"Indoor", p:91, pl:"$91+", pn:"per hour, 2 hr minimum", what:"Half room $91/hr resident, $123/hr non-resident.", catch:"Only Fri-Sun after regular hours. Too pricey for weekly practice.", contact:"", url:"https://www.chandleraz.gov/sites/default/files/departments/parks-and-recreation/City-of-Chander-Rental-Fees-CC-Mar2025.pdf", q:"Chandler Community Center Chandler AZ"},
+  {n:"Broadway Recreation Center", c:"Mesa", t:"Indoor", p:115, pl:"$115", pn:"per hour, full gym", what:"Cushioned wood gym floor, 96x120 ft.", catch:"Needs a liability insurance certificate. Only worth it split across a group.", contact:"59 E Broadway Rd · 480-835-6273", url:"https://www.arizonadisabledsports.com/specsratesrules", q:"Broadway Recreation Center 59 E Broadway Rd Mesa AZ"},
+  {n:"Arthur Murray Mesa-Gilbert", c:"Gilbert", t:"Indoor", p:950, pl:"Quote", pn:"no posted rate", what:"Polished floor, mirrors, sound system. Rents by the hour.", catch:"Inquiry plus deposit. Closes by 8:45 PM.", contact:"3347 E Baseline Rd · 480-287-5590", url:"https://arthurmurraymesa.com/studio-rental/", q:"Arthur Murray 3347 E Baseline Rd Gilbert AZ"},
+
+  // SOCIALS
+  {n:"Havana Nights at Dave & Buster's", c:"Tempe", t:"Social", p:5, pl:"$5", pn:"cover", what:"Wed and Sun. Lesson 7-8:30 PM, then open dancing until midnight. Polished concrete floor.", catch:"Second-floor patio, no AC. DJ picks the music.", contact:"Tempe Marketplace", url:"https://azsalsa.net/havana-nights/", q:"Dave and Busters Tempe Marketplace"},
+  {n:"Bachata Addiction Thursdays", c:"Tempe", t:"Social", p:5, pl:"$5-10", pn:"$10 with lesson, $5 after 9 PM", what:"Thursday bachata night with an 8 PM lesson.", catch:"Open-air rooftop, no AC.", contact:"Dave & Buster's, Tempe Marketplace", url:"https://azsalsa.net/bachata-addiction-thursdays/", q:"Dave and Busters Tempe Marketplace"},
+
+  // OUTDOOR, free
+  {n:"Soleri Bridge Plaza", c:"Scottsdale", t:"Outdoor", p:0, pl:"Free", pn:"open 24/7", what:"22,000 sq ft paved plaza with shade and seating on the Scottsdale Waterfront canal.", catch:"Dark and quiet at night. Bring a light if the plaza lights are off.", contact:"4420 N Scottsdale Rd", url:"https://www.yelp.com/biz/soleri-bridge-and-plaza-scottsdale-2", q:"Soleri Bridge and Plaza Scottsdale AZ"},
+  {n:"Scottsdale Civic Center", c:"Scottsdale", t:"Outdoor", p:0, pl:"Free", pn:"6 AM-10:30 PM", what:"Renovated Old Town park with the East Bowl and West Bowl stages.", catch:"East Bowl is grass. Use the paved areas near the pavilions. Concerts take it over some nights.", contact:"", url:"https://www.scottsdaleaz.gov/parks/find-a-park/scottsdale-civic-center", q:"Scottsdale Civic Center Scottsdale AZ"},
+  {n:"SkySong plaza", c:"Scottsdale", t:"Outdoor", p:0, pl:"Free", pn:"hours not checked", what:"Large paved plaza under the shade sail at Scottsdale Rd and McDowell.", catch:"Private property. Not checked, security may ask you to move.", contact:"", url:"https://www.google.com/maps/search/?api=1&query=SkySong%20Scottsdale%20AZ", q:"SkySong Scottsdale AZ"},
+  {n:"Tempe Beach Park", c:"Tempe", t:"Outdoor", p:0, pl:"Free", pn:"5 AM-midnight", what:"Lakeside park with paved paths along Town Lake.", catch:"Mostly lawn. Find a flat paved patch off the path.", contact:"", url:"https://www.tempe.gov/Home/Components/FacilityDirectory/FacilityDirectory/176/3542", q:"Tempe Beach Park Tempe AZ"},
+  {n:"Kiwanis Park", c:"Tempe", t:"Outdoor", p:0, pl:"Free", pn:"6 AM-midnight", what:"Big lit park around the Kiwanis Rec Center, with ramadas on concrete pads.", catch:"Ramadas can be reserved by groups.", contact:"Mill Ave and All America Way", url:"https://www.tempe.gov/Home/Components/FacilityDirectory/FacilityDirectory/120/3542", q:"Kiwanis Park Tempe AZ"},
+  {n:"Tempe Arts Park (Tempe Center for the Arts)", c:"Tempe", t:"Outdoor", p:0, pl:"Free", pn:"park hours", what:"17-acre lakeside art park with a sculpture garden and plaza on the southwest end of Town Lake.", catch:"The building closes at 5 PM. The grounds follow park hours (check).", contact:"", url:"https://www.downtowntempe.com/go/tempe-arts-park", q:"Tempe Center for the Arts Tempe AZ"},
+  {n:"Town Lake bridges", c:"Tempe", t:"Outdoor", p:0, pl:"Free", pn:"hours not checked", what:"Mill Ave bridge is lit with string lights at night. Elmore is a paved pedestrian bridge.", catch:"Narrow, with walkers and bikes passing through.", contact:"", url:"https://www.tempe.gov/government/community-services/tempe-town-lake/public-projects-at-town-lake/bridges-of-town-lake", q:"Tempe Town Lake pedestrian bridge"},
+  {n:"ASU Tempe campus plazas", c:"Tempe", t:"Outdoor", p:0, pl:"Free", pn:"campus open", what:"Lit paved plazas around Gammage and Palm Walk. Dancers practice on campus at night.", catch:"Not checked against campus rules.", contact:"", url:"https://www.google.com/maps/search/?api=1&query=ASU%20Gammage%20Tempe%20AZ", q:"ASU Gammage Tempe AZ"},
+  {n:"Tempe Marketplace District Stage", c:"Tempe", t:"Outdoor", p:0, pl:"Free", pn:"mall hours", what:"Paved plaza in the middle of the shopping center.", catch:"Private property, and bands play Thu-Sun.", contact:"2000 E Rio Salado Pkwy", url:"https://tempemarketplace.com/", q:"Tempe Marketplace District Stage"},
+  {n:"Mesa Arts Center Shadow Walk", c:"Mesa", t:"Outdoor", p:0, pl:"Free", pn:"night access unconfirmed", what:"704 ft shaded paved walkway, lit at night, with informal performance areas.", catch:"Building hours are Tue-Sat noon-5 PM. Check that the walkway stays open after dark.", contact:"Main St and Center St", url:"https://www.architectmagazine.com/technology/lighting/shadow-walk-mesa-ariz_o", q:"Mesa Arts Center Mesa AZ"},
+  {n:"Pioneer Park", c:"Mesa", t:"Outdoor", p:0, pl:"Free", pn:"park hours", what:"Downtown Mesa park, recently rebuilt, with a central plaza.", catch:"Families at the splash pad early evening. Go later.", contact:"", url:"https://www.vortex-intl.com/projects/pioneer-park/", q:"Pioneer Park Mesa AZ"},
+  {n:"Riverview Park", c:"Mesa", t:"Outdoor", p:0, pl:"Free", pn:"sunrise-10 PM", what:"Miles of paved trails around a lake at Dobson and Rio Salado.", catch:"Find a flat paved patch big enough to turn.", contact:"", url:"https://www.mesaaz.gov/Activities-Culture/Parks-Recreation-and-Community-Facilities/Parks-Facilities/Riverview-Park", q:"Riverview Park Mesa AZ"},
+  {n:"Water Tower Plaza", c:"Gilbert", t:"Outdoor", p:0, pl:"Free", pn:"5:30 AM-10 PM", what:"Paved plaza in the Heritage District with foot traffic and restaurants nearby.", catch:"Artwalk uses it 1st and 3rd Saturday mornings, Oct-Mar.", contact:"45 W Page Ave", url:"https://www.gilbertaz.gov/departments/parks-and-recreation/parks-information/parks/water-tower-park", q:"Gilbert Water Tower Plaza 45 W Page Ave"},
+  {n:"Gilbert Regional Park", c:"Gilbert", t:"Outdoor", p:0, pl:"Free", pn:"5:30 AM-10 PM", what:"New park with LED-lit areas and paved paths.", catch:"Far south Gilbert, long drive from Scottsdale.", contact:"3005 E Queen Creek Rd", url:"https://www.gilbertaz.gov/departments/parks-and-recreation/gilbert-s-new-regional-park", q:"Gilbert Regional Park 3005 E Queen Creek Rd"},
+  {n:"Freestone Park", c:"Gilbert", t:"Outdoor", p:0, pl:"Free", pn:"5:30 AM-10 PM", what:"Large park next to the Freestone Rec Center.", catch:"Lighting on paved areas not checked.", contact:"1045 E Juniper Rd", url:"https://www.gilbertaz.gov/freestone-park", q:"Freestone Park 1045 E Juniper Rd Gilbert AZ"},
+  {n:"Dr. A.J. Chandler Park", c:"Chandler", t:"Outdoor", p:0, pl:"Free", pn:"6 AM-10:30 PM", what:"Downtown Chandler park with a stage plaza.", catch:"Stage area is mostly grass. Downtown events take it over.", contact:"3 S Arizona Ave", url:"https://www.chandleraz.gov/explore/chandler-parks/guide/dr-a-j-chandler-park", q:"Dr A.J. Chandler Park Chandler AZ"},
+  {n:"Tumbleweed Park", c:"Chandler", t:"Outdoor", p:0, pl:"Free", pn:"6 AM-10:30 PM", what:"About 200 acres around the Tumbleweed Rec Center.", catch:"Paved, lit spots not checked. Look near the rec center.", contact:"", url:"https://www.chandleraz.gov/explore/chandler-parks/guide/tumbleweed-park", q:"Tumbleweed Park Chandler AZ"}
+];
+
+const TYPES = ["All","Indoor","Outdoor","Social"];
+const CITIES = ["Scottsdale","Tempe","Mesa","Gilbert","Chandler"];
+let type = "All", cities = new Set(CITIES), sort = "price";
+
+const esc = s => String(s).replace(/[&<>"]/g, ch => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[ch]));
+const mapUrl = q => "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(q);
+
+function chips(el, items, isOn, onTap){
+  el.innerHTML = items.map(v => `<button class="chip" type="button" aria-pressed="${isOn(v)}" data-v="${esc(v)}">${esc(v)}</button>`).join("");
+  el.onclick = e => { const b = e.target.closest("button"); if (b) onTap(b.dataset.v); };
+}
+
+function render(){
+  chips(document.getElementById("types"), TYPES, v => v === type, v => { type = v; render(); });
+  chips(document.getElementById("cities"), CITIES, v => cities.has(v), v => {
+    if (cities.size === CITIES.length) cities = new Set([v]);
+    else if (cities.has(v)) { cities.delete(v); if (!cities.size) cities = new Set(CITIES); }
+    else cities.add(v);
+    render();
+  });
+  let rows = S.filter(s => (type === "All" || s.t === type) && cities.has(s.c));
+  rows.sort(sort === "price"
+    ? (a, b) => a.p - b.p || a.n.localeCompare(b.n)
+    : (a, b) => CITIES.indexOf(a.c) - CITIES.indexOf(b.c) || a.p - b.p);
+  document.getElementById("count").textContent = rows.length + " of " + S.length;
+  document.getElementById("list").innerHTML = rows.length ? rows.map(s => `
+    <article class="spot${s.p === 0 ? " free" : ""}">
+      <div class="price">${esc(s.pl)}<small>${esc(s.pn)}</small></div>
+      <div class="main">
+        <h3 class="name">${esc(s.n)}</h3>
+        <div class="tags"><span class="tag">${esc(s.c)}</span><span class="tag ${s.t === "Outdoor" ? "outdoor" : ""}">${esc(s.t)}</span></div>
+        <p class="meta">${esc(s.what)}</p>
+        <p class="catch">${esc(s.catch)}</p>
+        ${s.contact ? `<p class="contact">${esc(s.contact)}</p>` : ""}
+        <div class="links"><a href="${esc(s.url)}" target="_blank" rel="noopener">Info page</a>${s.q ? `<a href="${mapUrl(s.q)}" target="_blank" rel="noopener">Map</a>` : ""}</div>
+      </div>
+    </article>`).join("") : `<p class="empty">Nothing matches. Tap a city to add it back.</p>`;
+}
+document.getElementById("sort").onchange = e => { sort = e.target.value; render(); };
+render();
+</script>
+</body>
+</html>
