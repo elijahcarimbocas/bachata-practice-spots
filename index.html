@@ -44,7 +44,7 @@
  section,footer{background:rgba(10,12,15,.62)}
  h1{text-shadow:0 0 24px rgba(10,12,15,.9)}
  .hero-body{padding-top:84px}
- h1{font-family:var(--disp);font-weight:900;font-size:clamp(3.2rem,10vw,7.4rem);line-height:.86;text-transform:uppercase}
+ h1{font-family:var(--disp);font-weight:900;font-size:clamp(2.4rem,6.5vw,4.4rem);line-height:.86;text-transform:uppercase}
  h1 .l2{color:var(--orange)}
  .lede{max-width:440px;color:var(--fog);margin-top:20px;line-height:1.65}
  .facts{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));max-width:640px;margin:40px 0 34px;border-top:1px solid var(--line2);border-bottom:1px solid var(--line2);background:rgba(10,12,15,.5)}
@@ -150,6 +150,15 @@
  }
  @media (prefers-reduced-motion:reduce){.ch i,.ss-imgs > *,.rot img{transition:none}}
 
+ .gear{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,7fr);gap:1px;background:var(--line);border:1px solid var(--line);border-top:2px solid var(--orange);margin-top:28px}
+ .gear figure{background:#ffffff;display:flex;align-items:center;justify-content:center;padding:18px}
+ .gear figure img{max-height:300px;width:auto}
+ .gear .txt{background:var(--panel);padding:24px 24px 26px;display:flex;flex-direction:column;gap:14px}
+ .gear .txt p{color:var(--fog);font-size:15px;max-width:60ch}
+ .gear .facts{margin:6px 0 0;max-width:none}
+ .gear .src{font-size:12px;color:var(--muted)} .gear .src a{text-decoration:underline;text-underline-offset:2px}
+ @media(max-width:760px){.gear{grid-template-columns:1fr}.gear figure img{max-height:220px}}
+
  footer{border-top:1px solid var(--line);padding:30px 0 50px;color:var(--muted);font-size:12.5px}
  footer h4{font-family:var(--disp);font-size:14px;letter-spacing:.24em;text-transform:uppercase;color:var(--fog);margin-bottom:8px}
  footer ul{list-style:none;display:grid;gap:4px}
@@ -179,6 +188,26 @@
   </div>
  </div>
 </header>
+
+<section id="gear">
+ <div class="wrap">
+  <h2>The speaker</h2>
+  <div class="gear">
+   <figure><img src="img/jbl-partybox-encore-essential.jpg" alt="JBL PartyBox Encore Essential speaker" loading="lazy"></figure>
+   <div class="txt">
+    <p>Elijah brings a JBL PartyBox Encore Essential, so we don't need a room with a sound system. It runs on battery, which is why the parks and plazas on this list work at all. It's 13 lbs and rides in the car fine.</p>
+    <p>Indoors, ask the front desk before turning it on. Outdoors, keep it low enough that it doesn't carry past the people around us.</p>
+    <div class="facts">
+     <div><b>100W</b><span>Output</span></div>
+     <div><b>6 hr</b><span>Battery</span></div>
+     <div><b>13 lb</b><span>Weight</span></div>
+     <div><b>IPX4</b><span>Splash proof</span></div>
+    </div>
+    <p class="src">Specs from <a href="https://www.jbl.com/PARTYBOX-ENCORE-ESSENTIAL-.html" target="_blank" rel="noopener">JBL</a>. Battery time is JBL's max and drops at high volume.</p>
+   </div>
+  </div>
+ </div>
+</section>
 
 <section id="all">
  <div class="wrap">
@@ -297,8 +326,7 @@ const IMG = {
 "img/town-lake-bridges-c5.jpg"
 ],
 "asu-tempe-campus-plazas": [
-"img/asu-tempe-campus-plazas.jpg",
-"img/asu-tempe-campus-plazas-c5.jpg"
+"img/asu-tempe-campus-plazas.jpg"
 ],
 "tempe-marketplace-district-stage": [
 "img/tempe-marketplace-district-stage.jpg",
@@ -314,7 +342,7 @@ const IMG = {
 "img/water-tower-plaza-c0.jpg"
 ]
 };
-const CREDITS = [["skysong plaza", "ASU SkySong Campus, Scottsdale (Panoramio)", "CC BY 3.0", "https://commons.wikimedia.org/wiki/File:Arizona_State_University_Sky_Song_Campus,_Scottsdale,_AZ_-_panoramio.jpg"], ["kiwanis park", "Tempe Kiwanis Park (Panoramio)", "CC BY 3.0", "https://commons.wikimedia.org/wiki/File:Tempe_Kiwanis_Park_Baseball_Field_-_panoramio.jpg"], ["tempe arts park tempe center for the art", "Tempe Center for the Arts", "CC BY-SA 3.0", "https://commons.wikimedia.org/wiki/File:Tempe_Center_for_the_Arts_-_NWC_-_2009-09-04.JPG"], ["town lake bridges", "Tempe Town Lake Pedestrian Bridge", "CC BY 2.0", "https://commons.wikimedia.org/wiki/File:Tempe_Town_Lake_Pedestrian_Bridge,_black_and_white.jpg"], ["asu tempe campus plazas", "Gammage Auditorium, ASU", "CC BY 2.5", "https://commons.wikimedia.org/wiki/File:FLW_Gammage_Auditorium_ASU_PHX_AZ_20186.JPG"], ["tempe marketplace district stage", "Tempe Marketplace", "CC BY-SA 3.0", "https://commons.wikimedia.org/wiki/File:Tempe_Marketplace_-_2008-04-17_-_Image1.JPG"], ["asu tempe campus plazas", "Arizona State University, Tempe Main Campus, Tempe, AZ - panoramio (54).jpg", "CC BY 3.0", "https://commons.wikimedia.org/wiki/File:Arizona_State_University,_Tempe_Main_Campus,_Tempe,_AZ_-_panoramio_(54).jpg"], ["kiwanis park", "Kiwanis Park Walk Path - panoramio.jpg", "CC BY 3.0", "https://commons.wikimedia.org/wiki/File:Kiwanis_Park_Walk_Path_-_panoramio.jpg"], ["kiwanis park", "Kiwanis Park Distant Bridge Structure - panoramio.jpg", "CC BY 3.0", "https://commons.wikimedia.org/wiki/File:Kiwanis_Park_Distant_Bridge_Structure_-_panoramio.jpg"], ["tempe arts park tempe center for the art", "Tempe Center for the Arts - West - 2009-09-04.JPG", "CC BY-SA 3.0", "https://commons.wikimedia.org/wiki/File:Tempe_Center_for_the_Arts_-_West_-_2009-09-04.JPG"], ["tempe arts park tempe center for the art", "Evening at Tempe Center for the Arts - panoramio.jpg", "CC BY 3.0", "https://commons.wikimedia.org/wiki/File:Evening_at_Tempe_Center_for_the_Arts_-_panoramio.jpg"], ["town lake bridges", "Tempe Town Lake Walk Bridge, Tempe, Arizona - panoramio.jpg", "CC BY 3.0", "https://commons.wikimedia.org/wiki/File:Tempe_Town_Lake_Walk_Bridge,_Tempe,_Arizona_-_panoramio.jpg"], ["town lake bridges", "Tempe town lake bridge 07042006.jpg", "CC BY-SA 3.0", "https://commons.wikimedia.org/wiki/File:Tempe_town_lake_bridge_07042006.jpg"], ["tempe marketplace district stage", "Tempe Marketplace - 2009-04-13 - Image9.JPG", "CC BY-SA 3.0", "https://commons.wikimedia.org/wiki/File:Tempe_Marketplace_-_2009-04-13_-_Image9.JPG"], ["tempe marketplace district stage", "Tempe Marketplace - 2008-04-17 - Image4.JPG", "CC BY-SA 3.0", "https://commons.wikimedia.org/wiki/File:Tempe_Marketplace_-_2008-04-17_-_Image4.JPG"], ["skysong plaza", "Skysong - East - 2010-02-18.jpg", "CC BY-SA 3.0", "https://commons.wikimedia.org/wiki/File:Skysong_-_East_-_2010-02-18.jpg"], ["skysong plaza", "Arizona State University Sky Song Campus, Scottsdale, AZ - panoramio (5).jpg", "CC BY 3.0", "https://commons.wikimedia.org/wiki/File:Arizona_State_University_Sky_Song_Campus,_Scottsdale,_AZ_-_panoramio_(5).jpg"], ["soleri bridge plaza", "Soleri bridge Scottsdale 003.JPG", "CC0", "https://commons.wikimedia.org/wiki/File:Soleri_bridge_Scottsdale_003.JPG"], ["soleri bridge plaza", "View of Scottsdale Waterfront from the new Marshall Way pedestrian bridge.jpg", "CC BY-SA 3.0", "https://commons.wikimedia.org/wiki/File:View_of_Scottsdale_Waterfront_from_the_new_Marshall_Way_pedestrian_bridge.jpg"], ["mesa arts center shadow walk", "Mesa Arts Center - West - 2009-09-16.JPG", "CC BY-SA 3.0", "https://commons.wikimedia.org/wiki/File:Mesa_Arts_Center_-_West_-_2009-09-16.JPG"], ["mesa arts center shadow walk", "Mesa arts center.jpg", "CC BY-SA 3.0", "https://commons.wikimedia.org/wiki/File:Mesa_arts_center.jpg"], ["water tower plaza", "Gilbert Watertower - North - 2009-09-14.jpg", "CC BY-SA 3.0", "https://commons.wikimedia.org/wiki/File:Gilbert_Watertower_-_North_-_2009-09-14.jpg"], ["water tower plaza", "Downtown Gilbert - SWC Gilbert & Page - 2009-03-23.JPG", "CC BY-SA 3.0", "https://commons.wikimedia.org/wiki/File:Downtown_Gilbert_-_SWC_Gilbert_%26_Page_-_2009-03-23.JPG"], ["pioneer park", "Mesa-Pioneer Park-Mesa Pioneer Monument-3.jpg", "CC BY-SA 4.0", "https://commons.wikimedia.org/wiki/File:Mesa-Pioneer_Park-Mesa_Pioneer_Monument-3.jpg"]];
+const CREDITS = [["skysong plaza", "ASU SkySong Campus, Scottsdale (Panoramio)", "CC BY 3.0", "https://commons.wikimedia.org/wiki/File:Arizona_State_University_Sky_Song_Campus,_Scottsdale,_AZ_-_panoramio.jpg"], ["kiwanis park", "Tempe Kiwanis Park (Panoramio)", "CC BY 3.0", "https://commons.wikimedia.org/wiki/File:Tempe_Kiwanis_Park_Baseball_Field_-_panoramio.jpg"], ["tempe arts park tempe center for the art", "Tempe Center for the Arts", "CC BY-SA 3.0", "https://commons.wikimedia.org/wiki/File:Tempe_Center_for_the_Arts_-_NWC_-_2009-09-04.JPG"], ["town lake bridges", "Tempe Town Lake Pedestrian Bridge", "CC BY 2.0", "https://commons.wikimedia.org/wiki/File:Tempe_Town_Lake_Pedestrian_Bridge,_black_and_white.jpg"], ["asu tempe campus plazas", "Gammage Auditorium, ASU", "CC BY 2.5", "https://commons.wikimedia.org/wiki/File:FLW_Gammage_Auditorium_ASU_PHX_AZ_20186.JPG"], ["tempe marketplace district stage", "Tempe Marketplace", "CC BY-SA 3.0", "https://commons.wikimedia.org/wiki/File:Tempe_Marketplace_-_2008-04-17_-_Image1.JPG"], ["kiwanis park", "Kiwanis Park Walk Path - panoramio.jpg", "CC BY 3.0", "https://commons.wikimedia.org/wiki/File:Kiwanis_Park_Walk_Path_-_panoramio.jpg"], ["kiwanis park", "Kiwanis Park Distant Bridge Structure - panoramio.jpg", "CC BY 3.0", "https://commons.wikimedia.org/wiki/File:Kiwanis_Park_Distant_Bridge_Structure_-_panoramio.jpg"], ["tempe arts park tempe center for the art", "Tempe Center for the Arts - West - 2009-09-04.JPG", "CC BY-SA 3.0", "https://commons.wikimedia.org/wiki/File:Tempe_Center_for_the_Arts_-_West_-_2009-09-04.JPG"], ["tempe arts park tempe center for the art", "Evening at Tempe Center for the Arts - panoramio.jpg", "CC BY 3.0", "https://commons.wikimedia.org/wiki/File:Evening_at_Tempe_Center_for_the_Arts_-_panoramio.jpg"], ["town lake bridges", "Tempe Town Lake Walk Bridge, Tempe, Arizona - panoramio.jpg", "CC BY 3.0", "https://commons.wikimedia.org/wiki/File:Tempe_Town_Lake_Walk_Bridge,_Tempe,_Arizona_-_panoramio.jpg"], ["town lake bridges", "Tempe town lake bridge 07042006.jpg", "CC BY-SA 3.0", "https://commons.wikimedia.org/wiki/File:Tempe_town_lake_bridge_07042006.jpg"], ["tempe marketplace district stage", "Tempe Marketplace - 2009-04-13 - Image9.JPG", "CC BY-SA 3.0", "https://commons.wikimedia.org/wiki/File:Tempe_Marketplace_-_2009-04-13_-_Image9.JPG"], ["tempe marketplace district stage", "Tempe Marketplace - 2008-04-17 - Image4.JPG", "CC BY-SA 3.0", "https://commons.wikimedia.org/wiki/File:Tempe_Marketplace_-_2008-04-17_-_Image4.JPG"], ["skysong plaza", "Skysong - East - 2010-02-18.jpg", "CC BY-SA 3.0", "https://commons.wikimedia.org/wiki/File:Skysong_-_East_-_2010-02-18.jpg"], ["skysong plaza", "Arizona State University Sky Song Campus, Scottsdale, AZ - panoramio (5).jpg", "CC BY 3.0", "https://commons.wikimedia.org/wiki/File:Arizona_State_University_Sky_Song_Campus,_Scottsdale,_AZ_-_panoramio_(5).jpg"], ["soleri bridge plaza", "Soleri bridge Scottsdale 003.JPG", "CC0", "https://commons.wikimedia.org/wiki/File:Soleri_bridge_Scottsdale_003.JPG"], ["soleri bridge plaza", "View of Scottsdale Waterfront from the new Marshall Way pedestrian bridge.jpg", "CC BY-SA 3.0", "https://commons.wikimedia.org/wiki/File:View_of_Scottsdale_Waterfront_from_the_new_Marshall_Way_pedestrian_bridge.jpg"], ["mesa arts center shadow walk", "Mesa Arts Center - West - 2009-09-16.JPG", "CC BY-SA 3.0", "https://commons.wikimedia.org/wiki/File:Mesa_Arts_Center_-_West_-_2009-09-16.JPG"], ["mesa arts center shadow walk", "Mesa arts center.jpg", "CC BY-SA 3.0", "https://commons.wikimedia.org/wiki/File:Mesa_arts_center.jpg"], ["water tower plaza", "Gilbert Watertower - North - 2009-09-14.jpg", "CC BY-SA 3.0", "https://commons.wikimedia.org/wiki/File:Gilbert_Watertower_-_North_-_2009-09-14.jpg"], ["water tower plaza", "Downtown Gilbert - SWC Gilbert & Page - 2009-03-23.JPG", "CC BY-SA 3.0", "https://commons.wikimedia.org/wiki/File:Downtown_Gilbert_-_SWC_Gilbert_%26_Page_-_2009-03-23.JPG"], ["pioneer park", "Mesa-Pioneer Park-Mesa Pioneer Monument-3.jpg", "CC BY-SA 4.0", "https://commons.wikimedia.org/wiki/File:Mesa-Pioneer_Park-Mesa_Pioneer_Monument-3.jpg"]];
 const PICKS = [
  ["CDC Studios (Creative Dance Collective)","Best indoor deal"],
  ["Eagles Community Center open gym","Cheapest with AC"],
