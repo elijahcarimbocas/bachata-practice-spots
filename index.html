@@ -150,14 +150,14 @@
  }
  @media (prefers-reduced-motion:reduce){.ch i,.ss-imgs > *,.rot img{transition:none}}
 
- .gear{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,7fr);gap:1px;background:var(--line);border:1px solid var(--line);border-top:2px solid var(--orange);margin-top:28px}
- .gear figure{background:#ffffff;display:flex;align-items:center;justify-content:center;padding:18px}
- .gear figure img{max-height:300px;width:auto}
+ .gear{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,7fr);max-width:75%;gap:1px;background:var(--line);border:1px solid var(--line);border-top:2px solid var(--orange);margin-top:28px}
+ .gear figure{background:var(--panel);display:flex;align-items:center;justify-content:center;padding:18px}
+ .gear figure img{max-height:225px;width:auto;filter:drop-shadow(0 10px 26px rgba(226,85,43,.25))}
  .gear .txt{background:var(--panel);padding:24px 24px 26px;display:flex;flex-direction:column;gap:14px}
  .gear .txt p{color:var(--fog);font-size:15px;max-width:60ch}
  .gear .facts{margin:6px 0 0;max-width:none}
  .gear .src{font-size:12px;color:var(--muted)} .gear .src a{text-decoration:underline;text-underline-offset:2px}
- @media(max-width:760px){.gear{grid-template-columns:1fr}.gear figure img{max-height:220px}}
+ @media(max-width:760px){.gear{grid-template-columns:1fr;max-width:none}.gear figure img{max-height:180px}}
 
  footer{border-top:1px solid var(--line);padding:30px 0 50px;color:var(--muted);font-size:12.5px}
  footer h4{font-family:var(--disp);font-size:14px;letter-spacing:.24em;text-transform:uppercase;color:var(--fog);margin-bottom:8px}
@@ -193,10 +193,9 @@
  <div class="wrap">
   <h2>The speaker</h2>
   <div class="gear">
-   <figure><img src="img/jbl-partybox-encore-essential.jpg" alt="JBL PartyBox Encore Essential speaker" loading="lazy"></figure>
+   <figure><img src="img/jbl-partybox-encore-essential.png" alt="JBL PartyBox Encore Essential speaker" loading="lazy"></figure>
    <div class="txt">
-    <p>Elijah brings a JBL PartyBox Encore Essential, so we don't need a room with a sound system. It runs on battery, which is why the parks and plazas on this list work at all. It's 13 lbs and rides in the car fine.</p>
-    <p>Indoors, ask the front desk before turning it on. Outdoors, keep it low enough that it doesn't carry past the people around us.</p>
+    <p>Elijah brings a JBL PartyBox Encore Essential, so we don't need a room with a sound system. It runs on battery, which is why the parks and plazas on this list work at all.</p>
     <div class="facts">
      <div><b>100W</b><span>Output</span></div>
      <div><b>6 hr</b><span>Battery</span></div>
