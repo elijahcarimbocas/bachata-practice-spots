@@ -169,6 +169,18 @@
  .ss-info{position:relative}
  .ss-info .stamp{top:18px;right:20px;bottom:auto}
 
+ .ss-list{-webkit-mask-image:linear-gradient(#000 86%,transparent);mask-image:linear-gradient(#000 86%,transparent);padding-bottom:40px}
+ @media(max-width:760px){
+  .ss-list{display:flex;flex-wrap:wrap;gap:6px;overflow-x:hidden;overflow-y:auto;max-height:220px;scroll-snap-type:none;padding:2px 0 28px}
+  .ss-list li{flex:none}
+  .ss-item{font-family:var(--body);font-size:14px;font-weight:600;letter-spacing:-.02em;white-space:nowrap;padding:8px 12px;border-radius:960px;background:var(--chip);gap:6px}
+  .ss-item[aria-current="true"]{background:var(--ink);color:#fff}
+  .ss-item .ch i:first-child{opacity:1;transform:none!important}
+  .ss-item .ch i:last-child{display:none}
+  .ss-p{display:inline;font-size:12px;padding-top:0;color:inherit;opacity:.65}
+  .ss-item[aria-current="true"] .ss-p{color:#fff}
+ }
+
  footer{background:var(--ink);color:#b3b3b3;padding:48px 0 64px;font-size:13px}
  footer h4{font-size:14px;font-weight:700;color:#fff;margin-bottom:10px}
  footer ul{list-style:none;display:grid;gap:4px}
@@ -526,12 +538,12 @@ document.getElementById("dayPills").onclick=e=>{const b=e.target.closest("button
 renderDayPills();
 renderRates();
 const HERO=[["Escalante Multi-Generational Center","escalante-multi-generational-center"],["Scottsdale Civic Center","scottsdale-civic-center"],["Soleri Bridge Plaza","soleri-bridge-plaza"],["Pyle Adult Recreation Center","pyle-adult-recreation-center"],["Kiwanis Recreation Center","kiwanis-recreation-center"],["North Tempe Multi-Generational Center","north-tempe-multi-generational-center"]];
-document.getElementById("heroRot").innerHTML=HERO.map(([n,k],i)=>`<img src="${IMG[k][0]}" alt="${esc(n)}" data-name="${esc(n)}"${i?' loading="lazy"':' class="show"'}>`).join("");
+document.getElementById("heroRot").innerHTML=HERO.map(([n,k],i)=>`<img src="${IMG[k][0]}" alt="${esc(n)}" data-name="${esc(n)}"${i?'':' class="show"'}>`).join("");
 document.getElementById("heroCap").textContent=HERO[0][0];
 render();
 if(!matchMedia("(prefers-reduced-motion: reduce)").matches) setInterval(()=>{
  document.querySelectorAll(".rot").forEach(r=>{const im=r.querySelectorAll("img"); if(im.length<2) return;
-  const k=[...im].findIndex(x=>x.classList.contains("show")); im[k].classList.remove("show"); im[(k+1)%im.length].classList.add("show"); if(r.id==="heroRot") document.getElementById("heroCap").textContent=im[(k+1)%im.length].dataset.name;});
+  const k=[...im].findIndex(x=>x.classList.contains("show")); im[k].classList.remove("show"); im[(k+1)%im.length].classList.add("show"); if(r.id==="heroRot"){const nm=im[(k+1)%im.length].dataset.name; setTimeout(()=>{document.getElementById("heroCap").textContent=nm},450);}});
 },3500);
 </script>
 </body>
