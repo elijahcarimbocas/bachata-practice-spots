@@ -164,8 +164,9 @@
  .np{color:var(--ash)}
  table.rates.resp{min-width:720px}
  .resp .ans{font-weight:700;white-space:nowrap}
+ .resp .tm{white-space:nowrap;color:var(--ink)}
  .resp .yes{color:#1f7a3a}.resp .no{color:#d62828}.resp .wait{color:var(--ash)}
- @media(max-width:760px){table.rates.resp,.resp tbody{display:block;width:100%;min-width:0}.resp thead{display:none}.resp tr,.resp td{display:block}.resp tr{border-top:1px solid #eee;padding:10px 0}.resp tr:first-child{border-top:0}.resp td{border-top:0;padding:4px 16px}.resp td:nth-child(4)::before{content:"Next step: ";font-weight:700;color:var(--ink)}}
+ @media(max-width:760px){table.rates.resp,.resp tbody{display:block;width:100%;min-width:0}.resp thead{display:none}.resp tr,.resp td{display:block}.resp tr{border-top:1px solid #eee;padding:10px 0}.resp tr:first-child{border-top:0}.resp td{border-top:0;padding:4px 16px}.resp td.tm::before{content:"Times: ";font-weight:700;color:var(--ink)}.resp td.tm{white-space:normal}.resp td:nth-child(5)::before{content:"Next step: ";font-weight:700;color:var(--ink)}}
 
  .hero-rot{aspect-ratio:4/5;max-height:520px;width:100%;border-radius:12px;overflow:hidden;border:6px solid #fff;box-shadow:var(--shadow-lg);background:#2a1033}
  .hero-cap{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.9);margin-top:12px}
@@ -179,6 +180,7 @@
  .rates td.hit{color:var(--ink);font-weight:700}
 
  .stamp{position:absolute;right:12px;bottom:12px;z-index:2;transform:rotate(-8deg);border:3px solid #d62828;color:#d62828;background:rgba(255,255,255,.88);border-radius:6px;padding:4px 10px;font-weight:800;font-size:13px;letter-spacing:.12em;text-transform:uppercase;box-shadow:0 0 0 2px rgba(214,40,40,.15) inset}
+ .stamp.no{background:#d62828;color:#fff;font-size:15px;letter-spacing:.16em}
  .stamp.draft{border-color:#8a8a8a;color:#5a5a5a;transform:rotate(-4deg)}
  .ss-info{position:relative}
  .ss-info .stamp{top:18px;right:20px;bottom:auto}
@@ -239,10 +241,10 @@
  <div class="wrap">
   <h2>Responses</h2>
   <p class="sub">Who wrote back to Mark's emails so far, and what they said.</p>
-  <div class="rates-wrap"><table class="rates resp"><thead><tr><th>Place</th><th>Answer</th><th>What they said</th><th>Next step</th></tr></thead><tbody>
-   <tr><td><b>Westside Multi-Generational Center</b><br>Tempe</td><td class="ans yes">Yes</td><td>Tue and Thu evenings are open. One room 6 to 9 PM, another 7 to 9 PM. $5/hr resident, $10/hr non-resident. 2-hour minimum, paid in full two weeks ahead. Mon, Wed and Fri nights go to a night school.</td><td>Fill out the <a href="files/westside-room-form.pdf" target="_blank" rel="noopener">room form</a> and send dates. Check the amplified sound box.</td></tr>
-   <tr><td><b>Tumbleweed Recreation Center</b><br>Chandler</td><td class="ans no">No</td><td>No dance practice in the Meeting Room or any other space, and no speakers anywhere in the building.</td><td>Off the list.</td></tr>
-   <tr><td><b>Mesa Parks reservations</b><br>Mesa</td><td class="ans wait">Auto-reply</td><td>Their team answers Mon to Thu, 7 AM to 6 PM.</td><td>Wait for a real answer.</td></tr>
+  <div class="rates-wrap"><table class="rates resp"><thead><tr><th>Place</th><th>Answer</th><th>Times</th><th>What they said</th><th>Next step</th></tr></thead><tbody>
+   <tr><td><b>Westside Multi-Generational Center</b><br>Tempe</td><td class="ans yes">Yes</td><td class="tm">Tue and Thu<br>6 to 9 PM (one room)<br>7 to 9 PM (other room)</td><td>$5/hr resident, $10/hr non-resident. 2-hour minimum, paid in full two weeks ahead. Mon, Wed and Fri nights go to a night school.</td><td>Fill out the <a href="files/westside-room-form.pdf" target="_blank" rel="noopener">room form</a> and send dates. Check the amplified sound box.</td></tr>
+   <tr><td><b>Tumbleweed Recreation Center</b><br>Chandler</td><td class="ans no">No</td><td class="tm">None</td><td>No dance practice in the Meeting Room or any other space, and no speakers anywhere in the building.</td><td>Off the list.</td></tr>
+   <tr><td><b>Mesa Parks reservations</b><br>Mesa</td><td class="ans wait">Auto-reply</td><td class="tm">Not yet</td><td>Their team answers emails Mon to Thu, 7 AM to 6 PM.</td><td>Wait for a real answer.</td></tr>
   </tbody></table></div>
  </div>
 </section>
@@ -424,7 +426,8 @@ const RATES = [{"city": "Scottsdale", "center": "Eldorado Aquatic & Fitness Cent
 const CONTACTED={"Escalante Multi-Generational Center": "10-6", "North Tempe Multi-Generational Center": "10-6", "Pyle Adult Recreation Center": "10-6", "Westside Multi-Generational Center": "10-6", "Clark Park Community Center": "10-6", "Kiwanis Recreation Center": "10-6", "Red Mountain Center": "10-6", "Eagles Community Center open gym": "10-6", "Freestone Recreation Center": "10-6", "Tumbleweed Recreation Center": "10-6", "Granite Reef Senior Center": "10-6", "Via Linda Senior Center": "10-6", "Eldorado Aquatic & Fitness Center": "10-6", "Mesa Arts Center Dance Studio": "10-6", "Club SAR": "10-6"};
 // Places with an email drafted in Gmail but not sent yet.
 const DRAFTED=new Set([]);
-const stamp=s=>CONTACTED[s.n]?`<span class="stamp">Contacted ${esc(CONTACTED[s.n])}</span>`:(DRAFTED.has(s.n)?`<span class="stamp draft">Draft ready</span>`:"");
+const DECLINED=new Set(["Tumbleweed Recreation Center"]);
+const stamp=s=>DECLINED.has(s.n)?`<span class="stamp no">No</span>`:CONTACTED[s.n]?`<span class="stamp">Contacted ${esc(CONTACTED[s.n])}</span>`:(DRAFTED.has(s.n)?`<span class="stamp draft">Draft ready</span>`:"");
 const TYPES=["All","Indoor","Outdoor","Rec center"];
 const REC=new Set(["Clark Park Community Center","Eagles Community Center open gym","Freestone Recreation Center","Tumbleweed Recreation Center","Eldorado Aquatic & Fitness Center","Club SAR","Kiwanis Recreation Center","Red Mountain Center","Escalante Multi-Generational Center","North Tempe Multi-Generational Center","Pyle Adult Recreation Center","Westside Multi-Generational Center","Granite Reef Senior Center","Via Linda Senior Center"]);
 const typeOk=s=>type==="All"||(type==="Rec center"?REC.has(s.n):s.t===type);
