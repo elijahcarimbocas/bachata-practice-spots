@@ -52,10 +52,11 @@
   .hero-body{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:40px;align-items:center;padding-block:72px 64px}
  h1{font-family:var(--disp);font-weight:500;font-size:clamp(2.6rem,6vw,4.6rem);line-height:1;letter-spacing:-.02em;text-wrap:balance}
  .lede{max-width:44ch;font-size:18px;margin-top:16px;color:rgba(255,255,255,.92)}
- header .facts{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
- header .facts div{background:rgba(255,255,255,.16);backdrop-filter:blur(2px);-webkit-backdrop-filter:blur(2px);border-radius:12px;padding:10px 16px;min-width:110px}
+ header .facts{display:grid;grid-template-columns:repeat(4,minmax(0,max-content));gap:10px;margin-top:28px}
+ header .facts div{background:rgba(255,255,255,.16);backdrop-filter:blur(2px);-webkit-backdrop-filter:blur(2px);border-radius:12px;padding:10px 16px}
  header .facts b{display:block;font-family:var(--disp);font-weight:500;font-size:30px;line-height:1.05}
  header .facts span{font-size:13px;color:rgba(255,255,255,.85)}
+ @media(max-width:600px){header .facts{grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}header .facts div{padding:8px 10px}header .facts b{font-size:22px}header .facts span{font-size:11px;display:block;line-height:1.25}}
  .hero-cap{font-size:13px;color:rgba(255,255,255,.85);margin-top:22px}
  @media(max-width:860px){.hero-body{grid-template-columns:1fr;padding-block:48px 40px}}
 
