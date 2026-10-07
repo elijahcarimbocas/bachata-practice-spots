@@ -27,23 +27,16 @@ If nothing good turns up in all three, skip it and list it in the report. Don't 
 
 | Slug | Place | City | Official page |
 |---|---|---|---|
-| eagles-community-center-open-gym | Eagles Community Center (gym floor if possible) | Mesa | https://www.mesaaz.gov/Activities-Culture/Parks-Recreation-and-Community-Facilities/Recreational-Facilities/Eagles-Community-Center |
 | freestone-recreation-center | Freestone Recreation Center | Gilbert | https://www.gilbertaz.gov/departments/parks-and-recreation/recreation-centers-classes/freestone-recreation-center |
-| tumbleweed-recreation-center | Tumbleweed Recreation Center | Chandler | https://www.chandleraz.gov/explore/chandler-recreation/centers-and-facilities/tumbleweed-recreation-center |
-| eldorado-aquatic-fitness-center | Eldorado Aquatic & Fitness Center | Scottsdale | https://www.scottsdaleaz.gov/aquatics/eldorado-pool |
 | club-sar | Club SAR fitness center | Scottsdale | https://www.scottsdaleaz.gov/club-sar-fitness-center |
 | kiwanis-recreation-center | Kiwanis Recreation Center | Tempe | https://www.tempe.gov/government/community-services/community-recreation-centers/kiwanis-recreation-center |
-| red-mountain-center | Red Mountain Center (Mesquite Room if shown) | Mesa | https://www.mesaaz.gov/Activities-Culture/Parks-Recreation-and-Community-Facilities/Recreational-Facilities/Red-Mountain-Center |
 | cdc-studios-creative-dance-collective | CDC Studios ballroom floor | Mesa | https://cdc.dance/studio-rental/ |
-| bright-open-layout-dance-studio-peerspace | Peerspace dance studio listing | Mesa | https://www.peerspace.com/pages/listings/622ab0eef7f27600218584e2 |
 | escalante-multi-generational-center | Escalante Multi-Generational Center | Tempe | https://www.tempe.gov/government/community-services/community-recreation-centers/escalante-multi-generational-center |
 | north-tempe-multi-generational-center | North Tempe Multi-Generational Center | Tempe | https://www.tempe.gov/government/community-services/community-recreation-centers/north-tempe-multi-generational-center |
 | pyle-adult-recreation-center | Pyle Adult Recreation Center | Tempe | https://www.tempe.gov/government/community-services/community-recreation-centers/pyle-adult-recreation-center |
-| chandler-community-center-cotton-room | Chandler Community Center | Chandler | https://www.chandleraz.gov/explore/chandler-recreation/centers-and-facilities/community-center |
-| soleri-bridge-plaza | Soleri Bridge & Plaza (Scottsdale Waterfront) | Scottsdale | https://www.scottsdalepublicart.org/ |
 | riverview-park | Riverview Park | Mesa | https://www.mesaaz.gov/Activities-Culture/Parks-Recreation-and-Community-Facilities/Parks-Facilities/Riverview-Park |
-| water-tower-plaza | Gilbert Water Tower Plaza | Gilbert | https://www.gilbertaz.gov/departments/parks-and-recreation/parks-information/parks/water-tower-park |
 | gilbert-regional-park | Gilbert Regional Park | Gilbert | https://www.gilbertaz.gov/departments/parks-and-recreation/gilbert-s-new-regional-park |
+| westside-multi-generational-center | Westside Multi-Generational Center | Tempe | https://www.tempe.gov/government/community-services/community-recreation-centers/westside-multi-generational-center |
 | freestone-park | Freestone Park | Gilbert | https://www.gilbertaz.gov/freestone-park |
 
 ## Hard rules
