@@ -161,6 +161,7 @@
  .dayfilter{display:flex;flex-direction:column;gap:8px;font-size:14px;color:var(--slate)}
  .dayfilter .frow{background:var(--chip)}
  @media(max-width:600px){.dayfilter{width:100%}}
+ .rates tr.alt td{background:#fdf0ff}
  .rates td.hit{color:var(--ink);font-weight:700}
 
  .stamp{position:absolute;right:12px;bottom:12px;z-index:2;transform:rotate(-8deg);border:3px solid #d62828;color:#d62828;background:rgba(255,255,255,.88);border-radius:6px;padding:4px 10px;font-weight:800;font-size:13px;letter-spacing:.12em;text-transform:uppercase;box-shadow:0 0 0 2px rgba(214,40,40,.15) inset}
@@ -508,12 +509,12 @@ function renderRates(){
  const rows=day?RATES.filter(r=>r.close[day]):RATES;
  document.getElementById("closeHead").textContent=day?"Closes "+day:"Closes weeknights";
  document.getElementById("rateCount").textContent=day?`${rows.length} of ${RATES.length} centers post hours for ${day}. The rest don't post them, so call first.`:`${RATES.length} centers`;
- let lastCity="";
+ let lastCity="", zi=0;
  document.getElementById("ratesBody").innerHTML=rows.length?rows.map(r=>{
-  const head=r.city!==lastCity?`<tr class="cityrow"><td colspan="7">${esc(r.city)}</td></tr>`:""; lastCity=r.city;
+  const head=r.city!==lastCity?`<tr class="cityrow"><td colspan="7">${esc(r.city)}</td></tr>`:""; if(head) zi=0; lastCity=r.city; const zc=(zi++%2)?" class=\"alt\"":"";
   const src=r.sources.slice(0,2).map((x,i)=>`<a href="${esc(x.url)}" target="_blank" rel="noopener">${i+1}</a><span class="tag">${esc(x.tag.replace(/[\[\]]/g,""))}</span>`).join(" ");
   const closes=day?`<td class="hit">${esc(r.close[day])}</td>`:`<td>${np(r.closes_weeknight)}</td>`;
-  return head+`<tr><td><b>${esc(r.center)}</b></td><td>${np(r.day_pass_res)} / ${np(r.day_pass_nonres)}</td><td>${np(r.room_name)}</td><td>${np(r.room_rate_res)} / ${np(r.room_rate_nonres)}</td><td>${np(r.room_min_hours)}</td>${closes}<td>${src}</td></tr>`;
+  return head+`<tr${zc}><td><b>${esc(r.center)}</b></td><td>${np(r.day_pass_res)} / ${np(r.day_pass_nonres)}</td><td>${np(r.room_name)}</td><td>${np(r.room_rate_res)} / ${np(r.room_rate_nonres)}</td><td>${np(r.room_min_hours)}</td>${closes}<td>${src}</td></tr>`;
  }).join(""):`<tr><td colspan="7" class="np">None of these centers post ${day} hours. Weekend hours aren't listed anywhere we checked, so call the front desk.</td></tr>`;
 }
 let rateDay="";
