@@ -424,7 +424,7 @@
   "room_name": "Classroom (whiteboard, sink)",
   "room_rate_res": "$5/hr",
   "room_rate_nonres": "$10/hr",
-  "room_min_hours": "not posted",
+  "room_min_hours": "2 hours (all reservations)",
   "room_notes": "Multi-purpose room $30/$60, gym $90/$120. Rentals during business hours.",
   "closes_weeknight": "not posted (rentals to 8:45 p.m. Mon-Fri)",
   "dance_room": "not posted",
