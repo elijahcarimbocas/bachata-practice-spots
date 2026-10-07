@@ -527,7 +527,7 @@ if(!matchMedia("(prefers-reduced-motion: reduce)").matches) setInterval(()=>{
 <script type="module">
 if(!matchMedia("(prefers-reduced-motion: reduce)").matches){
  setTimeout(()=>import("https://cdn.jsdelivr.net/npm/threejs-components@0.0.19/build/cursors/tubes1.min.js")
-  .then(m=>m.default(document.getElementById("tubes"),{tubes:{colors:["#e2552b","#f0a03c","#c9d2db"],lights:{intensity:200,colors:["#e2552b","#f0a03c","#ff7a45","#c9d2db"]}}}))
+  .then(m=>m.default(document.getElementById("tubes"),{tubes:{colors:["#e2552b","#b04ad0","#4b2357"],lights:{intensity:200,colors:["#f8c4ff","#e2552b","#96c4ff","#b04ad0"]}}}))
   .catch(()=>{}),100);
 }
 </script>
