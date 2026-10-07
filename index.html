@@ -158,8 +158,8 @@
  @media(max-width:860px){.hero-rot{aspect-ratio:16/10}}
  .rates-head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap}
  .rates-head > div{flex:1 1 420px;min-width:0}
- .dayfilter{display:flex;flex-direction:column;gap:6px;font-size:14px;color:var(--slate);min-width:220px}
- .dayfilter select{border:1px solid var(--ink);border-radius:8px;padding:12px 14px;background:#fff;font-size:16px;font-weight:600}
+ .dayfilter{display:flex;flex-direction:column;gap:8px;font-size:14px;color:var(--slate)}
+ .dayfilter .frow{background:var(--chip)}
  @media(max-width:600px){.dayfilter{width:100%}}
  .rates td.hit{color:var(--ink);font-weight:700}
 
@@ -245,9 +245,7 @@
   <div class="rates-head">
    <div><h2>Rec center rates</h2>
    <p class="sub">Every city rec center we checked, with the day pass and the cheapest room. We pay non-resident rates everywhere except Scottsdale for Elijah and Mesa for Maddie. Observed means we read it on the city's own page or fee PDF.</p></div>
-   <label class="dayfilter" for="rateDay"><span>Open on</span>
-    <select id="rateDay"><option value="">Any day</option><option>Mon</option><option>Tue</option><option>Wed</option><option>Thu</option><option>Fri</option><option>Sat</option><option>Sun</option></select>
-   </label>
+   <div class="dayfilter"><span>Open on</span><div class="frow" id="dayPills" role="group" aria-label="Open on"></div></div>
   </div>
   <p class="count" id="rateCount"></p>
   <div class="rates-wrap"><table class="rates"><thead><tr><th>Center</th><th>Day pass (res / non-res)</th><th>Cheapest room</th><th>Room rate (res / non-res)</th><th>Minimum</th><th id="closeHead">Closes weeknights</th><th>Source</th></tr></thead><tbody id="ratesBody"></tbody></table></div>
@@ -503,7 +501,7 @@ function closeMap(str){
 }
 RATES.forEach(r=>r.close=closeMap(r.closes_weeknight));
 function renderRates(){
- const day=document.getElementById("rateDay").value;
+ const day=rateDay;
  const rows=day?RATES.filter(r=>r.close[day]):RATES;
  document.getElementById("closeHead").textContent=day?"Closes "+day:"Closes weeknights";
  document.getElementById("rateCount").textContent=day?`${rows.length} of ${RATES.length} centers post hours for ${day}. The rest don't post them, so call first.`:`${RATES.length} centers`;
@@ -515,9 +513,15 @@ function renderRates(){
   return head+`<tr><td><b>${esc(r.center)}</b></td><td>${np(r.day_pass_res)} / ${np(r.day_pass_nonres)}</td><td>${np(r.room_name)}</td><td>${np(r.room_rate_res)} / ${np(r.room_rate_nonres)}</td><td>${np(r.room_min_hours)}</td>${closes}<td>${src}</td></tr>`;
  }).join(""):`<tr><td colspan="7" class="np">None of these centers post ${day} hours. Weekend hours aren't listed anywhere we checked, so call the front desk.</td></tr>`;
 }
-document.getElementById("rateDay").onchange=renderRates;
+let rateDay="";
+function renderDayPills(){
+ const el=document.getElementById("dayPills");
+ el.innerHTML=[["","Any"],...DAYS.map(d=>[d,d])].map(([v,l])=>`<button type="button" class="f" aria-pressed="${v===rateDay}" data-v="${v}">${l}</button>`).join("");
+}
+document.getElementById("dayPills").onclick=e=>{const b=e.target.closest("button"); if(!b) return; rateDay=b.dataset.v; renderDayPills(); renderRates();};
+renderDayPills();
 renderRates();
-const HERO=[["Rio Salado circle at Tempe Arts Park","rio-salado-circle-at-tempe-arts-park"],["Scottsdale Civic Center","scottsdale-civic-center"],["Soleri Bridge Plaza","soleri-bridge-plaza"],["Pyle Adult Recreation Center","pyle-adult-recreation-center"],["Kiwanis Recreation Center","kiwanis-recreation-center"],["North Tempe Multi-Generational Center","north-tempe-multi-generational-center"]];
+const HERO=[["Escalante Multi-Generational Center","escalante-multi-generational-center"],["Scottsdale Civic Center","scottsdale-civic-center"],["Soleri Bridge Plaza","soleri-bridge-plaza"],["Pyle Adult Recreation Center","pyle-adult-recreation-center"],["Kiwanis Recreation Center","kiwanis-recreation-center"],["North Tempe Multi-Generational Center","north-tempe-multi-generational-center"]];
 document.getElementById("heroRot").innerHTML=HERO.map(([n,k],i)=>`<img src="${IMG[k][0]}" alt="${esc(n)}" data-name="${esc(n)}"${i?' loading="lazy"':' class="show"'}>`).join("");
 document.getElementById("heroCap").textContent=HERO[0][0];
 render();
