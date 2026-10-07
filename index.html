@@ -282,13 +282,6 @@
  </div>
 </section>
 
-<footer>
- <div class="wrap">
-  <h4>Photo credits</h4>
-  <ul id="credits"></ul>
-  <p style="margin-top:14px">Other photos come from each place's own page. Places without a photo show a placeholder.</p>
- </div>
-</footer>
 
 <script>
 const S = [
@@ -521,7 +514,6 @@ document.getElementById("f-free").textContent=S.filter(s=>s.p===0).length;
 document.getElementById("f-all").textContent=S.length;
 document.getElementById("f-sent").textContent=Object.keys(CONTACTED).length;
 document.getElementById("f-cheap").textContent="$"+Math.min(...S.filter(s=>s.t==="Indoor"&&s.p>0).map(s=>s.p));
-document.getElementById("credits").innerHTML=CREDITS.map(c=>`<li>${esc(c[0])}: <a href="${c[3]}" target="_blank" rel="noopener">${esc(c[1])}</a>, ${c[2].startsWith("Esri")?"":"Wikimedia Commons, "}${esc(c[2])}</li>`).join("");
 document.getElementById("sort").onchange=e=>{sort=e.target.value;render()};
 
 const np=v=>/not posted|n\/a/i.test(v)?`<span class="np">${esc(v)}</span>`:`<b>${esc(v)}</b>`;
