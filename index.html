@@ -40,21 +40,25 @@
  header{position:relative;overflow:hidden;border-bottom:1px solid var(--line);isolation:isolate}
  #tubes{position:fixed;inset:0;width:100%;height:100%;z-index:0;display:block}
  header,section,footer{position:relative;z-index:1}
- header::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background:linear-gradient(105deg,rgba(10,12,15,.7) 0%,rgba(10,12,15,.25) 60%,transparent 100%)}
- section,footer{background:rgba(10,12,15,.62)}
+ header::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background:linear-gradient(105deg,rgba(10,12,15,.55) 0%,rgba(10,12,15,.1) 55%,transparent 100%)}
+ section,footer{background:rgba(10,12,15,.38)}
  h1{text-shadow:0 0 24px rgba(10,12,15,.9)}
- .hero-body{padding-top:84px}
+ .hero-body{padding-top:40px;display:grid;grid-template-columns:minmax(0,6fr) minmax(0,5fr);gap:40px;align-items:center}
+ .hero-rot{aspect-ratio:4/5;border:1px solid var(--line2);border-top:2px solid var(--orange);background:var(--steel);max-height:520px;width:100%}
+ .hero-rot img{filter:saturate(.9)}
+ .hero-cap{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--fog);margin-top:8px;font-weight:600}
+ @media(max-width:860px){.hero-body{grid-template-columns:1fr;gap:24px}.hero-rot{aspect-ratio:16/10}}
  h1{font-family:var(--disp);font-weight:900;font-size:clamp(2.4rem,6.5vw,4.4rem);line-height:.86;text-transform:uppercase}
  h1 .l2{color:var(--orange)}
  .lede{max-width:440px;color:var(--fog);margin-top:20px;line-height:1.65}
- .facts{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));max-width:640px;margin:40px 0 34px;border-top:1px solid var(--line2);border-bottom:1px solid var(--line2);background:rgba(10,12,15,.5)}
+ .facts{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));max-width:640px;margin:28px 0 30px;border-top:1px solid var(--line2);border-bottom:1px solid var(--line2);background:rgba(10,12,15,.5)}
  .facts div{padding:14px 10px 12px;text-align:center;border-right:1px solid var(--line)}
  .facts div:last-child{border-right:0}
  .facts b{display:block;font-family:var(--disp);font-weight:800;font-size:clamp(28px,6vw,42px);line-height:1;font-variant-numeric:tabular-nums}
  .facts div:first-child b{color:var(--orange)}
  .facts span{display:block;font-size:9.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);margin-top:7px;font-weight:600}
 
- section{padding:64px 0;position:relative}
+ section{padding:44px 0;position:relative}
  section::before{content:"";position:absolute;top:0;left:0;right:0;height:9px;background:var(--cable);opacity:.55}
  h2{font-family:var(--disp);font-weight:800;font-size:clamp(2.2rem,6vw,3.6rem);line-height:.92;text-transform:uppercase}
  .sub{color:var(--muted);max-width:520px;margin-top:12px;font-size:14.5px}
@@ -184,10 +188,11 @@
 </head>
 <body>
 <canvas id="tubes" aria-hidden="true"></canvas>
-<nav><div class="wrap"><a class="logo" href="#top">Practice <b>Spots</b></a><a class="back" href="https://elijahcarimbocas.github.io/sf-sbk-2026/">Road to SBK</a></div></nav>
+<nav><div class="wrap"><a class="logo" href="#top">Practice <b>Spots</b></a></div></nav>
 
 <header id="top">
  <div class="wrap hero-body">
+  <div>
   <h1>Where to<br><span class="l2">practice</span><br>for cheap</h1>
   <p class="lede">Rec centers, studios and parks across the East Valley, everything $30 or less, cheapest first. Prices checked October 2026. Call before you drive.</p>
   <div class="facts">
@@ -196,6 +201,8 @@
    <div><b>5</b><span>Cities</span></div>
    <div><b id="f-all">0</b><span>Places</span></div>
   </div>
+  </div>
+  <figure><div class="hero-rot rot" id="heroRot"></div><figcaption class="hero-cap" id="heroCap"></figcaption></figure>
  </div>
 </header>
 
@@ -289,7 +296,6 @@ const S = [
   {n:"SkySong plaza", c:"Scottsdale", t:"Outdoor", p:0, pl:"Free", pn:"hours not checked", what:"Large paved plaza under the shade sail at Scottsdale Rd and McDowell.", catch:"Private property. Not checked, security may ask you to move.", contact:"", url:"https://www.google.com/maps/search/?api=1&query=SkySong%20Scottsdale%20AZ", q:"SkySong Scottsdale AZ"},
   {n:"Kiwanis Park", c:"Tempe", t:"Outdoor", p:0, pl:"Free", pn:"6 AM-midnight", what:"Big lit park around the Kiwanis Rec Center, with ramadas on concrete pads.", catch:"Ramadas can be reserved by groups.", contact:"Mill Ave and All America Way", url:"https://www.tempe.gov/Home/Components/FacilityDirectory/FacilityDirectory/120/3542", q:"Kiwanis Park Tempe AZ"},
   {n:"Rio Salado circle at Tempe Arts Park", c:"Tempe", t:"Outdoor", p:0, pl:"Free", pn:"park hours", what:"Big smooth concrete circle on the Rio Salado Path, right next to the Tempe Center for the Arts on Town Lake. Skaters use it at sunset.", catch:"The building closes at 5 PM. The grounds follow park hours (check).", contact:"", url:"https://www.downtowntempe.com/go/tempe-arts-park", q:"Tempe Center for the Arts Tempe AZ"},
-  {n:"Town Lake bridges", c:"Tempe", t:"Outdoor", p:0, pl:"Free", pn:"hours not checked", what:"Mill Ave bridge is lit with string lights at night. Elmore is a paved pedestrian bridge.", catch:"Narrow, with walkers and bikes passing through.", contact:"", url:"https://www.tempe.gov/government/community-services/tempe-town-lake/public-projects-at-town-lake/bridges-of-town-lake", q:"Tempe Town Lake pedestrian bridge"},
   {n:"ASU Tempe campus plazas", c:"Tempe", t:"Outdoor", p:0, pl:"Free", pn:"campus open", what:"Lit paved plazas around Gammage and Palm Walk. Dancers practice on campus at night.", catch:"Not checked against campus rules.", contact:"", url:"https://www.google.com/maps/search/?api=1&query=ASU%20Gammage%20Tempe%20AZ", q:"ASU Gammage Tempe AZ"},
   {n:"Tempe Marketplace District Stage", c:"Tempe", t:"Outdoor", p:0, pl:"Free", pn:"mall hours", what:"Paved plaza in the middle of the shopping center.", catch:"Private property, and bands play Thu-Sun.", contact:"2000 E Rio Salado Pkwy", url:"https://tempemarketplace.com/", q:"Tempe Marketplace District Stage"},
   {n:"Mesa Arts Center Shadow Walk", c:"Mesa", t:"Outdoor", p:0, pl:"Free", pn:"night access unconfirmed", what:"704 ft shaded paved walkway, lit at night, with informal performance areas.", catch:"Building hours are Tue-Sat noon-5 PM. Check that the walkway stays open after dark.", contact:"Main St and Center St", url:"https://www.architectmagazine.com/technology/lighting/shadow-walk-mesa-ariz_o", q:"Mesa Arts Center Mesa AZ"},
@@ -336,11 +342,6 @@ const IMG = {
 "img/tempe-arts-park-tempe-center-for-the-art-c1.jpg",
 "img/tempe-arts-park-tempe-center-for-the-art-c6.jpg"
 ],
-"town-lake-bridges": [
-"img/town-lake-bridges.jpg",
-"img/town-lake-bridges-c1.jpg",
-"img/town-lake-bridges-c5.jpg"
-],
 "asu-tempe-campus-plazas": [
 "img/asu-tempe-campus-plazas.jpg"
 ],
@@ -374,9 +375,28 @@ const IMG = {
 ],
 "via-linda-senior-center": [
 "img/via-linda-senior-center.jpg"
+],
+"kiwanis-recreation-center": [
+"img/kiwanis-recreation-center.jpg"
+],
+"north-tempe-multi-generational-center": [
+"img/north-tempe-multi-generational-center.jpg"
+],
+"escalante-multi-generational-center": [
+"img/escalante-multi-generational-center.jpg"
+],
+"westside-multi-generational-center": [
+"img/westside-multi-generational-center.jpg"
+],
+"freestone-recreation-center": [
+"img/freestone-recreation-center.jpg"
+],
+"pyle-adult-recreation-center": [
+"img/pyle-adult-recreation-center.jpg",
+"img/pyle-adult-recreation-center-2.jpg"
 ]
 };
-const CREDITS = [["skysong plaza", "ASU SkySong Campus, Scottsdale (Panoramio)", "CC BY 3.0", "https://commons.wikimedia.org/wiki/File:Arizona_State_University_Sky_Song_Campus,_Scottsdale,_AZ_-_panoramio.jpg"], ["kiwanis park", "Tempe Kiwanis Park (Panoramio)", "CC BY 3.0", "https://commons.wikimedia.org/wiki/File:Tempe_Kiwanis_Park_Baseball_Field_-_panoramio.jpg"], ["tempe arts park tempe center for the art", "Tempe Center for the Arts", "CC BY-SA 3.0", "https://commons.wikimedia.org/wiki/File:Tempe_Center_for_the_Arts_-_NWC_-_2009-09-04.JPG"], ["town lake bridges", "Tempe Town Lake Pedestrian Bridge", "CC BY 2.0", "https://commons.wikimedia.org/wiki/File:Tempe_Town_Lake_Pedestrian_Bridge,_black_and_white.jpg"], ["asu tempe campus plazas", "Gammage Auditorium, ASU", "CC BY 2.5", "https://commons.wikimedia.org/wiki/File:FLW_Gammage_Auditorium_ASU_PHX_AZ_20186.JPG"], ["tempe marketplace district stage", "Tempe Marketplace", "CC BY-SA 3.0", "https://commons.wikimedia.org/wiki/File:Tempe_Marketplace_-_2008-04-17_-_Image1.JPG"], ["kiwanis park", "Kiwanis Park Walk Path - panoramio.jpg", "CC BY 3.0", "https://commons.wikimedia.org/wiki/File:Kiwanis_Park_Walk_Path_-_panoramio.jpg"], ["kiwanis park", "Kiwanis Park Distant Bridge Structure - panoramio.jpg", "CC BY 3.0", "https://commons.wikimedia.org/wiki/File:Kiwanis_Park_Distant_Bridge_Structure_-_panoramio.jpg"], ["tempe arts park tempe center for the art", "Tempe Center for the Arts - West - 2009-09-04.JPG", "CC BY-SA 3.0", "https://commons.wikimedia.org/wiki/File:Tempe_Center_for_the_Arts_-_West_-_2009-09-04.JPG"], ["tempe arts park tempe center for the art", "Evening at Tempe Center for the Arts - panoramio.jpg", "CC BY 3.0", "https://commons.wikimedia.org/wiki/File:Evening_at_Tempe_Center_for_the_Arts_-_panoramio.jpg"], ["town lake bridges", "Tempe Town Lake Walk Bridge, Tempe, Arizona - panoramio.jpg", "CC BY 3.0", "https://commons.wikimedia.org/wiki/File:Tempe_Town_Lake_Walk_Bridge,_Tempe,_Arizona_-_panoramio.jpg"], ["town lake bridges", "Tempe town lake bridge 07042006.jpg", "CC BY-SA 3.0", "https://commons.wikimedia.org/wiki/File:Tempe_town_lake_bridge_07042006.jpg"], ["tempe marketplace district stage", "Tempe Marketplace - 2009-04-13 - Image9.JPG", "CC BY-SA 3.0", "https://commons.wikimedia.org/wiki/File:Tempe_Marketplace_-_2009-04-13_-_Image9.JPG"], ["tempe marketplace district stage", "Tempe Marketplace - 2008-04-17 - Image4.JPG", "CC BY-SA 3.0", "https://commons.wikimedia.org/wiki/File:Tempe_Marketplace_-_2008-04-17_-_Image4.JPG"], ["skysong plaza", "Skysong - East - 2010-02-18.jpg", "CC BY-SA 3.0", "https://commons.wikimedia.org/wiki/File:Skysong_-_East_-_2010-02-18.jpg"], ["skysong plaza", "Arizona State University Sky Song Campus, Scottsdale, AZ - panoramio (5).jpg", "CC BY 3.0", "https://commons.wikimedia.org/wiki/File:Arizona_State_University_Sky_Song_Campus,_Scottsdale,_AZ_-_panoramio_(5).jpg"], ["soleri bridge plaza", "Soleri bridge Scottsdale 003.JPG", "CC0", "https://commons.wikimedia.org/wiki/File:Soleri_bridge_Scottsdale_003.JPG"], ["soleri bridge plaza", "View of Scottsdale Waterfront from the new Marshall Way pedestrian bridge.jpg", "CC BY-SA 3.0", "https://commons.wikimedia.org/wiki/File:View_of_Scottsdale_Waterfront_from_the_new_Marshall_Way_pedestrian_bridge.jpg"], ["mesa arts center shadow walk", "Mesa Arts Center - West - 2009-09-16.JPG", "CC BY-SA 3.0", "https://commons.wikimedia.org/wiki/File:Mesa_Arts_Center_-_West_-_2009-09-16.JPG"], ["mesa arts center shadow walk", "Mesa arts center.jpg", "CC BY-SA 3.0", "https://commons.wikimedia.org/wiki/File:Mesa_arts_center.jpg"], ["water tower plaza", "Gilbert Watertower - North - 2009-09-14.jpg", "CC BY-SA 3.0", "https://commons.wikimedia.org/wiki/File:Gilbert_Watertower_-_North_-_2009-09-14.jpg"], ["water tower plaza", "Downtown Gilbert - SWC Gilbert & Page - 2009-03-23.JPG", "CC BY-SA 3.0", "https://commons.wikimedia.org/wiki/File:Downtown_Gilbert_-_SWC_Gilbert_%26_Page_-_2009-03-23.JPG"], ["pioneer park", "Mesa-Pioneer Park-Mesa Pioneer Monument-3.jpg", "CC BY-SA 4.0", "https://commons.wikimedia.org/wiki/File:Mesa-Pioneer_Park-Mesa_Pioneer_Monument-3.jpg"]];
+const CREDITS = [["skysong plaza", "ASU SkySong Campus, Scottsdale (Panoramio)", "CC BY 3.0", "https://commons.wikimedia.org/wiki/File:Arizona_State_University_Sky_Song_Campus,_Scottsdale,_AZ_-_panoramio.jpg"], ["kiwanis park", "Tempe Kiwanis Park (Panoramio)", "CC BY 3.0", "https://commons.wikimedia.org/wiki/File:Tempe_Kiwanis_Park_Baseball_Field_-_panoramio.jpg"], ["tempe arts park tempe center for the art", "Tempe Center for the Arts", "CC BY-SA 3.0", "https://commons.wikimedia.org/wiki/File:Tempe_Center_for_the_Arts_-_NWC_-_2009-09-04.JPG"], ["asu tempe campus plazas", "Gammage Auditorium, ASU", "CC BY 2.5", "https://commons.wikimedia.org/wiki/File:FLW_Gammage_Auditorium_ASU_PHX_AZ_20186.JPG"], ["tempe marketplace district stage", "Tempe Marketplace", "CC BY-SA 3.0", "https://commons.wikimedia.org/wiki/File:Tempe_Marketplace_-_2008-04-17_-_Image1.JPG"], ["kiwanis park", "Kiwanis Park Walk Path - panoramio.jpg", "CC BY 3.0", "https://commons.wikimedia.org/wiki/File:Kiwanis_Park_Walk_Path_-_panoramio.jpg"], ["kiwanis park", "Kiwanis Park Distant Bridge Structure - panoramio.jpg", "CC BY 3.0", "https://commons.wikimedia.org/wiki/File:Kiwanis_Park_Distant_Bridge_Structure_-_panoramio.jpg"], ["tempe arts park tempe center for the art", "Tempe Center for the Arts - West - 2009-09-04.JPG", "CC BY-SA 3.0", "https://commons.wikimedia.org/wiki/File:Tempe_Center_for_the_Arts_-_West_-_2009-09-04.JPG"], ["tempe arts park tempe center for the art", "Evening at Tempe Center for the Arts - panoramio.jpg", "CC BY 3.0", "https://commons.wikimedia.org/wiki/File:Evening_at_Tempe_Center_for_the_Arts_-_panoramio.jpg"], ["tempe marketplace district stage", "Tempe Marketplace - 2009-04-13 - Image9.JPG", "CC BY-SA 3.0", "https://commons.wikimedia.org/wiki/File:Tempe_Marketplace_-_2009-04-13_-_Image9.JPG"], ["tempe marketplace district stage", "Tempe Marketplace - 2008-04-17 - Image4.JPG", "CC BY-SA 3.0", "https://commons.wikimedia.org/wiki/File:Tempe_Marketplace_-_2008-04-17_-_Image4.JPG"], ["skysong plaza", "Skysong - East - 2010-02-18.jpg", "CC BY-SA 3.0", "https://commons.wikimedia.org/wiki/File:Skysong_-_East_-_2010-02-18.jpg"], ["skysong plaza", "Arizona State University Sky Song Campus, Scottsdale, AZ - panoramio (5).jpg", "CC BY 3.0", "https://commons.wikimedia.org/wiki/File:Arizona_State_University_Sky_Song_Campus,_Scottsdale,_AZ_-_panoramio_(5).jpg"], ["soleri bridge plaza", "Soleri bridge Scottsdale 003.JPG", "CC0", "https://commons.wikimedia.org/wiki/File:Soleri_bridge_Scottsdale_003.JPG"], ["soleri bridge plaza", "View of Scottsdale Waterfront from the new Marshall Way pedestrian bridge.jpg", "CC BY-SA 3.0", "https://commons.wikimedia.org/wiki/File:View_of_Scottsdale_Waterfront_from_the_new_Marshall_Way_pedestrian_bridge.jpg"], ["mesa arts center shadow walk", "Mesa Arts Center - West - 2009-09-16.JPG", "CC BY-SA 3.0", "https://commons.wikimedia.org/wiki/File:Mesa_Arts_Center_-_West_-_2009-09-16.JPG"], ["mesa arts center shadow walk", "Mesa arts center.jpg", "CC BY-SA 3.0", "https://commons.wikimedia.org/wiki/File:Mesa_arts_center.jpg"], ["water tower plaza", "Gilbert Watertower - North - 2009-09-14.jpg", "CC BY-SA 3.0", "https://commons.wikimedia.org/wiki/File:Gilbert_Watertower_-_North_-_2009-09-14.jpg"], ["water tower plaza", "Downtown Gilbert - SWC Gilbert & Page - 2009-03-23.JPG", "CC BY-SA 3.0", "https://commons.wikimedia.org/wiki/File:Downtown_Gilbert_-_SWC_Gilbert_%26_Page_-_2009-03-23.JPG"], ["pioneer park", "Mesa-Pioneer Park-Mesa Pioneer Monument-3.jpg", "CC BY-SA 4.0", "https://commons.wikimedia.org/wiki/File:Mesa-Pioneer_Park-Mesa_Pioneer_Monument-3.jpg"]];
 const PICKS = [
  ["CDC Studios (Creative Dance Collective)","Best indoor deal"],
  ["Eagles Community Center open gym","Cheapest with AC"],
@@ -481,10 +501,13 @@ document.getElementById("ratesBody").innerHTML=RATES.map(r=>{
  const src=r.sources.slice(0,2).map((x,i)=>`<a href="${esc(x.url)}" target="_blank" rel="noopener">${i+1}</a><span class="tag">${esc(x.tag.replace(/[\[\]]/g,""))}</span>`).join(" ");
  return head+`<tr><td><b>${esc(r.center)}</b></td><td>${np(r.day_pass_res)} / ${np(r.day_pass_nonres)}</td><td>${np(r.room_name)}</td><td>${np(r.room_rate_res)} / ${np(r.room_rate_nonres)}</td><td>${np(r.room_min_hours)}</td><td>${np(r.closes_weeknight)}</td><td>${src}</td></tr>`;
 }).join("");
+const HERO=[["Rio Salado circle at Tempe Arts Park","rio-salado-circle-at-tempe-arts-park"],["Scottsdale Civic Center","scottsdale-civic-center"],["Soleri Bridge Plaza","soleri-bridge-plaza"],["Pyle Adult Recreation Center","pyle-adult-recreation-center"],["Mesa Arts Center Shadow Walk","mesa-arts-center-shadow-walk"],["North Tempe Multi-Generational Center","north-tempe-multi-generational-center"]];
+document.getElementById("heroRot").innerHTML=HERO.map(([n,k],i)=>`<img src="${IMG[k][0]}" alt="${esc(n)}" data-name="${esc(n)}"${i?' loading="lazy"':' class="show"'}>`).join("");
+document.getElementById("heroCap").textContent=HERO[0][0];
 render();
 if(!matchMedia("(prefers-reduced-motion: reduce)").matches) setInterval(()=>{
  document.querySelectorAll(".rot").forEach(r=>{const im=r.querySelectorAll("img"); if(im.length<2) return;
-  const k=[...im].findIndex(x=>x.classList.contains("show")); im[k].classList.remove("show"); im[(k+1)%im.length].classList.add("show")});
+  const k=[...im].findIndex(x=>x.classList.contains("show")); im[k].classList.remove("show"); im[(k+1)%im.length].classList.add("show"); if(r.id==="heroRot") document.getElementById("heroCap").textContent=im[(k+1)%im.length].dataset.name;});
 },3500);
 </script>
 <script type="module">
