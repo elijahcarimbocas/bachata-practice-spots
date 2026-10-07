@@ -244,6 +244,7 @@
   <div class="rates-wrap"><table class="rates resp"><thead><tr><th>Place</th><th>Answer</th><th>Times</th><th>What they said</th><th>Next step</th></tr></thead><tbody>
    <tr><td><b>Westside Multi-Generational Center</b><br>Tempe</td><td class="ans yes">Yes</td><td class="tm">Tue and Thu<br>6 to 9 PM (one room)<br>7 to 9 PM (other room)</td><td>$5/hr resident, $10/hr non-resident. 2-hour minimum, paid in full two weeks ahead. Mon, Wed and Fri nights go to a night school.</td><td>Fill out the <a href="files/westside-room-form.pdf" target="_blank" rel="noopener">room form</a> and send dates. Check the amplified sound box.</td></tr>
    <tr><td><b>Tumbleweed Recreation Center</b><br>Chandler</td><td class="ans no">No</td><td class="tm">None</td><td>No dance practice in the Meeting Room or any other space, and no speakers anywhere in the building.</td><td>Off the list.</td></tr>
+   <tr><td><b>Eldorado Aquatic &amp; Fitness Center</b><br>Scottsdale</td><td class="ans no">No</td><td class="tm">None</td><td>The aquatic center has no group fitness room. The Eldorado Community Center has one, but they don't usually allow drop-in use. They didn't answer the parking question.</td><td>Off the list for drop-in. A booked room at the community center goes through Scottsdale Facility Booking.</td></tr>
    <tr><td><b>Mesa Parks reservations</b><br>Mesa</td><td class="ans wait">Auto-reply</td><td class="tm">Not yet</td><td>Their team answers emails Mon to Thu, 7 AM to 6 PM.</td><td>Wait for a real answer.</td></tr>
   </tbody></table></div>
  </div>
@@ -426,7 +427,7 @@ const RATES = [{"city": "Scottsdale", "center": "Eldorado Aquatic & Fitness Cent
 const CONTACTED={"Escalante Multi-Generational Center": "10-6", "North Tempe Multi-Generational Center": "10-6", "Pyle Adult Recreation Center": "10-6", "Westside Multi-Generational Center": "10-6", "Clark Park Community Center": "10-6", "Kiwanis Recreation Center": "10-6", "Red Mountain Center": "10-6", "Eagles Community Center open gym": "10-6", "Freestone Recreation Center": "10-6", "Tumbleweed Recreation Center": "10-6", "Granite Reef Senior Center": "10-6", "Via Linda Senior Center": "10-6", "Eldorado Aquatic & Fitness Center": "10-6", "Mesa Arts Center Dance Studio": "10-6", "Club SAR": "10-6"};
 // Places with an email drafted in Gmail but not sent yet.
 const DRAFTED=new Set([]);
-const DECLINED=new Set(["Tumbleweed Recreation Center"]);
+const DECLINED=new Set(["Tumbleweed Recreation Center","Eldorado Aquatic & Fitness Center"]);
 const stamp=s=>DECLINED.has(s.n)?`<span class="stamp no">No</span>`:CONTACTED[s.n]?`<span class="stamp">Contacted ${esc(CONTACTED[s.n])}</span>`:(DRAFTED.has(s.n)?`<span class="stamp draft">Draft ready</span>`:"");
 const TYPES=["All","Indoor","Outdoor","Rec center"];
 const REC=new Set(["Clark Park Community Center","Eagles Community Center open gym","Freestone Recreation Center","Tumbleweed Recreation Center","Eldorado Aquatic & Fitness Center","Club SAR","Kiwanis Recreation Center","Red Mountain Center","Escalante Multi-Generational Center","North Tempe Multi-Generational Center","Pyle Adult Recreation Center","Westside Multi-Generational Center","Granite Reef Senior Center","Via Linda Senior Center"]);
