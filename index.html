@@ -181,6 +181,12 @@
   .ss-item[aria-current="true"] .ss-p{color:#fff}
  }
 
+ @media(max-width:760px){.filters{position:static;backdrop-filter:none;-webkit-backdrop-filter:none;background:none}}
+
+ header .facts .sent-tile{background:#fff;border:3px solid #d62828;transform:rotate(-2deg)}
+ header .facts .sent-tile b{color:#d62828}
+ header .facts .sent-tile span{color:#d62828;font-weight:700}
+
  footer{background:var(--ink);color:#b3b3b3;padding:48px 0 64px;font-size:13px}
  footer h4{font-size:14px;font-weight:700;color:#fff;margin-bottom:10px}
  footer ul{list-style:none;display:grid;gap:4px}
@@ -200,6 +206,7 @@
     <div><b id="f-free">0</b><span>Free spots</span></div>
     <div><b>5</b><span>Cities</span></div>
     <div><b id="f-all">0</b><span>Places</span></div>
+    <div class="sent-tile"><b id="f-sent">0</b><span>Places Mark emailed</span></div>
    </div>
   </div>
   <figure><div class="hero-rot rot" id="heroRot"></div><figcaption class="hero-cap" id="heroCap"></figcaption></figure>
@@ -503,6 +510,7 @@ $("ssImgs").addEventListener("pointerdown",e=>x0=e.clientX);
 $("ssImgs").addEventListener("pointerup",e=>{if(x0===null)return; const dx=e.clientX-x0; x0=null; if(Math.abs(dx)>40) go(active+(dx<0?1:-1))});
 document.getElementById("f-free").textContent=S.filter(s=>s.p===0).length;
 document.getElementById("f-all").textContent=S.length;
+document.getElementById("f-sent").textContent=Object.keys(CONTACTED).length;
 document.getElementById("f-cheap").textContent="$"+Math.min(...S.filter(s=>s.t==="Indoor"&&s.p>0).map(s=>s.p));
 document.getElementById("credits").innerHTML=CREDITS.map(c=>`<li>${esc(c[0])}: <a href="${c[3]}" target="_blank" rel="noopener">${esc(c[1])}</a>, ${c[2].startsWith("Esri")?"":"Wikimedia Commons, "}${esc(c[2])}</li>`).join("");
 document.getElementById("sort").onchange=e=>{sort=e.target.value;render()};
