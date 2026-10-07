@@ -1,786 +1,806 @@
 [
-  {
-    "city": "Scottsdale",
-    "center": "Eldorado Aquatic & Fitness Center",
-    "address": "2301 N. Miller Road, Scottsdale",
-    "day_pass_res": "$4",
-    "day_pass_nonres": "$6",
-    "room_name": "not posted (aquatic reservable spaces are summer-only)",
-    "room_rate_res": "not posted",
-    "room_rate_nonres": "not posted",
-    "room_min_hours": "not posted",
-    "room_notes": "Day pass is lap swim + fitness center. Indoor rooms at Eldorado Park are booked through the Facility Booking Office (480-312-7707). Scottsdale indoor rooms are priced by size, same for resident and non-resident: Extra Small (cap 20) $5/hr, Small (<500 sf) $20/hr, Medium $25/hr, Large $40/hr, XL $60/hr (fee schedule eff. 7/1/2025). Which rooms at this center fall in which band is not posted.",
-    "closes_weeknight": "not posted (pool/fitness hours vary month to month per city page)",
-    "dance_room": "Aerobic and fitness classes are held here; no dance room named",
-    "sources": [
-      {
-        "url": "https://www.scottsdaleaz.gov/docs/default-source/scottsdaleaz/park---recreation/find-a-park-maps/community-services-rates.pdf",
-        "tag": "Observed"
-      },
-      {
-        "url": "https://www.scottsdaleaz.gov/aquatics/eldorado-pool",
-        "tag": "Observed"
-      },
-      {
-        "url": "https://www.scottsdaleaz.gov/parks/reservations",
-        "tag": "Observed"
-      }
-    ]
-  },
-  {
-    "city": "Scottsdale",
-    "center": "Eldorado Community Center (Eldorado Park)",
-    "address": "1891 N. Miller Road, Scottsdale, AZ 85257",
-    "day_pass_res": "$5/year open gym card (gym only)",
-    "day_pass_nonres": "$5/year open gym card (residency split not posted)",
-    "room_name": "Indoor rooms (names not posted)",
-    "room_rate_res": "$5-60/hr by size band",
-    "room_rate_nonres": "$5-60/hr by size band",
-    "room_min_hours": "not posted",
-    "room_notes": "Open gym card covers drop-in basketball/volleyball in the Eldorado CC gym. Scottsdale indoor rooms are priced by size, same for resident and non-resident: Extra Small (cap 20) $5/hr, Small (<500 sf) $20/hr, Medium $25/hr, Large $40/hr, XL $60/hr (fee schedule eff. 7/1/2025). Which rooms at this center fall in which band is not posted.",
-    "closes_weeknight": "8 p.m. (Mon-Fri 9 a.m.-8 p.m.)",
-    "dance_room": "not posted",
-    "sources": [
-      {
-        "url": "https://www.scottsdaleaz.gov/parks/find-a-park/eldorado-park",
-        "tag": "Observed"
-      },
-      {
-        "url": "https://www.scottsdaleaz.gov/docs/default-source/scottsdaleaz/park---recreation/find-a-park-maps/community-services-rates.pdf",
-        "tag": "Observed"
-      },
-      {
-        "url": "https://www.scottsdaleaz.gov/parks/reservations",
-        "tag": "Observed"
-      }
-    ]
-  },
-  {
-    "city": "Scottsdale",
-    "center": "Club SAR Fitness Center",
-    "address": "8055 E. Camelback Road, Scottsdale",
-    "day_pass_res": "$4",
-    "day_pass_nonres": "$6",
-    "room_name": "not posted (Club SAR not on the Facility Booking indoor list)",
-    "room_rate_res": "not posted",
-    "room_rate_nonres": "not posted",
-    "room_min_hours": "not posted",
-    "room_notes": "Fee schedule lists Club SAR Daily Admission $4 res / $6 non-res; city page lists fitness drop-in $4/$6.",
-    "closes_weeknight": "9 p.m. Mon-Thu, 8 p.m. Fri",
-    "dance_room": "Group fitness classes held; no rentable dance room posted",
-    "sources": [
-      {
-        "url": "https://www.scottsdaleaz.gov/club-sar-fitness-center",
-        "tag": "Observed"
-      },
-      {
-        "url": "https://www.scottsdaleaz.gov/docs/default-source/scottsdaleaz/park---recreation/find-a-park-maps/community-services-rates.pdf",
-        "tag": "Observed"
-      }
-    ]
-  },
-  {
-    "city": "Scottsdale",
-    "center": "Cactus Pool & Fitness Center (Cactus Park)",
-    "address": "7202 E. Cactus Road, Scottsdale",
-    "day_pass_res": "$4",
-    "day_pass_nonres": "$6",
-    "room_name": "not posted",
-    "room_rate_res": "not posted",
-    "room_rate_nonres": "not posted",
-    "room_min_hours": "not posted",
-    "room_notes": "Cactus Park is not on the Facility Booking indoor-room list (only outdoor). Day pass = lap swim + fitness.",
-    "closes_weeknight": "not posted",
-    "dance_room": "Aerobic and leisure education classes held; room not named",
-    "sources": [
-      {
-        "url": "https://www.scottsdaleaz.gov/aquatics/cactus-pool",
-        "tag": "Observed"
-      },
-      {
-        "url": "https://www.scottsdaleaz.gov/docs/default-source/scottsdaleaz/park---recreation/find-a-park-maps/community-services-rates.pdf",
-        "tag": "Observed"
-      },
-      {
-        "url": "https://www.scottsdaleaz.gov/parks/reservations",
-        "tag": "Observed"
-      }
-    ]
-  },
-  {
-    "city": "Scottsdale",
-    "center": "Chaparral Community Center / Chaparral Pool",
-    "address": "5401 N. Hayden Road, Scottsdale (pool 5445 N. Hayden Rd)",
-    "day_pass_res": "$4 (pool/fitness, summer season only)",
-    "day_pass_nonres": "$6 (pool/fitness, summer season only)",
-    "room_name": "Indoor rooms (names not posted)",
-    "room_rate_res": "$5-60/hr by size band",
-    "room_rate_nonres": "$5-60/hr by size band",
-    "room_min_hours": "not posted",
-    "room_notes": "Chaparral Park is on the Facility Booking indoor-room list. Scottsdale indoor rooms are priced by size, same for resident and non-resident: Extra Small (cap 20) $5/hr, Small (<500 sf) $20/hr, Medium $25/hr, Large $40/hr, XL $60/hr (fee schedule eff. 7/1/2025). Which rooms at this center fall in which band is not posted.",
-    "closes_weeknight": "7 p.m. (community center Mon-Fri 9 a.m.-7 p.m.)",
-    "dance_room": "not posted",
-    "sources": [
-      {
-        "url": "https://www.scottsdaleaz.gov/parks/find-a-park/chaparral-park",
-        "tag": "Observed"
-      },
-      {
-        "url": "https://www.scottsdaleaz.gov/aquatics/chaparral-pool",
-        "tag": "Observed"
-      },
-      {
-        "url": "https://www.scottsdaleaz.gov/docs/default-source/scottsdaleaz/park---recreation/find-a-park-maps/community-services-rates.pdf",
-        "tag": "Observed"
-      },
-      {
-        "url": "https://www.scottsdaleaz.gov/parks/reservations",
-        "tag": "Observed"
-      }
-    ]
-  },
-  {
-    "city": "Scottsdale",
-    "center": "Paiute Neighborhood Center",
-    "address": "6535 E. Osborn Road, Scottsdale",
-    "day_pass_res": "not posted",
-    "day_pass_nonres": "not posted",
-    "room_name": "not posted (rent by calling 480-312-2529)",
-    "room_rate_res": "not posted",
-    "room_rate_nonres": "not posted",
-    "room_min_hours": "not posted",
-    "room_notes": "Not on the Facility Booking list; reservations page says contact the center directly.",
-    "closes_weeknight": "5 p.m. (Mon-Fri 8 a.m.-5 p.m.)",
-    "dance_room": "not posted",
-    "sources": [
-      {
-        "url": "https://www.scottsdaleaz.gov/paiute-neighborhood-center",
-        "tag": "Observed"
-      },
-      {
-        "url": "https://www.scottsdaleaz.gov/parks/reservations",
-        "tag": "Observed"
-      }
-    ]
-  },
-  {
-    "city": "Scottsdale",
-    "center": "Vista del Camino Community Center",
-    "address": "7700 E. Roosevelt St., Scottsdale",
-    "day_pass_res": "not posted",
-    "day_pass_nonres": "not posted",
-    "room_name": "Indoor rooms via Facility Booking (names not posted)",
-    "room_rate_res": "$5-60/hr by size band",
-    "room_rate_nonres": "$5-60/hr by size band",
-    "room_min_hours": "not posted",
-    "room_notes": "Vista del Camino Park is on the Facility Booking indoor list. Scottsdale indoor rooms are priced by size, same for resident and non-resident: Extra Small (cap 20) $5/hr, Small (<500 sf) $20/hr, Medium $25/hr, Large $40/hr, XL $60/hr (fee schedule eff. 7/1/2025). Which rooms at this center fall in which band is not posted.",
-    "closes_weeknight": "5 p.m. (Mon-Fri 8 a.m.-5 p.m.)",
-    "dance_room": "not posted",
-    "sources": [
-      {
-        "url": "https://www.scottsdaleaz.gov/vista-del-camino-community-center",
-        "tag": "Observed"
-      },
-      {
-        "url": "https://www.scottsdaleaz.gov/parks/reservations",
-        "tag": "Observed"
-      },
-      {
-        "url": "https://www.scottsdaleaz.gov/docs/default-source/scottsdaleaz/park---recreation/find-a-park-maps/community-services-rates.pdf",
-        "tag": "Observed"
-      }
-    ]
-  },
-  {
-    "city": "Scottsdale",
-    "center": "Granite Reef Senior Center",
-    "address": "1700 N. Granite Reef Road, Scottsdale (address not on the page I read)",
-    "day_pass_res": "not posted",
-    "day_pass_nonres": "not posted",
-    "room_name": "Small room (201-500 sq ft, cap 30)",
-    "room_rate_res": "$20/hr",
-    "room_rate_nonres": "$20/hr",
-    "room_min_hours": "none (\"no minimum hourly requirements\")",
-    "room_notes": "Plus $10 non-refundable processing fee per contract. Rentals only during the center's business hours. Payment in full when booking. Insurance only for outside vendors and 'certain types of rentals'. Medium $25, Large $40, XL $60.",
-    "closes_weeknight": "8 p.m. Mon-Thu, 5 p.m. Fri",
-    "dance_room": "not posted",
-    "sources": [
-      {
-        "url": "https://www.scottsdaleaz.gov/seniors/granite-reef-senior-center",
-        "tag": "Observed"
-      },
-      {
-        "url": "https://www.scottsdaleaz.gov/seniors/services/rentals",
-        "tag": "Observed"
-      }
-    ]
-  },
-  {
-    "city": "Scottsdale",
-    "center": "Via Linda Senior Center",
-    "address": "10440 E. Via Linda, Scottsdale",
-    "day_pass_res": "not posted",
-    "day_pass_nonres": "not posted",
-    "room_name": "Small room (201-500 sq ft, cap 30)",
-    "room_rate_res": "$20/hr",
-    "room_rate_nonres": "$20/hr",
-    "room_min_hours": "none",
-    "room_notes": "Same senior-center rules as Granite Reef: $10 processing fee per contract, business hours only, no XL room at Via Linda.",
-    "closes_weeknight": "8 p.m. Mon-Thu, 5 p.m. Fri",
-    "dance_room": "not posted",
-    "sources": [
-      {
-        "url": "https://www.scottsdaleaz.gov/seniors/via-linda-senior-center",
-        "tag": "Observed"
-      },
-      {
-        "url": "https://www.scottsdaleaz.gov/seniors/services/rentals",
-        "tag": "Observed"
-      }
-    ]
-  },
-  {
-    "city": "Scottsdale",
-    "center": "McDowell Mountain Ranch Aquatic & Fitness Center",
-    "address": "not posted (not fetched)",
-    "day_pass_res": "$4 (lap swim + fitness)",
-    "day_pass_nonres": "$6 (lap swim + fitness)",
-    "room_name": "Meeting Room (via Facility Booking)",
-    "room_rate_res": "$5-60/hr by size band",
-    "room_rate_nonres": "$5-60/hr by size band",
-    "room_min_hours": "not posted",
-    "room_notes": "Scottsdale indoor rooms are priced by size, same for resident and non-resident: Extra Small (cap 20) $5/hr, Small (<500 sf) $20/hr, Medium $25/hr, Large $40/hr, XL $60/hr (fee schedule eff. 7/1/2025). Which rooms at this center fall in which band is not posted.",
-    "closes_weeknight": "not posted",
-    "dance_room": "not posted",
-    "sources": [
-      {
-        "url": "https://www.scottsdaleaz.gov/docs/default-source/scottsdaleaz/park---recreation/find-a-park-maps/community-services-rates.pdf",
-        "tag": "Observed"
-      },
-      {
-        "url": "https://www.scottsdaleaz.gov/parks/reservations",
-        "tag": "Observed"
-      }
-    ]
-  },
-  {
-    "city": "Tempe",
-    "center": "Kiwanis Recreation Center",
-    "address": "6111 S. All America Way, Tempe, AZ 85283",
-    "day_pass_res": "$4 (fitness center drop-in)",
-    "day_pass_nonres": "$4 (no residency split posted)",
-    "room_name": "Classroom A or B (~20'x28', cap 25) or Observation Room",
-    "room_rate_res": "$30/hr",
-    "room_rate_nonres": "$30/hr",
-    "room_min_hours": "not posted",
-    "room_notes": "$55/hr for A+B combined. Rentals during business hours (Mon-Thu to 10 p.m.). City 'may require' a certificate of insurance ($1M bodily injury / $100K property damage).",
-    "closes_weeknight": "10 p.m. Mon-Thu, 7 p.m. Fri (fitness center 9:30 p.m.)",
-    "dance_room": "No dance room listed; classrooms only",
-    "sources": [
-      {
-        "url": "https://www.tempe.gov/government/community-services/community-recreation-centers/kiwanis-recreation-center",
-        "tag": "Observed"
-      },
-      {
-        "url": "https://www.tempe.gov/government/community-services/community-recreation-centers/fitness-centers",
-        "tag": "Observed"
-      },
-      {
-        "url": "https://www.tempe.gov/government/community-services/community-recreation-centers/rentals-at-recreation-centers",
-        "tag": "Observed"
-      },
-      {
-        "url": "https://form.jotform.com/261265993585169",
-        "tag": "Observed"
-      }
-    ]
-  },
-  {
-    "city": "Tempe",
-    "center": "Escalante Multi-Generational Center",
-    "address": "2150 E. Orange St., Tempe, AZ 85281",
-    "day_pass_res": "$1 fitness drop-in (free facility membership required)",
-    "day_pass_nonres": "$1 (no residency split posted)",
-    "room_name": "Amistad / Bravo / Brio / La Paz classrooms or Conference Room (cap 15-25)",
-    "room_rate_res": "$5/hr",
-    "room_rate_nonres": "$10/hr",
-    "room_min_hours": "none during business hours; 2-hour minimum outside business hours ($80/hr)",
-    "room_notes": "Best fit for dancing: Multi-Purpose Room (Sano), cap 50, mirrored walls + dance floor + speaker, $20/hr res, $50/hr non-res. Senior Center MPR half $15/$30. A deposit 'may be required'; COI 'may be required'.",
-    "closes_weeknight": "9 p.m. Mon-Thu, 8 p.m. Fri (rentals to 8:30 p.m. Mon-Thu, 7:30 p.m. Fri)",
-    "dance_room": "Yes - Sano Multi-Purpose Room (mirrors, dance floor)",
-    "sources": [
-      {
-        "url": "https://www.tempe.gov/government/community-services/community-recreation-centers/escalante-multi-generational-center",
-        "tag": "Observed"
-      },
-      {
-        "url": "https://www.tempe.gov/government/community-services/community-recreation-centers/rentals-at-recreation-centers",
-        "tag": "Observed"
-      },
-      {
-        "url": "https://www.tempe.gov/government/community-services/community-recreation-centers/fitness-centers",
-        "tag": "Observed"
-      },
-      {
-        "url": "https://form.jotform.com/261055173540147",
-        "tag": "Observed"
-      }
-    ]
-  },
-  {
-    "city": "Tempe",
-    "center": "North Tempe Multi-Generational Center",
-    "address": "1555 N. Bridalwreath St., Tempe, AZ 85288",
-    "day_pass_res": "$1 single day pass (fitness + gym programs; free facility membership required)",
-    "day_pass_nonres": "$1 (no residency split posted)",
-    "room_name": "Conference Room (Large/Small) or Palo Verde / Sisso classroom (cap 25)",
-    "room_rate_res": "$5/hr",
-    "room_rate_nonres": "$10/hr",
-    "room_min_hours": "not posted",
-    "room_notes": "Juniper/Joshua classroom $15/$30 individual. Rentals only during business hours. Deposit and COI 'may be required'.",
-    "closes_weeknight": "8 p.m. Mon-Fri (rentals to 7:45 p.m.)",
-    "dance_room": "not posted",
-    "sources": [
-      {
-        "url": "https://www.tempe.gov/government/community-services/community-recreation-centers/north-tempe-multi-generational-center",
-        "tag": "Observed"
-      },
-      {
-        "url": "https://www.tempe.gov/government/community-services/community-recreation-centers/north-tempe-multi-generational-center/facility-information",
-        "tag": "Observed"
-      },
-      {
-        "url": "https://www.tempe.gov/government/community-services/community-recreation-centers/rentals-at-recreation-centers",
-        "tag": "Observed"
-      },
-      {
-        "url": "https://form.jotform.com/261045330593149",
-        "tag": "Observed"
-      }
-    ]
-  },
-  {
-    "city": "Tempe",
-    "center": "Pyle Adult Recreation Center (18+)",
-    "address": "655 E. Southern Ave., Tempe, AZ 85282",
-    "day_pass_res": "$2 fitness single-day drop-in",
-    "day_pass_nonres": "$2 (no residency split posted)",
-    "room_name": "Conference Room (cap 20) or Payson / Prescott / Tucson / Yuma room (cap 30)",
-    "room_rate_res": "$5/hr",
-    "room_rate_nonres": "$10/hr",
-    "room_min_hours": "2 hours for all rentals",
-    "room_notes": "Globe Room $10/$20, Multi-Purpose Room (stage) $30/$60. Book 2+ weeks ahead. Smart TV use $10/yr. The Dance Room (barre, mirrors, Bluetooth speakers) is NOT reservable.",
-    "closes_weeknight": "8:30 p.m. Mon-Thu, 4:30 p.m. Fri",
-    "dance_room": "Yes, but not reservable",
-    "sources": [
-      {
-        "url": "https://www.tempe.gov/government/community-services/community-recreation-centers/pyle-adult-recreation-center/facility-information",
-        "tag": "Observed"
-      },
-      {
-        "url": "https://www.tempe.gov/government/community-services/community-recreation-centers/rentals-at-recreation-centers",
-        "tag": "Observed"
-      },
-      {
-        "url": "https://form.jotform.com/261095935293162",
-        "tag": "Observed"
-      },
-      {
-        "url": "https://www.tempe.gov/home/showpublisheddocument/14737/639263537132800000",
-        "tag": "Observed"
-      },
-      {
-        "url": "https://www.tempe.gov/government/community-services/community-recreation-centers/fitness-centers",
-        "tag": "Observed"
-      }
-    ]
-  },
-  {
-    "city": "Tempe",
-    "center": "Westside Multi-Generational Center",
-    "address": "715 W. 5th St., Tempe, AZ 85281",
-    "day_pass_res": "not posted",
-    "day_pass_nonres": "not posted",
-    "room_name": "Classroom (whiteboard, sink)",
-    "room_rate_res": "$5/hr",
-    "room_rate_nonres": "$10/hr",
-    "room_min_hours": "not posted",
-    "room_notes": "Multi-purpose room $30/$60, gym $90/$120. Rentals during business hours.",
-    "closes_weeknight": "not posted (rentals to 8:45 p.m. Mon-Fri)",
-    "dance_room": "not posted",
-    "sources": [
-      {
-        "url": "https://www.tempe.gov/government/community-services/community-recreation-centers/rentals-at-recreation-centers",
-        "tag": "Observed"
-      },
-      {
-        "url": "https://form.jotform.com/261094781474161",
-        "tag": "Observed"
-      }
-    ]
-  },
-  {
-    "city": "Mesa",
-    "center": "Red Mountain Center (multigenerational)",
-    "address": "7550 E Adobe St, Mesa, AZ 85207",
-    "day_pass_res": "$5 adult (18-54)",
-    "day_pass_nonres": "$5 (no residency split posted)",
-    "room_name": "Activity Room / Conference Room",
-    "room_rate_res": "$20-65/hr (range only)",
-    "room_rate_nonres": "$20-65/hr (range only)",
-    "room_min_hours": "not posted",
-    "room_notes": "Book via RMC Interest Form; staff sets the rate inside the range. Fee PDF (Apr 2026) bands: small space up to 999 sf $18-60/hr; staff overtime $25-100/hr outside open hours.",
-    "closes_weeknight": "9 p.m. Mon-Fri",
-    "dance_room": "Group fitness (aerobics, Zumba) offered; Mesquite Room has hardwood floor ($75-225/hr)",
-    "sources": [
-      {
-        "url": "https://www.mesaaz.gov/Activities-Culture/Parks-Recreation-and-Community-Facilities/Recreational-Facilities/Red-Mountain-Center",
-        "tag": "Observed"
-      },
-      {
-        "url": "https://www.mesaaz.gov/Activities-Culture/Parks-Recreation-and-Community-Facilities/Parks-Facilities/Facility-Reservations",
-        "tag": "Observed"
-      },
-      {
-        "url": "https://www.mesaaz.gov/files/assets/public/v/9/government/omb/fees-charges/parks-recreational-revenue-fees.pdf",
-        "tag": "Observed"
-      }
-    ]
-  },
-  {
-    "city": "Mesa",
-    "center": "Eagles Community Center",
-    "address": "828 E Broadway Rd, Mesa, AZ 85204",
-    "day_pass_res": "$3 adult open gym drop-in",
-    "day_pass_nonres": "$3 (no residency split posted)",
-    "room_name": "Dance Studio / Classrooms / Conference Room",
-    "room_rate_res": "not posted (fee PDF band: small $18-60/hr)",
-    "room_rate_nonres": "not posted",
-    "room_min_hours": "not posted",
-    "room_notes": "Rental list names a Dance Studio but no price. Open gym weeknights Mon/Tue/Wed/Fri (no Thu). Insurance ($1M/$2M) is posted for vendors and inflatables, not small room rentals.",
-    "closes_weeknight": "8:30 p.m. Mon-Fri",
-    "dance_room": "Yes - Dance Studio (rentable, price not posted)",
-    "sources": [
-      {
-        "url": "https://www.mesaaz.gov/Activities-Culture/Parks-Recreation-and-Community-Facilities/Recreational-Facilities/Eagles-Community-Center",
-        "tag": "Observed"
-      },
-      {
-        "url": "https://www.mesaaz.gov/Activities-Culture/Parks-Recreation-and-Community-Facilities/Parks-Facilities/Facility-Reservations",
-        "tag": "Observed"
-      },
-      {
-        "url": "https://www.mesaaz.gov/files/assets/public/v/9/government/omb/fees-charges/parks-recreational-revenue-fees.pdf",
-        "tag": "Observed"
-      }
-    ]
-  },
-  {
-    "city": "Mesa",
-    "center": "Jefferson Recreation Center",
-    "address": "not posted on the city page I read",
-    "day_pass_res": "not posted (no drop-in; after-school programs until 5:30 p.m.)",
-    "day_pass_nonres": "not posted",
-    "room_name": "Classrooms / Gymnasium",
-    "room_rate_res": "not posted (fee PDF band: small $18-60/hr)",
-    "room_rate_nonres": "not posted",
-    "room_min_hours": "not posted",
-    "room_notes": "Reservations available weeknights starting 6 p.m.",
-    "closes_weeknight": "not posted",
-    "dance_room": "not posted",
-    "sources": [
-      {
-        "url": "https://www.mesaaz.gov/Activities-Culture/Parks-Recreation-and-Community-Facilities/Recreational-Facilities/Jefferson-Rec-Center",
-        "tag": "Observed"
-      },
-      {
-        "url": "https://www.mesaaz.gov/Activities-Culture/Parks-Recreation-and-Community-Facilities/Parks-Facilities/Facility-Reservations",
-        "tag": "Observed"
-      },
-      {
-        "url": "https://www.mesaaz.gov/files/assets/public/v/9/government/omb/fees-charges/parks-recreational-revenue-fees.pdf",
-        "tag": "Observed"
-      }
-    ]
-  },
-  {
-    "city": "Mesa",
-    "center": "Webster Recreation Center",
-    "address": "not posted (not fetched)",
-    "day_pass_res": "$2-8 (fee PDF range for Mesa rec centers)",
-    "day_pass_nonres": "$2-8 (range)",
-    "room_name": "Classrooms / Gymnasium",
-    "room_rate_res": "not posted (fee PDF band: small $18-60/hr)",
-    "room_rate_nonres": "not posted",
-    "room_min_hours": "not posted",
-    "room_notes": "",
-    "closes_weeknight": "not posted",
-    "dance_room": "not posted",
-    "sources": [
-      {
-        "url": "https://www.mesaaz.gov/Activities-Culture/Parks-Recreation-and-Community-Facilities/Parks-Facilities/Facility-Reservations",
-        "tag": "Observed"
-      },
-      {
-        "url": "https://www.mesaaz.gov/files/assets/public/v/9/government/omb/fees-charges/parks-recreational-revenue-fees.pdf",
-        "tag": "Observed"
-      }
-    ]
-  },
-  {
-    "city": "Mesa",
-    "center": "Broadway Recreation Center",
-    "address": "59 E Broadway Rd, Mesa (operated by Arizona Disabled Sports)",
-    "day_pass_res": "not posted (rental only, no public hours)",
-    "day_pass_nonres": "not posted",
-    "room_name": "Full-court gym only",
-    "room_rate_res": "$115/hr",
-    "room_rate_nonres": "$115/hr",
-    "room_min_hours": "not posted",
-    "room_notes": "City-owned, run by Arizona Disabled Sports. 25% deposit at signing and a general liability insurance policy naming MASD/BRC as additional insured are required. Half-court not offered. $115 figure is from a search snippet; the page I fetched did not show it in text.",
-    "closes_weeknight": "not posted",
-    "dance_room": "No (gym)",
-    "sources": [
-      {
-        "url": "https://www.arizonadisabledsports.com/specsratesrules",
-        "tag": "Observed"
-      },
-      {
-        "url": "https://www.arizonadisabledsports.com/specsratesrules",
-        "tag": "Reported"
-      }
-    ]
-  },
-  {
-    "city": "Mesa",
-    "center": "Washington Activity Center",
-    "address": "44 E 5th St, Mesa, AZ 85201",
-    "day_pass_res": "not posted",
-    "day_pass_nonres": "not posted",
-    "room_name": "not posted",
-    "room_rate_res": "not posted",
-    "room_rate_nonres": "not posted",
-    "room_min_hours": "not posted",
-    "room_notes": "Not on Mesa's Facility Reservations page; the city URL I tried returned 404. Hours come from Yelp.",
-    "closes_weeknight": "9 p.m. Mon-Thu, 6 p.m. Fri",
-    "dance_room": "not posted",
-    "sources": [
-      {
-        "url": "https://www.yelp.com/biz/washington-activity-center-mesa",
-        "tag": "Reported"
-      }
-    ]
-  },
-  {
-    "city": "Mesa",
-    "center": "Mesa senior centers (Aster Senior Center at Mesa Downtown, 247 N Macdonald)",
-    "address": "247 N Macdonald, Mesa, AZ 85201",
-    "day_pass_res": "not posted",
-    "day_pass_nonres": "not posted",
-    "room_name": "not posted",
-    "room_rate_res": "not posted",
-    "room_rate_nonres": "not posted",
-    "room_min_hours": "not posted",
-    "room_notes": "Run by Aster Aging, Inc. (nonprofit), not City of Mesa Parks. Contact (480) 962-5612.",
-    "closes_weeknight": "not posted",
-    "dance_room": "not posted",
-    "sources": [
-      {
-        "url": "https://www.asteraz.org/services/seniorcenters.html",
-        "tag": "Reported"
-      },
-      {
-        "url": "https://www.fsl.org/locations/mesa-active-adult-center/",
-        "tag": "Reported"
-      }
-    ]
-  },
-  {
-    "city": "Gilbert",
-    "center": "Freestone Recreation Center",
-    "address": "1141 E. Guadalupe Road, Gilbert, AZ 85234",
-    "day_pass_res": "$4.50 adult ($3.50 non-prime 12-3 p.m. weekdays)",
-    "day_pass_nonres": "$6.75 adult",
-    "room_name": "Aerobics Room B (800 sq ft, wood floor)",
-    "room_rate_res": "$25/hr",
-    "room_rate_nonres": "$31.25/hr",
-    "room_min_hours": "2 hours",
-    "room_notes": "Aerobics Room A (900 sf, wood) $35/$43.75. Plus 2.5% tax and a refundable $100 deposit at booking. Book 14 business days to 6 months ahead. Liability insurance 'may be required'. After-hours staff fees $20/hr/staff only outside business hours.",
-    "closes_weeknight": "10 p.m. Mon-Fri",
-    "dance_room": "Yes - Aerobics Rooms A and B (wood floors)",
-    "sources": [
-      {
-        "url": "https://www.gilbertaz.gov/departments/parks-and-recreation/parks-facility-and-sport-field-rentals/recreation-centers-room-rentals",
-        "tag": "Observed"
-      },
-      {
-        "url": "https://www.gilbertaz.gov/departments/parks-and-recreation/recreation-centers-classes/freestone-recreation-center/passes-memberships",
-        "tag": "Observed"
-      }
-    ]
-  },
-  {
-    "city": "Gilbert",
-    "center": "Gilbert Community Center",
-    "address": "130 N. Oak Street, Gilbert, AZ 85233",
-    "day_pass_res": "not posted",
-    "day_pass_nonres": "not posted",
-    "room_name": "Classroom (700 sf) or Pine Room (630 sf, wood floor)",
-    "room_rate_res": "$30/hr",
-    "room_rate_nonres": "$37.50/hr",
-    "room_min_hours": "2 hours",
-    "room_notes": "Rental hours 7 a.m.-midnight but the center closes 6 p.m. Mon-Thu, so evening rentals add after-hours staff fees ($20/hr per staff; two staff after 5 p.m.). $100 refundable deposit + 2.5% tax.",
-    "closes_weeknight": "6 p.m. Mon-Thu, 5 p.m. Fri",
-    "dance_room": "Pine Room has a wood floor (no furniture); no dance room named",
-    "sources": [
-      {
-        "url": "https://www.gilbertaz.gov/departments/parks-and-recreation/parks-facility-and-sport-field-rentals/recreation-centers-room-rentals",
-        "tag": "Observed"
-      }
-    ]
-  },
-  {
-    "city": "Gilbert",
-    "center": "McQueen Park Activity Center",
-    "address": "510 N. Horne St, Gilbert, AZ 85233",
-    "day_pass_res": "not posted",
-    "day_pass_nonres": "not posted",
-    "room_name": "Classroom (660-780 sf, 4 available)",
-    "room_rate_res": "$30/hr",
-    "room_rate_nonres": "$37.50/hr",
-    "room_min_hours": "2 hours",
-    "room_notes": "Half gym $35/$43.75 (athletic use only). $100 refundable deposit + 2.5% tax; insurance 'may be required'.",
-    "closes_weeknight": "9 p.m. Mon-Fri",
-    "dance_room": "not posted",
-    "sources": [
-      {
-        "url": "https://www.gilbertaz.gov/departments/parks-and-recreation/parks-facility-and-sport-field-rentals/recreation-centers-room-rentals",
-        "tag": "Observed"
-      }
-    ]
-  },
-  {
-    "city": "Gilbert",
-    "center": "Southeast Regional Library rooms",
-    "address": "775 N. Greenfield Rd, Gilbert 85234",
-    "day_pass_res": "n/a",
-    "day_pass_nonres": "n/a",
-    "room_name": "Conference Room A (Alcott) or B (Twain), 700 sf",
-    "room_rate_res": "$55/hr",
-    "room_rate_nonres": "$63.75/hr",
-    "room_min_hours": "2 hours",
-    "room_notes": "Assembly Room (Shakespeare) $95/$113.75. $100 refundable deposit + 2.5% tax. Rental hours 7 a.m.-midnight.",
-    "closes_weeknight": "not posted (rental hours to midnight)",
-    "dance_room": "No",
-    "sources": [
-      {
-        "url": "https://www.gilbertaz.gov/departments/parks-and-recreation/parks-facility-and-sport-field-rentals/recreation-centers-room-rentals",
-        "tag": "Observed"
-      }
-    ]
-  },
-  {
-    "city": "Chandler",
-    "center": "Tumbleweed Recreation Center",
-    "address": "745 E. Germann Road, Chandler, 85286",
-    "day_pass_res": "$4 adult (20-54)",
-    "day_pass_nonres": "$6 adult",
-    "room_name": "Meeting Room (400 sf, cap 15)",
-    "room_rate_res": "$25/hr",
-    "room_rate_nonres": "$34/hr",
-    "room_min_hours": "not posted for TRC (Community Center and Nature Center state 2 hours)",
-    "room_notes": "Full Classroom (600 sf) $40/$54. Classroom/meeting rooms only during TRC open hours, book 2 weeks to 90 days ahead. Cotton Room (multipurpose) only Fri-Sun. Payment due at booking, plus tax. Day pass covers fitness area and open gym.",
-    "closes_weeknight": "8 p.m. Mon-Fri",
-    "dance_room": "Yes - Dance Studio and Group Exercise Studio (not on the rental price list)",
-    "sources": [
-      {
-        "url": "https://www.chandleraz.gov/sites/default/files/departments/parks-and-recreation/City-of-Chander-Rental-Fees-TRC-Mar2025.pdf",
-        "tag": "Observed"
-      },
-      {
-        "url": "https://www.chandleraz.gov/explore/chandler-recreation/centers-and-facilities/tumbleweed-recreation-center/memberships",
-        "tag": "Observed"
-      },
-      {
-        "url": "https://www.chandleraz.gov/explore/chandler-recreation/centers-and-facilities/tumbleweed-recreation-center",
-        "tag": "Observed"
-      },
-      {
-        "url": "https://www.chandleraz.gov/explore/chandler-recreation/centers-and-facilities/parties-and-rentals",
-        "tag": "Observed"
-      }
-    ]
-  },
-  {
-    "city": "Chandler",
-    "center": "Chandler Community Center",
-    "address": "125 E. Commonwealth Ave., Chandler, 85225",
-    "day_pass_res": "not posted",
-    "day_pass_nonres": "not posted",
-    "room_name": "Classroom 101 (cap 25)",
-    "room_rate_res": "$25/hr",
-    "room_rate_nonres": "$34/hr",
-    "room_min_hours": "2 hours",
-    "room_notes": "Multipurpose one section $65/$88. Rentals page says Community Center rentals are only Friday-Sunday after regular hours, so weeknight practice is likely not bookable. Payment due at booking, plus tax.",
-    "closes_weeknight": "7 p.m. Mon-Thu, 5 p.m. Fri",
-    "dance_room": "Multipurpose rooms only",
-    "sources": [
-      {
-        "url": "https://www.chandleraz.gov/sites/default/files/departments/parks-and-recreation/City-of-Chander-Rental-Fees-CC-Mar2025.pdf",
-        "tag": "Observed"
-      },
-      {
-        "url": "https://www.chandleraz.gov/explore/chandler-recreation/centers-and-facilities/parties-and-rentals",
-        "tag": "Observed"
-      },
-      {
-        "url": "https://www.chandleraz.gov/explore/chandler-recreation/centers-and-facilities/chandler-community-center",
-        "tag": "Observed"
-      }
-    ]
-  },
-  {
-    "city": "Chandler",
-    "center": "Snedigar Recreation Center",
-    "address": "4500 S. Basha Rd., Chandler, AZ 85248",
-    "day_pass_res": "not posted",
-    "day_pass_nonres": "not posted",
-    "room_name": "not posted",
-    "room_rate_res": "not posted",
-    "room_rate_nonres": "not posted",
-    "room_min_hours": "not posted",
-    "room_notes": "Open only for recreation programs. Rental info by phone 480-782-2727 or 480-782-2900.",
-    "closes_weeknight": "not posted (open only for programs)",
-    "dance_room": "not posted",
-    "sources": [
-      {
-        "url": "https://www.chandleraz.gov/explore/chandler-recreation/centers-and-facilities/snedigar-recreation-center",
-        "tag": "Observed"
-      }
-    ]
-  },
-  {
-    "city": "Chandler",
-    "center": "Chandler Nature Center (formerly Environmental Education Center)",
-    "address": "4050 E. Chandler Heights Road, Chandler, 85249",
-    "day_pass_res": "free drop-in programs (no day pass)",
-    "day_pass_nonres": "free drop-in programs",
-    "room_name": "Jackrabbit (classroom cap 24)",
-    "room_rate_res": "$40/hr",
-    "room_rate_nonres": "$54/hr",
-    "room_min_hours": "2 hours",
-    "room_notes": "Painted Desert $60/$81. Rentals during open hours, plus Fri-Sun after hours. No kitchen. Payment due at booking, plus tax.",
-    "closes_weeknight": "7 p.m. Mon-Thu, 5 p.m. Fri",
-    "dance_room": "No",
-    "sources": [
-      {
-        "url": "https://www.chandleraz.gov/explore/chandler-recreation/centers-and-facilities/parties-and-rentals",
-        "tag": "Observed"
-      },
-      {
-        "url": "https://www.chandleraz.gov/explore/chandler-recreation/centers-and-facilities/chandler-nature-center",
-        "tag": "Observed"
-      }
-    ]
-  }
+ {
+  "city": "Scottsdale",
+  "center": "Eldorado Aquatic & Fitness Center",
+  "address": "2301 N. Miller Road, Scottsdale",
+  "day_pass_res": "$4",
+  "day_pass_nonres": "$6",
+  "room_name": "not posted (aquatic reservable spaces are summer-only)",
+  "room_rate_res": "not posted",
+  "room_rate_nonres": "not posted",
+  "room_min_hours": "not posted",
+  "room_notes": "Day pass is lap swim + fitness center. Indoor rooms at Eldorado Park are booked through the Facility Booking Office (480-312-7707). Scottsdale indoor rooms are priced by size, same for resident and non-resident: Extra Small (cap 20) $5/hr, Small (<500 sf) $20/hr, Medium $25/hr, Large $40/hr, XL $60/hr (fee schedule eff. 7/1/2025). Which rooms at this center fall in which band is not posted.",
+  "closes_weeknight": "not posted (pool/fitness hours vary month to month per city page)",
+  "dance_room": "Aerobic and fitness classes are held here; no dance room named",
+  "sources": [
+   {
+    "url": "https://www.scottsdaleaz.gov/docs/default-source/scottsdaleaz/park---recreation/find-a-park-maps/community-services-rates.pdf",
+    "tag": "Observed"
+   },
+   {
+    "url": "https://www.scottsdaleaz.gov/aquatics/eldorado-pool",
+    "tag": "Observed"
+   },
+   {
+    "url": "https://www.scottsdaleaz.gov/parks/reservations",
+    "tag": "Observed"
+   }
+  ]
+ },
+ {
+  "city": "Scottsdale",
+  "center": "Eldorado Community Center (Eldorado Park)",
+  "address": "1891 N. Miller Road, Scottsdale, AZ 85257",
+  "day_pass_res": "$5/year open gym card (gym only)",
+  "day_pass_nonres": "$5/year open gym card (residency split not posted)",
+  "room_name": "Indoor rooms (names not posted)",
+  "room_rate_res": "$5-60/hr by size band",
+  "room_rate_nonres": "$5-60/hr by size band",
+  "room_min_hours": "not posted",
+  "room_notes": "Open gym card covers drop-in basketball/volleyball in the Eldorado CC gym. Scottsdale indoor rooms are priced by size, same for resident and non-resident: Extra Small (cap 20) $5/hr, Small (<500 sf) $20/hr, Medium $25/hr, Large $40/hr, XL $60/hr (fee schedule eff. 7/1/2025). Which rooms at this center fall in which band is not posted.",
+  "closes_weeknight": "8 p.m. (Mon-Fri 9 a.m.-8 p.m.)",
+  "dance_room": "not posted",
+  "sources": [
+   {
+    "url": "https://www.scottsdaleaz.gov/parks/find-a-park/eldorado-park",
+    "tag": "Observed"
+   },
+   {
+    "url": "https://www.scottsdaleaz.gov/docs/default-source/scottsdaleaz/park---recreation/find-a-park-maps/community-services-rates.pdf",
+    "tag": "Observed"
+   },
+   {
+    "url": "https://www.scottsdaleaz.gov/parks/reservations",
+    "tag": "Observed"
+   }
+  ]
+ },
+ {
+  "city": "Scottsdale",
+  "center": "Club SAR Fitness Center",
+  "address": "8055 E. Camelback Road, Scottsdale",
+  "day_pass_res": "$4",
+  "day_pass_nonres": "$6",
+  "room_name": "not posted (Club SAR not on the Facility Booking indoor list)",
+  "room_rate_res": "not posted",
+  "room_rate_nonres": "not posted",
+  "room_min_hours": "not posted",
+  "room_notes": "Fee schedule lists Club SAR Daily Admission $4 res / $6 non-res; city page lists fitness drop-in $4/$6.",
+  "closes_weeknight": "9 p.m. Mon-Thu, 8 p.m. Fri",
+  "dance_room": "Group fitness classes held; no rentable dance room posted",
+  "sources": [
+   {
+    "url": "https://www.scottsdaleaz.gov/club-sar-fitness-center",
+    "tag": "Observed"
+   },
+   {
+    "url": "https://www.scottsdaleaz.gov/docs/default-source/scottsdaleaz/park---recreation/find-a-park-maps/community-services-rates.pdf",
+    "tag": "Observed"
+   }
+  ]
+ },
+ {
+  "city": "Scottsdale",
+  "center": "Cactus Pool & Fitness Center (Cactus Park)",
+  "address": "7202 E. Cactus Road, Scottsdale",
+  "day_pass_res": "$4",
+  "day_pass_nonres": "$6",
+  "room_name": "not posted",
+  "room_rate_res": "not posted",
+  "room_rate_nonres": "not posted",
+  "room_min_hours": "not posted",
+  "room_notes": "Cactus Park is not on the Facility Booking indoor-room list (only outdoor). Day pass = lap swim + fitness.",
+  "closes_weeknight": "not posted",
+  "dance_room": "Aerobic and leisure education classes held; room not named",
+  "sources": [
+   {
+    "url": "https://www.scottsdaleaz.gov/aquatics/cactus-pool",
+    "tag": "Observed"
+   },
+   {
+    "url": "https://www.scottsdaleaz.gov/docs/default-source/scottsdaleaz/park---recreation/find-a-park-maps/community-services-rates.pdf",
+    "tag": "Observed"
+   },
+   {
+    "url": "https://www.scottsdaleaz.gov/parks/reservations",
+    "tag": "Observed"
+   }
+  ]
+ },
+ {
+  "city": "Scottsdale",
+  "center": "Chaparral Community Center / Chaparral Pool",
+  "address": "5401 N. Hayden Road, Scottsdale (pool 5445 N. Hayden Rd)",
+  "day_pass_res": "$4 (pool/fitness, summer season only)",
+  "day_pass_nonres": "$6 (pool/fitness, summer season only)",
+  "room_name": "Indoor rooms (names not posted)",
+  "room_rate_res": "$5-60/hr by size band",
+  "room_rate_nonres": "$5-60/hr by size band",
+  "room_min_hours": "not posted",
+  "room_notes": "Chaparral Park is on the Facility Booking indoor-room list. Scottsdale indoor rooms are priced by size, same for resident and non-resident: Extra Small (cap 20) $5/hr, Small (<500 sf) $20/hr, Medium $25/hr, Large $40/hr, XL $60/hr (fee schedule eff. 7/1/2025). Which rooms at this center fall in which band is not posted.",
+  "closes_weeknight": "7 p.m. (community center Mon-Fri 9 a.m.-7 p.m.)",
+  "dance_room": "not posted",
+  "sources": [
+   {
+    "url": "https://www.scottsdaleaz.gov/parks/find-a-park/chaparral-park",
+    "tag": "Observed"
+   },
+   {
+    "url": "https://www.scottsdaleaz.gov/aquatics/chaparral-pool",
+    "tag": "Observed"
+   },
+   {
+    "url": "https://www.scottsdaleaz.gov/docs/default-source/scottsdaleaz/park---recreation/find-a-park-maps/community-services-rates.pdf",
+    "tag": "Observed"
+   },
+   {
+    "url": "https://www.scottsdaleaz.gov/parks/reservations",
+    "tag": "Observed"
+   }
+  ]
+ },
+ {
+  "city": "Scottsdale",
+  "center": "Paiute Neighborhood Center",
+  "address": "6535 E. Osborn Road, Scottsdale",
+  "day_pass_res": "not posted",
+  "day_pass_nonres": "not posted",
+  "room_name": "not posted (rent by calling 480-312-2529)",
+  "room_rate_res": "not posted",
+  "room_rate_nonres": "not posted",
+  "room_min_hours": "not posted",
+  "room_notes": "Not on the Facility Booking list; reservations page says contact the center directly.",
+  "closes_weeknight": "5 p.m. (Mon-Fri 8 a.m.-5 p.m.)",
+  "dance_room": "not posted",
+  "sources": [
+   {
+    "url": "https://www.scottsdaleaz.gov/paiute-neighborhood-center",
+    "tag": "Observed"
+   },
+   {
+    "url": "https://www.scottsdaleaz.gov/parks/reservations",
+    "tag": "Observed"
+   }
+  ]
+ },
+ {
+  "city": "Scottsdale",
+  "center": "Vista del Camino Community Center",
+  "address": "7700 E. Roosevelt St., Scottsdale",
+  "day_pass_res": "not posted",
+  "day_pass_nonres": "not posted",
+  "room_name": "Indoor rooms via Facility Booking (names not posted)",
+  "room_rate_res": "$5-60/hr by size band",
+  "room_rate_nonres": "$5-60/hr by size band",
+  "room_min_hours": "not posted",
+  "room_notes": "Vista del Camino Park is on the Facility Booking indoor list. Scottsdale indoor rooms are priced by size, same for resident and non-resident: Extra Small (cap 20) $5/hr, Small (<500 sf) $20/hr, Medium $25/hr, Large $40/hr, XL $60/hr (fee schedule eff. 7/1/2025). Which rooms at this center fall in which band is not posted.",
+  "closes_weeknight": "5 p.m. (Mon-Fri 8 a.m.-5 p.m.)",
+  "dance_room": "not posted",
+  "sources": [
+   {
+    "url": "https://www.scottsdaleaz.gov/vista-del-camino-community-center",
+    "tag": "Observed"
+   },
+   {
+    "url": "https://www.scottsdaleaz.gov/parks/reservations",
+    "tag": "Observed"
+   },
+   {
+    "url": "https://www.scottsdaleaz.gov/docs/default-source/scottsdaleaz/park---recreation/find-a-park-maps/community-services-rates.pdf",
+    "tag": "Observed"
+   }
+  ]
+ },
+ {
+  "city": "Scottsdale",
+  "center": "Granite Reef Senior Center",
+  "address": "1700 N. Granite Reef Road, Scottsdale (address not on the page I read)",
+  "day_pass_res": "not posted",
+  "day_pass_nonres": "not posted",
+  "room_name": "Small room (201-500 sq ft, cap 30)",
+  "room_rate_res": "$20/hr",
+  "room_rate_nonres": "$20/hr",
+  "room_min_hours": "none (\"no minimum hourly requirements\")",
+  "room_notes": "Plus $10 non-refundable processing fee per contract. Rentals only during the center's business hours. Payment in full when booking. Insurance only for outside vendors and 'certain types of rentals'. Medium $25, Large $40, XL $60.",
+  "closes_weeknight": "8 p.m. Mon-Thu, 5 p.m. Fri",
+  "dance_room": "not posted",
+  "sources": [
+   {
+    "url": "https://www.scottsdaleaz.gov/seniors/granite-reef-senior-center",
+    "tag": "Observed"
+   },
+   {
+    "url": "https://www.scottsdaleaz.gov/seniors/services/rentals",
+    "tag": "Observed"
+   }
+  ]
+ },
+ {
+  "city": "Scottsdale",
+  "center": "Via Linda Senior Center",
+  "address": "10440 E. Via Linda, Scottsdale",
+  "day_pass_res": "not posted",
+  "day_pass_nonres": "not posted",
+  "room_name": "Small room (201-500 sq ft, cap 30)",
+  "room_rate_res": "$20/hr",
+  "room_rate_nonres": "$20/hr",
+  "room_min_hours": "none",
+  "room_notes": "Same senior-center rules as Granite Reef: $10 processing fee per contract, business hours only, no XL room at Via Linda.",
+  "closes_weeknight": "8 p.m. Mon-Thu, 5 p.m. Fri",
+  "dance_room": "not posted",
+  "sources": [
+   {
+    "url": "https://www.scottsdaleaz.gov/seniors/via-linda-senior-center",
+    "tag": "Observed"
+   },
+   {
+    "url": "https://www.scottsdaleaz.gov/seniors/services/rentals",
+    "tag": "Observed"
+   }
+  ]
+ },
+ {
+  "city": "Scottsdale",
+  "center": "McDowell Mountain Ranch Aquatic & Fitness Center",
+  "address": "not posted (not fetched)",
+  "day_pass_res": "$4 (lap swim + fitness)",
+  "day_pass_nonres": "$6 (lap swim + fitness)",
+  "room_name": "Meeting Room (via Facility Booking)",
+  "room_rate_res": "$5-60/hr by size band",
+  "room_rate_nonres": "$5-60/hr by size band",
+  "room_min_hours": "not posted",
+  "room_notes": "Scottsdale indoor rooms are priced by size, same for resident and non-resident: Extra Small (cap 20) $5/hr, Small (<500 sf) $20/hr, Medium $25/hr, Large $40/hr, XL $60/hr (fee schedule eff. 7/1/2025). Which rooms at this center fall in which band is not posted.",
+  "closes_weeknight": "not posted",
+  "dance_room": "not posted",
+  "sources": [
+   {
+    "url": "https://www.scottsdaleaz.gov/docs/default-source/scottsdaleaz/park---recreation/find-a-park-maps/community-services-rates.pdf",
+    "tag": "Observed"
+   },
+   {
+    "url": "https://www.scottsdaleaz.gov/parks/reservations",
+    "tag": "Observed"
+   }
+  ]
+ },
+ {
+  "city": "Tempe",
+  "center": "Clark Park Community Center",
+  "day_pass_res": "not posted",
+  "day_pass_nonres": "not posted",
+  "room_name": "Ash / Elm / Palm classrooms, Cypress Multi-Purpose Room (730-1,416 sq ft, Bluetooth speakers)",
+  "room_rate_res": "not posted",
+  "room_rate_nonres": "not posted",
+  "room_min_hours": "not posted",
+  "closes_weeknight": "not posted",
+  "sources": [
+   {
+    "url": "https://www.tempe.gov/government/community-services/community-recreation-centers/rentals-at-recreation-centers",
+    "tag": "[Observed]"
+   }
+  ],
+  "address": "1730 S. Roosevelt St., Building A, Tempe, AZ 85281",
+  "room_notes": "Rate not posted on Tempe rentals page",
+  "dance_room": "no (multi-purpose room 1,416 sq ft)"
+ },
+ {
+  "city": "Tempe",
+  "center": "Kiwanis Recreation Center",
+  "address": "6111 S. All America Way, Tempe, AZ 85283",
+  "day_pass_res": "$4 (fitness center drop-in)",
+  "day_pass_nonres": "$4 (no residency split posted)",
+  "room_name": "Classroom A or B (~20'x28', cap 25) or Observation Room",
+  "room_rate_res": "$30/hr",
+  "room_rate_nonres": "$30/hr",
+  "room_min_hours": "not posted",
+  "room_notes": "$55/hr for A+B combined. Rentals during business hours (Mon-Thu to 10 p.m.). City 'may require' a certificate of insurance ($1M bodily injury / $100K property damage).",
+  "closes_weeknight": "10 p.m. Mon-Thu, 7 p.m. Fri (fitness center 9:30 p.m.)",
+  "dance_room": "No dance room listed; classrooms only",
+  "sources": [
+   {
+    "url": "https://www.tempe.gov/government/community-services/community-recreation-centers/kiwanis-recreation-center",
+    "tag": "Observed"
+   },
+   {
+    "url": "https://www.tempe.gov/government/community-services/community-recreation-centers/fitness-centers",
+    "tag": "Observed"
+   },
+   {
+    "url": "https://www.tempe.gov/government/community-services/community-recreation-centers/rentals-at-recreation-centers",
+    "tag": "Observed"
+   },
+   {
+    "url": "https://form.jotform.com/261265993585169",
+    "tag": "Observed"
+   }
+  ]
+ },
+ {
+  "city": "Tempe",
+  "center": "Escalante Multi-Generational Center",
+  "address": "2150 E. Orange St., Tempe, AZ 85281",
+  "day_pass_res": "$1 fitness drop-in (free facility membership required)",
+  "day_pass_nonres": "$1 (no residency split posted)",
+  "room_name": "Amistad / Bravo / Brio / La Paz classrooms or Conference Room (cap 15-25)",
+  "room_rate_res": "$5/hr",
+  "room_rate_nonres": "$10/hr",
+  "room_min_hours": "none during business hours; 2-hour minimum outside business hours ($80/hr)",
+  "room_notes": "Best fit for dancing: Multi-Purpose Room (Sano), cap 50, mirrored walls + dance floor + speaker, $20/hr res, $50/hr non-res. Senior Center MPR half $15/$30. A deposit 'may be required'; COI 'may be required'.",
+  "closes_weeknight": "9 p.m. Mon-Thu, 8 p.m. Fri (rentals to 8:30 p.m. Mon-Thu, 7:30 p.m. Fri)",
+  "dance_room": "Yes - Sano Multi-Purpose Room (mirrors, dance floor)",
+  "sources": [
+   {
+    "url": "https://www.tempe.gov/government/community-services/community-recreation-centers/escalante-multi-generational-center",
+    "tag": "Observed"
+   },
+   {
+    "url": "https://www.tempe.gov/government/community-services/community-recreation-centers/rentals-at-recreation-centers",
+    "tag": "Observed"
+   },
+   {
+    "url": "https://www.tempe.gov/government/community-services/community-recreation-centers/fitness-centers",
+    "tag": "Observed"
+   },
+   {
+    "url": "https://form.jotform.com/261055173540147",
+    "tag": "Observed"
+   }
+  ]
+ },
+ {
+  "city": "Tempe",
+  "center": "North Tempe Multi-Generational Center",
+  "address": "1555 N. Bridalwreath St., Tempe, AZ 85288",
+  "day_pass_res": "$1 single day pass (fitness + gym programs; free facility membership required)",
+  "day_pass_nonres": "$1 (no residency split posted)",
+  "room_name": "Conference Room (Large/Small) or Palo Verde / Sisso classroom (cap 25)",
+  "room_rate_res": "$5/hr",
+  "room_rate_nonres": "$10/hr",
+  "room_min_hours": "not posted",
+  "room_notes": "Juniper/Joshua classroom $15/$30 individual. Rentals only during business hours. Deposit and COI 'may be required'.",
+  "closes_weeknight": "8 p.m. Mon-Fri (rentals to 7:45 p.m.)",
+  "dance_room": "not posted",
+  "sources": [
+   {
+    "url": "https://www.tempe.gov/government/community-services/community-recreation-centers/north-tempe-multi-generational-center",
+    "tag": "Observed"
+   },
+   {
+    "url": "https://www.tempe.gov/government/community-services/community-recreation-centers/north-tempe-multi-generational-center/facility-information",
+    "tag": "Observed"
+   },
+   {
+    "url": "https://www.tempe.gov/government/community-services/community-recreation-centers/rentals-at-recreation-centers",
+    "tag": "Observed"
+   },
+   {
+    "url": "https://form.jotform.com/261045330593149",
+    "tag": "Observed"
+   }
+  ]
+ },
+ {
+  "city": "Tempe",
+  "center": "Pyle Adult Recreation Center (18+)",
+  "address": "655 E. Southern Ave., Tempe, AZ 85282",
+  "day_pass_res": "$2 fitness single-day drop-in",
+  "day_pass_nonres": "$2 (no residency split posted)",
+  "room_name": "Conference Room (cap 20) or Payson / Prescott / Tucson / Yuma room (cap 30)",
+  "room_rate_res": "$5/hr",
+  "room_rate_nonres": "$10/hr",
+  "room_min_hours": "2 hours for all rentals",
+  "room_notes": "Globe Room $10/$20, Multi-Purpose Room (stage) $30/$60. Book 2+ weeks ahead. Smart TV use $10/yr. The Dance Room (barre, mirrors, Bluetooth speakers) is NOT reservable.",
+  "closes_weeknight": "8:30 p.m. Mon-Thu, 4:30 p.m. Fri",
+  "dance_room": "Yes, but not reservable",
+  "sources": [
+   {
+    "url": "https://www.tempe.gov/government/community-services/community-recreation-centers/pyle-adult-recreation-center/facility-information",
+    "tag": "Observed"
+   },
+   {
+    "url": "https://www.tempe.gov/government/community-services/community-recreation-centers/rentals-at-recreation-centers",
+    "tag": "Observed"
+   },
+   {
+    "url": "https://form.jotform.com/261095935293162",
+    "tag": "Observed"
+   },
+   {
+    "url": "https://www.tempe.gov/home/showpublisheddocument/14737/639263537132800000",
+    "tag": "Observed"
+   },
+   {
+    "url": "https://www.tempe.gov/government/community-services/community-recreation-centers/fitness-centers",
+    "tag": "Observed"
+   }
+  ]
+ },
+ {
+  "city": "Tempe",
+  "center": "Westside Multi-Generational Center",
+  "address": "715 W. 5th St., Tempe, AZ 85281",
+  "day_pass_res": "not posted",
+  "day_pass_nonres": "not posted",
+  "room_name": "Classroom (whiteboard, sink)",
+  "room_rate_res": "$5/hr",
+  "room_rate_nonres": "$10/hr",
+  "room_min_hours": "not posted",
+  "room_notes": "Multi-purpose room $30/$60, gym $90/$120. Rentals during business hours.",
+  "closes_weeknight": "not posted (rentals to 8:45 p.m. Mon-Fri)",
+  "dance_room": "not posted",
+  "sources": [
+   {
+    "url": "https://www.tempe.gov/government/community-services/community-recreation-centers/rentals-at-recreation-centers",
+    "tag": "Observed"
+   },
+   {
+    "url": "https://form.jotform.com/261094781474161",
+    "tag": "Observed"
+   }
+  ]
+ },
+ {
+  "city": "Mesa",
+  "center": "Red Mountain Center (multigenerational)",
+  "address": "7550 E Adobe St, Mesa, AZ 85207",
+  "day_pass_res": "$5 adult (18-54)",
+  "day_pass_nonres": "$5 (no residency split posted)",
+  "room_name": "Activity Room / Conference Room",
+  "room_rate_res": "$20-65/hr (range only)",
+  "room_rate_nonres": "$20-65/hr (range only)",
+  "room_min_hours": "not posted",
+  "room_notes": "Book via RMC Interest Form; staff sets the rate inside the range. Fee PDF (Apr 2026) bands: small space up to 999 sf $18-60/hr; staff overtime $25-100/hr outside open hours.",
+  "closes_weeknight": "9 p.m. Mon-Fri",
+  "dance_room": "Group fitness (aerobics, Zumba) offered; Mesquite Room has hardwood floor ($75-225/hr)",
+  "sources": [
+   {
+    "url": "https://www.mesaaz.gov/Activities-Culture/Parks-Recreation-and-Community-Facilities/Recreational-Facilities/Red-Mountain-Center",
+    "tag": "Observed"
+   },
+   {
+    "url": "https://www.mesaaz.gov/Activities-Culture/Parks-Recreation-and-Community-Facilities/Parks-Facilities/Facility-Reservations",
+    "tag": "Observed"
+   },
+   {
+    "url": "https://www.mesaaz.gov/files/assets/public/v/9/government/omb/fees-charges/parks-recreational-revenue-fees.pdf",
+    "tag": "Observed"
+   }
+  ]
+ },
+ {
+  "city": "Mesa",
+  "center": "Eagles Community Center",
+  "address": "828 E Broadway Rd, Mesa, AZ 85204",
+  "day_pass_res": "$3 adult open gym drop-in",
+  "day_pass_nonres": "$3 (no residency split posted)",
+  "room_name": "Dance Studio / Classrooms / Conference Room",
+  "room_rate_res": "not posted (fee PDF band: small $18-60/hr)",
+  "room_rate_nonres": "not posted",
+  "room_min_hours": "not posted",
+  "room_notes": "Rental list names a Dance Studio but no price. Open gym weeknights Mon/Tue/Wed/Fri (no Thu). Insurance ($1M/$2M) is posted for vendors and inflatables, not small room rentals.",
+  "closes_weeknight": "8:30 p.m. Mon-Fri",
+  "dance_room": "Yes - Dance Studio (rentable, price not posted)",
+  "sources": [
+   {
+    "url": "https://www.mesaaz.gov/Activities-Culture/Parks-Recreation-and-Community-Facilities/Recreational-Facilities/Eagles-Community-Center",
+    "tag": "Observed"
+   },
+   {
+    "url": "https://www.mesaaz.gov/Activities-Culture/Parks-Recreation-and-Community-Facilities/Parks-Facilities/Facility-Reservations",
+    "tag": "Observed"
+   },
+   {
+    "url": "https://www.mesaaz.gov/files/assets/public/v/9/government/omb/fees-charges/parks-recreational-revenue-fees.pdf",
+    "tag": "Observed"
+   }
+  ]
+ },
+ {
+  "city": "Mesa",
+  "center": "Jefferson Recreation Center",
+  "address": "not posted on the city page I read",
+  "day_pass_res": "not posted (no drop-in; after-school programs until 5:30 p.m.)",
+  "day_pass_nonres": "not posted",
+  "room_name": "Classrooms / Gymnasium",
+  "room_rate_res": "not posted (fee PDF band: small $18-60/hr)",
+  "room_rate_nonres": "not posted",
+  "room_min_hours": "not posted",
+  "room_notes": "Reservations available weeknights starting 6 p.m.",
+  "closes_weeknight": "not posted",
+  "dance_room": "not posted",
+  "sources": [
+   {
+    "url": "https://www.mesaaz.gov/Activities-Culture/Parks-Recreation-and-Community-Facilities/Recreational-Facilities/Jefferson-Rec-Center",
+    "tag": "Observed"
+   },
+   {
+    "url": "https://www.mesaaz.gov/Activities-Culture/Parks-Recreation-and-Community-Facilities/Parks-Facilities/Facility-Reservations",
+    "tag": "Observed"
+   },
+   {
+    "url": "https://www.mesaaz.gov/files/assets/public/v/9/government/omb/fees-charges/parks-recreational-revenue-fees.pdf",
+    "tag": "Observed"
+   }
+  ]
+ },
+ {
+  "city": "Mesa",
+  "center": "Webster Recreation Center",
+  "address": "not posted (not fetched)",
+  "day_pass_res": "$2-8 (fee PDF range for Mesa rec centers)",
+  "day_pass_nonres": "$2-8 (range)",
+  "room_name": "Classrooms / Gymnasium",
+  "room_rate_res": "not posted (fee PDF band: small $18-60/hr)",
+  "room_rate_nonres": "not posted",
+  "room_min_hours": "not posted",
+  "room_notes": "",
+  "closes_weeknight": "not posted",
+  "dance_room": "not posted",
+  "sources": [
+   {
+    "url": "https://www.mesaaz.gov/Activities-Culture/Parks-Recreation-and-Community-Facilities/Parks-Facilities/Facility-Reservations",
+    "tag": "Observed"
+   },
+   {
+    "url": "https://www.mesaaz.gov/files/assets/public/v/9/government/omb/fees-charges/parks-recreational-revenue-fees.pdf",
+    "tag": "Observed"
+   }
+  ]
+ },
+ {
+  "city": "Mesa",
+  "center": "Broadway Recreation Center",
+  "address": "59 E Broadway Rd, Mesa (operated by Arizona Disabled Sports)",
+  "day_pass_res": "not posted (rental only, no public hours)",
+  "day_pass_nonres": "not posted",
+  "room_name": "Full-court gym only",
+  "room_rate_res": "$115/hr",
+  "room_rate_nonres": "$115/hr",
+  "room_min_hours": "not posted",
+  "room_notes": "City-owned, run by Arizona Disabled Sports. 25% deposit at signing and a general liability insurance policy naming MASD/BRC as additional insured are required. Half-court not offered. $115 figure is from a search snippet; the page I fetched did not show it in text.",
+  "closes_weeknight": "not posted",
+  "dance_room": "No (gym)",
+  "sources": [
+   {
+    "url": "https://www.arizonadisabledsports.com/specsratesrules",
+    "tag": "Observed"
+   },
+   {
+    "url": "https://www.arizonadisabledsports.com/specsratesrules",
+    "tag": "Reported"
+   }
+  ]
+ },
+ {
+  "city": "Mesa",
+  "center": "Washington Activity Center",
+  "address": "44 E 5th St, Mesa, AZ 85201",
+  "day_pass_res": "not posted",
+  "day_pass_nonres": "not posted",
+  "room_name": "not posted",
+  "room_rate_res": "not posted",
+  "room_rate_nonres": "not posted",
+  "room_min_hours": "not posted",
+  "room_notes": "Not on Mesa's Facility Reservations page; the city URL I tried returned 404. Hours come from Yelp.",
+  "closes_weeknight": "9 p.m. Mon-Thu, 6 p.m. Fri",
+  "dance_room": "not posted",
+  "sources": [
+   {
+    "url": "https://www.yelp.com/biz/washington-activity-center-mesa",
+    "tag": "Reported"
+   }
+  ]
+ },
+ {
+  "city": "Mesa",
+  "center": "Mesa senior centers (Aster Senior Center at Mesa Downtown, 247 N Macdonald)",
+  "address": "247 N Macdonald, Mesa, AZ 85201",
+  "day_pass_res": "not posted",
+  "day_pass_nonres": "not posted",
+  "room_name": "not posted",
+  "room_rate_res": "not posted",
+  "room_rate_nonres": "not posted",
+  "room_min_hours": "not posted",
+  "room_notes": "Run by Aster Aging, Inc. (nonprofit), not City of Mesa Parks. Contact (480) 962-5612.",
+  "closes_weeknight": "not posted",
+  "dance_room": "not posted",
+  "sources": [
+   {
+    "url": "https://www.asteraz.org/services/seniorcenters.html",
+    "tag": "Reported"
+   },
+   {
+    "url": "https://www.fsl.org/locations/mesa-active-adult-center/",
+    "tag": "Reported"
+   }
+  ]
+ },
+ {
+  "city": "Gilbert",
+  "center": "Freestone Recreation Center",
+  "address": "1141 E. Guadalupe Road, Gilbert, AZ 85234",
+  "day_pass_res": "$4.50 adult ($3.50 non-prime 12-3 p.m. weekdays)",
+  "day_pass_nonres": "$6.75 adult",
+  "room_name": "Aerobics Room B (800 sq ft, wood floor)",
+  "room_rate_res": "$25/hr",
+  "room_rate_nonres": "$31.25/hr",
+  "room_min_hours": "2 hours",
+  "room_notes": "Aerobics Room A (900 sf, wood) $35/$43.75. Plus 2.5% tax and a refundable $100 deposit at booking. Book 14 business days to 6 months ahead. Liability insurance 'may be required'. After-hours staff fees $20/hr/staff only outside business hours.",
+  "closes_weeknight": "10 p.m. Mon-Fri",
+  "dance_room": "Yes - Aerobics Rooms A and B (wood floors)",
+  "sources": [
+   {
+    "url": "https://www.gilbertaz.gov/departments/parks-and-recreation/parks-facility-and-sport-field-rentals/recreation-centers-room-rentals",
+    "tag": "Observed"
+   },
+   {
+    "url": "https://www.gilbertaz.gov/departments/parks-and-recreation/recreation-centers-classes/freestone-recreation-center/passes-memberships",
+    "tag": "Observed"
+   }
+  ]
+ },
+ {
+  "city": "Gilbert",
+  "center": "Gilbert Community Center",
+  "address": "130 N. Oak Street, Gilbert, AZ 85233",
+  "day_pass_res": "not posted",
+  "day_pass_nonres": "not posted",
+  "room_name": "Classroom (700 sf) or Pine Room (630 sf, wood floor)",
+  "room_rate_res": "$30/hr",
+  "room_rate_nonres": "$37.50/hr",
+  "room_min_hours": "2 hours",
+  "room_notes": "Rental hours 7 a.m.-midnight but the center closes 6 p.m. Mon-Thu, so evening rentals add after-hours staff fees ($20/hr per staff; two staff after 5 p.m.). $100 refundable deposit + 2.5% tax.",
+  "closes_weeknight": "6 p.m. Mon-Thu, 5 p.m. Fri",
+  "dance_room": "Pine Room has a wood floor (no furniture); no dance room named",
+  "sources": [
+   {
+    "url": "https://www.gilbertaz.gov/departments/parks-and-recreation/parks-facility-and-sport-field-rentals/recreation-centers-room-rentals",
+    "tag": "Observed"
+   }
+  ]
+ },
+ {
+  "city": "Gilbert",
+  "center": "McQueen Park Activity Center",
+  "address": "510 N. Horne St, Gilbert, AZ 85233",
+  "day_pass_res": "not posted",
+  "day_pass_nonres": "not posted",
+  "room_name": "Classroom (660-780 sf, 4 available)",
+  "room_rate_res": "$30/hr",
+  "room_rate_nonres": "$37.50/hr",
+  "room_min_hours": "2 hours",
+  "room_notes": "Half gym $35/$43.75 (athletic use only). $100 refundable deposit + 2.5% tax; insurance 'may be required'.",
+  "closes_weeknight": "9 p.m. Mon-Fri",
+  "dance_room": "not posted",
+  "sources": [
+   {
+    "url": "https://www.gilbertaz.gov/departments/parks-and-recreation/parks-facility-and-sport-field-rentals/recreation-centers-room-rentals",
+    "tag": "Observed"
+   }
+  ]
+ },
+ {
+  "city": "Gilbert",
+  "center": "Southeast Regional Library rooms",
+  "address": "775 N. Greenfield Rd, Gilbert 85234",
+  "day_pass_res": "n/a",
+  "day_pass_nonres": "n/a",
+  "room_name": "Conference Room A (Alcott) or B (Twain), 700 sf",
+  "room_rate_res": "$55/hr",
+  "room_rate_nonres": "$63.75/hr",
+  "room_min_hours": "2 hours",
+  "room_notes": "Assembly Room (Shakespeare) $95/$113.75. $100 refundable deposit + 2.5% tax. Rental hours 7 a.m.-midnight.",
+  "closes_weeknight": "not posted (rental hours to midnight)",
+  "dance_room": "No",
+  "sources": [
+   {
+    "url": "https://www.gilbertaz.gov/departments/parks-and-recreation/parks-facility-and-sport-field-rentals/recreation-centers-room-rentals",
+    "tag": "Observed"
+   }
+  ]
+ },
+ {
+  "city": "Chandler",
+  "center": "Tumbleweed Recreation Center",
+  "address": "745 E. Germann Road, Chandler, 85286",
+  "day_pass_res": "$4 adult (20-54)",
+  "day_pass_nonres": "$6 adult",
+  "room_name": "Meeting Room (400 sf, cap 15)",
+  "room_rate_res": "$25/hr",
+  "room_rate_nonres": "$34/hr",
+  "room_min_hours": "not posted for TRC (Community Center and Nature Center state 2 hours)",
+  "room_notes": "Full Classroom (600 sf) $40/$54. Classroom/meeting rooms only during TRC open hours, book 2 weeks to 90 days ahead. Cotton Room (multipurpose) only Fri-Sun. Payment due at booking, plus tax. Day pass covers fitness area and open gym.",
+  "closes_weeknight": "8 p.m. Mon-Fri",
+  "dance_room": "Yes - Dance Studio and Group Exercise Studio (not on the rental price list)",
+  "sources": [
+   {
+    "url": "https://www.chandleraz.gov/sites/default/files/departments/parks-and-recreation/City-of-Chander-Rental-Fees-TRC-Mar2025.pdf",
+    "tag": "Observed"
+   },
+   {
+    "url": "https://www.chandleraz.gov/explore/chandler-recreation/centers-and-facilities/tumbleweed-recreation-center/memberships",
+    "tag": "Observed"
+   },
+   {
+    "url": "https://www.chandleraz.gov/explore/chandler-recreation/centers-and-facilities/tumbleweed-recreation-center",
+    "tag": "Observed"
+   },
+   {
+    "url": "https://www.chandleraz.gov/explore/chandler-recreation/centers-and-facilities/parties-and-rentals",
+    "tag": "Observed"
+   }
+  ]
+ },
+ {
+  "city": "Chandler",
+  "center": "Chandler Community Center",
+  "address": "125 E. Commonwealth Ave., Chandler, 85225",
+  "day_pass_res": "not posted",
+  "day_pass_nonres": "not posted",
+  "room_name": "Classroom 101 (cap 25)",
+  "room_rate_res": "$25/hr",
+  "room_rate_nonres": "$34/hr",
+  "room_min_hours": "2 hours",
+  "room_notes": "Multipurpose one section $65/$88. Rentals page says Community Center rentals are only Friday-Sunday after regular hours, so weeknight practice is likely not bookable. Payment due at booking, plus tax.",
+  "closes_weeknight": "7 p.m. Mon-Thu, 5 p.m. Fri",
+  "dance_room": "Multipurpose rooms only",
+  "sources": [
+   {
+    "url": "https://www.chandleraz.gov/sites/default/files/departments/parks-and-recreation/City-of-Chander-Rental-Fees-CC-Mar2025.pdf",
+    "tag": "Observed"
+   },
+   {
+    "url": "https://www.chandleraz.gov/explore/chandler-recreation/centers-and-facilities/parties-and-rentals",
+    "tag": "Observed"
+   },
+   {
+    "url": "https://www.chandleraz.gov/explore/chandler-recreation/centers-and-facilities/chandler-community-center",
+    "tag": "Observed"
+   }
+  ]
+ },
+ {
+  "city": "Chandler",
+  "center": "Snedigar Recreation Center",
+  "address": "4500 S. Basha Rd., Chandler, AZ 85248",
+  "day_pass_res": "not posted",
+  "day_pass_nonres": "not posted",
+  "room_name": "not posted",
+  "room_rate_res": "not posted",
+  "room_rate_nonres": "not posted",
+  "room_min_hours": "not posted",
+  "room_notes": "Open only for recreation programs. Rental info by phone 480-782-2727 or 480-782-2900.",
+  "closes_weeknight": "not posted (open only for programs)",
+  "dance_room": "not posted",
+  "sources": [
+   {
+    "url": "https://www.chandleraz.gov/explore/chandler-recreation/centers-and-facilities/snedigar-recreation-center",
+    "tag": "Observed"
+   }
+  ]
+ },
+ {
+  "city": "Chandler",
+  "center": "Chandler Nature Center (formerly Environmental Education Center)",
+  "address": "4050 E. Chandler Heights Road, Chandler, 85249",
+  "day_pass_res": "free drop-in programs (no day pass)",
+  "day_pass_nonres": "free drop-in programs",
+  "room_name": "Jackrabbit (classroom cap 24)",
+  "room_rate_res": "$40/hr",
+  "room_rate_nonres": "$54/hr",
+  "room_min_hours": "2 hours",
+  "room_notes": "Painted Desert $60/$81. Rentals during open hours, plus Fri-Sun after hours. No kitchen. Payment due at booking, plus tax.",
+  "closes_weeknight": "7 p.m. Mon-Thu, 5 p.m. Fri",
+  "dance_room": "No",
+  "sources": [
+   {
+    "url": "https://www.chandleraz.gov/explore/chandler-recreation/centers-and-facilities/parties-and-rentals",
+    "tag": "Observed"
+   },
+   {
+    "url": "https://www.chandleraz.gov/explore/chandler-recreation/centers-and-facilities/chandler-nature-center",
+    "tag": "Observed"
+   }
+  ]
+ }
 ]
