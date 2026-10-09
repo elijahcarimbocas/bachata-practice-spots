@@ -183,8 +183,8 @@
  .pick{background:#fff;border-radius:12px;box-shadow:var(--shadow);padding:16px 18px;display:flex;flex-direction:column;gap:4px}
  .pick .pk{font-size:12px;font-weight:700;color:#1f7a3a}
  .pick b{font-family:var(--disp);font-weight:500;font-size:20px;color:var(--ink)}
- .pick span:last-child{color:var(--slate);font-size:14px}
- @media(max-width:600px){.picks{gap:8px}.pick{padding:12px}.pick b{font-size:16px}.pick span:last-child{font-size:12.5px}}
+ .pick>span:nth-of-type(2){color:var(--slate);font-size:14px}
+ @media(max-width:600px){.picks{gap:8px}.pick{padding:12px}.pick b{font-size:16px}.pick>span:nth-of-type(2){font-size:12.5px}}
  .pickmap-wrap{margin-top:12px;background:#fff;border-radius:12px;box-shadow:var(--shadow);overflow:hidden}
  #pickmap{height:380px;position:relative;background:#f1ecff}
  #pickmap::after{content:"";position:absolute;inset:0;z-index:450;pointer-events:none;background:linear-gradient(135deg,#fbe9ff 0%,#f1ecff 40%,#e8f1ff 75%,#e6f8f7 100%);mix-blend-mode:multiply;opacity:.9}
@@ -198,6 +198,19 @@
  .dir span{font-size:11px;font-weight:600;opacity:.75}
  .dir.alt{background:#fff;color:#000;box-shadow:inset 0 0 0 1.5px #000}
  .leaflet-popup-content a{color:#000;font-weight:700}
+ .calblock{margin-top:12px;background:#fff;border-radius:12px;box-shadow:var(--shadow);padding:14px 16px}
+ .cal-legend{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:12.5px;color:var(--slate);margin-bottom:10px}
+ .cal-legend i{display:inline-block;width:12px;height:12px;border-radius:4px;margin-right:6px;vertical-align:-1px}
+ .k1,.cal .g .a{background:#1f7a3a}.k2,.cal .g .c{background:#b14ee0}.k3,.cal .g .ac{background:linear-gradient(135deg,#1f7a3a 50%,#b14ee0 50%)}
+ .k4{outline:2px dashed #1f7a3a;outline-offset:-2px}
+ .cal{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+ .cal .mo b{display:block;font-family:var(--disp);font-weight:500;font-size:15px;margin-bottom:6px;color:var(--ink)}
+ .cal .g{display:grid;grid-template-columns:repeat(7,1fr);gap:3px;text-align:center;font-size:12px}
+ .cal .g span{padding:5px 0;border-radius:6px;color:var(--ash)}
+ .cal .g .dw{font-weight:700;color:var(--slate)}
+ .cal .g .a,.cal .g .c,.cal .g .ac{color:#fff;font-weight:800}
+ .cal .g .fl{outline:2px dashed #1f7a3a;outline-offset:-2px;color:var(--ink);font-weight:800}
+ @media(max-width:600px){.calblock{padding:10px}.cal{gap:8px}.cal .mo b{font-size:12px}.cal .g{gap:1px;font-size:9.5px}.cal .g span{padding:3px 0;border-radius:4px}.cal-legend{font-size:11px}}
  .resp .yes{color:#1f7a3a}.resp .no{color:#d62828}.resp .wait{color:var(--ash)}
 
  .hero-rot{aspect-ratio:4/5;max-height:520px;width:100%;border-radius:12px;overflow:hidden;border:6px solid #fff;box-shadow:var(--shadow-lg);background:#2a1033}
@@ -276,7 +289,11 @@
   <p class="sub">Who wrote back to Mark's emails, what they said, and where each one stands. $10/hr rooms come first. On a phone, swipe the table sideways.</p>
   <div class="picks">
    <div class="pick"><span class="pk">1st choice</span><b>Amistad at Escalante</b><span>Mondays 6:30 to 8 PM, Oct 19 to Dec 28, plus Tue Oct 13. $10/hr, about $15 a night. Mirrors. 2150 E Orange St, Tempe, down the southeast hallway.</span></div>
-   <div class="pick"><span class="pk">Alternate</span><b>Palm or Ash at Clark Park</b><span>6:30 to 8:30 PM on set dates, mostly Wed and Thu. $10/hr with a 2-hour minimum, $20 a night. Bluetooth speakers built in. 1730 S Roosevelt St, Tempe.</span></div>
+   <div class="pick alt"><span class="pk">Alternate</span><b>Palm or Ash at Clark Park</b><span>6:30 to 8:30 PM on set dates, mostly Wed and Thu. $10/hr with a 2-hour minimum, $20 a night. Bluetooth speakers built in. 1730 S Roosevelt St, Tempe.</span></div>
+  </div>
+  <div class="calblock">
+   <div class="cal-legend"><span><i class="k1"></i>Amistad, 1st choice</span><span><i class="k2"></i>Clark Park Palm or Ash, alternate</span><span><i class="k3"></i>Both open</span><span><i class="k4"></i>Check: Escalante closes at 6 on Dec 21</span></div>
+   <div class="cal" data-a="2026-10-13,2026-10-19,2026-10-26,2026-11-02,2026-11-09,2026-11-16,2026-11-23,2026-11-30,2026-12-07,2026-12-14,2026-12-21,2026-12-28" data-c="2026-10-22,2026-10-29,2026-11-03,2026-11-05,2026-11-12,2026-11-17,2026-11-18,2026-11-19,2026-11-24,2026-11-25,2026-11-30,2026-12-01,2026-12-02,2026-12-03,2026-12-07,2026-12-14" data-flag="2026-12-21"></div>
   </div>
   <div class="pickmap-wrap">
    <div id="pickmap" role="img" aria-label="Map of Escalante Community Center and Clark Park Community Center in Tempe"></div>
@@ -631,6 +648,25 @@ if(!matchMedia("(prefers-reduced-motion: reduce)").matches) setInterval(()=>{
   var pad=m.getSize().x<500?[20,20]:[60,60];
   m.fitBounds(pts,{padding:pad});
 })();
+</script>
+
+<script>
+document.querySelectorAll('.cal').forEach(function(c){
+  var A=new Set(c.dataset.a.split(',')), C=new Set(c.dataset.c.split(',')), F=new Set((c.dataset.flag||'').split(',').filter(Boolean));
+  var mn=['October','November','December'], h='';
+  [9,10,11].forEach(function(mo,i){
+    var first=new Date(2026,mo,1).getDay(), days=new Date(2026,mo+1,0).getDate(), g='';
+    'SMTWTFS'.split('').forEach(function(d){g+='<span class="dw">'+d+'</span>';});
+    for(var k=0;k<first;k++) g+='<span></span>';
+    for(var d=1;d<=days;d++){
+      var key='2026-'+String(mo+1).padStart(2,'0')+'-'+String(d).padStart(2,'0');
+      var cls=F.has(key)?'fl':(A.has(key)&&C.has(key))?'ac':A.has(key)?'a':C.has(key)?'c':'';
+      g+='<span class="'+cls+'">'+d+'</span>';
+    }
+    h+='<div class="mo"><b>'+mn[i]+' 2026</b><div class="g">'+g+'</div></div>';
+  });
+  c.innerHTML=h;
+});
 </script>
 </body>
 </html>
