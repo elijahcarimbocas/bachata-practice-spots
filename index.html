@@ -185,6 +185,19 @@
  .pick b{font-family:var(--disp);font-weight:500;font-size:20px;color:var(--ink)}
  .pick span:last-child{color:var(--slate);font-size:14px}
  @media(max-width:600px){.picks{gap:8px}.pick{padding:12px}.pick b{font-size:16px}.pick span:last-child{font-size:12.5px}}
+ .pickmap-wrap{margin-top:20px;background:#fff;border-radius:12px;box-shadow:var(--shadow);overflow:hidden}
+ #pickmap{height:380px;position:relative;background:#f1ecff}
+ #pickmap::after{content:"";position:absolute;inset:0;z-index:450;pointer-events:none;background:linear-gradient(135deg,#fbe9ff 0%,#f1ecff 40%,#e8f1ff 75%,#e6f8f7 100%);mix-blend-mode:multiply;opacity:.9}
+ .pin{display:flex;align-items:center;gap:6px;white-space:nowrap;transform:translate(-9px,-9px)}
+ .pin i{width:18px;height:18px;border-radius:50%;border:3px solid #fff;box-shadow:0 2px 6px rgba(60,20,80,.35);flex:none}
+ .pin.left{flex-direction:row-reverse;transform:translate(calc(-100% + 9px),-9px)}
+ .pin.first i{background:#1f7a3a}.pin.alt i{background:#b14ee0}
+ .pin b{background:#000;color:#fff;font:600 12px/1 var(--body,inherit);padding:6px 9px;border-radius:999px}
+ .pickmap-links{display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:12px}
+ .dir{display:flex;flex-direction:column;gap:2px;padding:10px 14px;border-radius:999px;background:#000;color:#fff;text-decoration:none;font-weight:700;font-size:14px;text-align:center}
+ .dir span{font-size:11px;font-weight:600;opacity:.75}
+ .dir.alt{background:#fff;color:#000;box-shadow:inset 0 0 0 1.5px #000}
+ .leaflet-popup-content a{color:#000;font-weight:700}
  .resp .yes{color:#1f7a3a}.resp .no{color:#d62828}.resp .wait{color:var(--ash)}
 
  .hero-rot{aspect-ratio:4/5;max-height:520px;width:100%;border-radius:12px;overflow:hidden;border:6px solid #fff;box-shadow:var(--shadow-lg);background:#2a1033}
@@ -217,6 +230,7 @@
  footer ul{list-style:none;display:grid;gap:4px}
  footer a{text-decoration:underline;text-underline-offset:2px;color:#fff}
 </style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
 </head>
 <body>
 <nav><div class="wrap"><a class="logo" href="#top">Practice <b>Spots</b></a></div></nav>
@@ -278,6 +292,13 @@
    <tr><td><b>Eldorado Aquatic &amp; Fitness Center</b><br>Scottsdale</td><td class="ans no">No</td><td class="tm">None</td><td class="bk">n/a</td><td>The aquatic center has no group fitness room. The Eldorado Community Center has one, but they don't usually allow drop-in use.</td><td class="nx">10/7: Closed out for drop-in.</td></tr>
    <tr><td><b>Linton Milano Music</b><br>Mesa</td><td class="ans no">No</td><td class="tm">None after 6 PM</td><td class="bk">n/a</td><td>The studios are booked for private music lessons in the afternoons and evenings, so nothing is open after 6.</td><td class="nx">10/7: Closed out.</td></tr>
   </tbody></table></div>
+  <div class="pickmap-wrap">
+   <div id="pickmap" role="img" aria-label="Map of Escalante Community Center and Clark Park Community Center in Tempe"></div>
+   <div class="pickmap-links">
+    <a class="dir first" href="https://www.google.com/maps/dir/?api=1&destination=Escalante+Community+Center%2C+2150+E+Orange+St%2C+Tempe%2C+AZ+85281" target="_blank" rel="noopener"><span>1st choice</span>Directions to Escalante</a>
+    <a class="dir alt" href="https://www.google.com/maps/dir/?api=1&destination=Clark+Park+Community+Center%2C+1730+S+Roosevelt+St%2C+Tempe%2C+AZ+85281" target="_blank" rel="noopener"><span>Alternate</span>Directions to Clark Park</a>
+   </div>
+  </div>
  </div>
 </section>
 
@@ -588,6 +609,28 @@ if(!matchMedia("(prefers-reduced-motion: reduce)").matches) setInterval(()=>{
  document.querySelectorAll(".rot").forEach(r=>{const im=r.querySelectorAll("img"); if(im.length<2) return;
   const k=[...im].findIndex(x=>x.classList.contains("show")); im[k].classList.remove("show"); im[(k+1)%im.length].classList.add("show"); if(r.id==="heroRot"){const nm=im[(k+1)%im.length].dataset.name; setTimeout(()=>{document.getElementById("heroCap").textContent=nm},450);}});
 },3500);
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script>
+(function(){
+  if(!window.L) return;
+  var m=L.map('pickmap',{scrollWheelZoom:false,zoomControl:true,attributionControl:true});
+  L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}',{maxZoom:16,attribution:'Tiles &copy; Esri, HERE, Garmin, &copy; OpenStreetMap contributors'}).addTo(m);
+  L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Reference/MapServer/tile/{z}/{y}/{x}',{maxZoom:16}).addTo(m);
+  var spots=[
+    {ll:[33.4191654,-111.8944789],cls:'first left',lbl:'1st choice: Amistad',addr:'2150 E Orange St',dir:'https://www.google.com/maps/dir/?api=1&destination=Escalante+Community+Center%2C+2150+E+Orange+St%2C+Tempe%2C+AZ+85281'},
+    {ll:[33.4101943,-111.94795],cls:'alt',lbl:'Alternate: Clark Park',addr:'1730 S Roosevelt St',dir:'https://www.google.com/maps/dir/?api=1&destination=Clark+Park+Community+Center%2C+1730+S+Roosevelt+St%2C+Tempe%2C+AZ+85281'}
+  ];
+  var pts=[];
+  spots.forEach(function(p){
+    var icon=L.divIcon({className:'',html:'<div class="pin '+p.cls+'"><i></i><b>'+p.lbl+'</b></div>',iconSize:null});
+    L.marker(p.ll,{icon:icon}).addTo(m).bindPopup('<b>'+p.lbl+'</b><br>'+p.addr+', Tempe<br><a href="'+p.dir+'" target="_blank" rel="noopener">Get directions</a>');
+    pts.push(p.ll);
+  });
+  var pad=m.getSize().x<500?[20,20]:[60,60];
+  m.fitBounds(pts,{padding:pad});
+})();
 </script>
 </body>
 </html>
