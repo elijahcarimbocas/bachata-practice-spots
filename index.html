@@ -179,13 +179,19 @@
  .resp tr.child>td{border-top:1px dashed #eee}
  .resp a[href^="tel:"]{white-space:nowrap}
  .resp tr.child>td:first-child{padding-left:30px}
- .picks{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:20px}
+ .picks{display:grid;grid-template-columns:1fr;gap:12px;margin-top:20px}
  .pick{background:#fff;border-radius:12px;box-shadow:var(--shadow);padding:16px 18px;display:flex;flex-direction:column;gap:4px}
  .pick a{color:var(--ink);text-decoration:underline;text-underline-offset:2px}
  .pick .pk{font-size:12px;font-weight:700;color:#1f7a3a}
  .pick b{font-family:var(--disp);font-weight:500;font-size:20px;color:var(--ink)}
  .pick>span:nth-of-type(2){color:var(--slate);font-size:14px}
- @media(max-width:600px){.picks{gap:8px}.pick{padding:12px}.pick b{font-size:16px}.pick>span:nth-of-type(2){font-size:12.5px}}
+.pick.has-img{flex-direction:row;gap:16px;align-items:flex-start}
+.pick-txt{display:flex;flex-direction:column;gap:4px;flex:1;min-width:0}
+.pick-txt>span:nth-of-type(2),.pick-spec{color:var(--slate);font-size:14px}
+.pick-spec{margin-top:4px}
+.pick-img{flex:0 0 220px}
+.pick-img img{width:100%;display:block;border-radius:8px;aspect-ratio:3/2;object-fit:cover}
+ @media(max-width:600px){.picks{gap:8px}.pick{padding:12px}.pick b{font-size:16px}.pick>span:nth-of-type(2),.pick-txt>span:nth-of-type(2),.pick-spec{font-size:12.5px}.pick.has-img{flex-direction:column}.pick-img{flex-basis:auto;width:100%}}
  .pickmap-wrap{margin-top:12px;background:#fff;border-radius:12px;box-shadow:var(--shadow);overflow:hidden}
  #pickmap{height:380px;position:relative;background:#f1ecff}
  #pickmap::after{content:"";position:absolute;inset:0;z-index:450;pointer-events:none;background:linear-gradient(135deg,#fbe9ff 0%,#f1ecff 40%,#e8f1ff 75%,#e6f8f7 100%);mix-blend-mode:multiply;opacity:.9}
@@ -300,7 +306,7 @@
   <h2>Responses</h2>
   <p class="sub">Who wrote back to Mark's emails, what they said, and where each one stands. $10/hr rooms come first. On a phone, swipe the table sideways.</p>
   <div class="picks">
-   <div class="pick"><span class="pk">1st choice</span><b>Amistad at Escalante</b><span>Form sent for Mondays 6:30 to 8 PM, Oct 19 to Nov 9, paying as we go. Open Mondays through Dec 14. $10/hr, about $15 a night. Hard floor and mirrors (<a href="files/amistad.jpg" target="_blank" rel="noopener">photo</a>). 2150 E Orange St, Tempe, down the southeast hallway.</span></div>
+   <div class="pick has-img"><div class="pick-txt"><span class="pk">1st choice</span><b>Amistad at Escalante</b><span>Form sent for Mondays 6:30 to 8 PM, Oct 19 to Nov 9, paying as we go. Open Mondays through Dec 14. $10/hr, about $15 a night. Hard floor and mirrors. 2150 E Orange St, Tempe, down the southeast hallway.</span><span class="pick-spec">Capacity: 25 people<br>Special features: TV, whiteboard, sink</span></div><a class="pick-img" href="files/amistad.jpg" target="_blank" rel="noopener"><img src="files/amistad.jpg" alt="Amistad classroom with tables and chairs, mirrors along the back wall and a hard floor" loading="lazy"></a></div>
    <div class="pick alt"><span class="pk">Alternate</span><b>Palm or Ash at Clark Park</b><span>6:30 to 8:30 PM on set dates, mostly Wed and Thu. $10/hr with a 2-hour minimum, $20 a night. Bluetooth speakers built in. 1730 S Roosevelt St, Tempe.</span></div>
   </div>
   <div class="calblock">
